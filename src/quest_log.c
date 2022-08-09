@@ -1174,7 +1174,7 @@ static void Task_EndQuestLog(u8 taskId)
         break;
     default:
         if (sQuestLogCurrentScene.sceneEndMode == 1)
-            ShowMapNamePopup(TRUE);
+            ShowMapNamePopup();
         CpuCopy16(sPalettesBackup, gPlttBufferUnfaded, PLTT_SIZE);
         Free(sPalettesBackup);
         sQuestLogCurrentScene = (struct UnkStruct_203AE94){};

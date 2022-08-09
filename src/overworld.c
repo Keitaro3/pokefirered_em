@@ -91,6 +91,7 @@ static EWRAM_DATA struct WarpData sWarpDestination = {};
 static EWRAM_DATA struct WarpData sFixedDiveWarp = {};
 static EWRAM_DATA struct WarpData sFixedHoleWarp = {};
 
+static EWRAM_DATA u16 sLastMapSectionId = 0;
 static EWRAM_DATA struct InitialPlayerAvatarState sInitialPlayerAvatarState = {};
 
 EWRAM_DATA bool8 gDisableMapMusicChangeOnMapLoad = MUSIC_DISABLE_OFF;
@@ -774,8 +775,10 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     DoCurrentWeather();
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
-    if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId)
-        ShowMapNamePopup(TRUE);
+
+    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER 
+     || gMapHeader.regionMapSectionId != sLastMapSectionId)
+        ShowMapNamePopup();
 }
 
 static void LoadMapFromWarp(bool32 unused)
@@ -1400,7 +1403,7 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
             if (gQuestLogPlaybackState == 2)
                 sub_81127F8(&gInputToStoreInQuestLogMaybe);
             ScriptContext2_Enable();
-            DismissMapNamePopup();
+            //HideMapNamePopupWindow();
         }
         else
         {
@@ -1425,7 +1428,7 @@ static void DoCB1_Overworld_QuestLogPlayback(void)
         if (ProcessPlayerFieldInput(&fieldInput) == TRUE)
         {
             ScriptContext2_Enable();
-            DismissMapNamePopup();
+            //HideMapNamePopupWindow();
         }
         else
         {
@@ -1670,7 +1673,7 @@ void CB2_ReturnToFieldFromDiploma(void)
 static void FieldCB_ShowMapNameOnContinue(void)
 {
     if (gMapHeader.showMapName == TRUE)
-        ShowMapNamePopup(FALSE);
+        ShowMapNamePopup();
     FieldCB_WarpExitFadeFromBlack();
 }
 
@@ -1905,7 +1908,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 inLink)
         }
         else if (gMapHeader.showMapName == TRUE)
         {
-            ShowMapNamePopup(FALSE);
+            ShowMapNamePopup();
         }
         (*state)++;
         break;

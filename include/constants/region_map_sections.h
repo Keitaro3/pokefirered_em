@@ -52,9 +52,9 @@
 #define MAPSEC_ROUTE_133                    0x30
 #define MAPSEC_ROUTE_134                    0x31
 #define MAPSEC_UNDERWATER_124               0x32
-#define MAPSEC_UNDERWATER_125               0x33
-#define MAPSEC_UNDERWATER_126               0x34
-#define MAPSEC_UNDERWATER_127               0x35
+#define MAPSEC_UNDERWATER_126               0x33
+#define MAPSEC_UNDERWATER_127               0x34
+#define MAPSEC_UNDERWATER_128               0x35
 #define MAPSEC_UNDERWATER_SOOTOPOLIS        0x36
 #define MAPSEC_GRANITE_CAVE                 0x37
 #define MAPSEC_MT_CHIMNEY                   0x38
@@ -70,7 +70,7 @@
 #define MAPSEC_AQUA_HIDEOUT_OLD             0x42
 #define MAPSEC_SHOAL_CAVE                   0x43
 #define MAPSEC_SEAFLOOR_CAVERN              0x44
-#define MAPSEC_UNDERWATER_128               0x45
+#define MAPSEC_UNDERWATER_SEAFLOOR_CAVERN   0x45
 #define MAPSEC_VICTORY_ROAD                 0x46
 #define MAPSEC_MIRAGE_ISLAND                0x47
 #define MAPSEC_CAVE_OF_ORIGIN               0x48
@@ -204,11 +204,41 @@
 #define MAPSEC_VIAPOIS_CHAMBER              0xC2
 #define MAPSEC_EMBER_SPA                    0xC3
 #define MAPSEC_SPECIAL_AREA                 0xC4
+
+/*
+#define MAPSECS_EMERALD                     0xC5
+
+#define MAPSEC_AQUA_HIDEOUT                 0xC5
+#define MAPSEC_MAGMA_HIDEOUT                0xC6
+#define MAPSEC_MIRAGE_TOWER                 0xC7
+#define MAPSEC_BIRTH_ISLAND_EM              0xC8
+#define MAPSEC_FARAWAY_ISLAND               0xC9
+#define MAPSEC_ARTISAN_CAVE                 0xCA
+#define MAPSEC_MARINE_CAVE                  0xCB
+#define MAPSEC_UNDERWATER_MARINE_CAVE       0xCC
+#define MAPSEC_TERRA_CAVE                   0xCD
+#define MAPSEC_UNDERWATER_105               0xCE
+#define MAPSEC_UNDERWATER_125               0xCF
+#define MAPSEC_UNDERWATER_129               0xD0
+#define MAPSEC_DESERT_UNDERPASS             0xD1
+#define MAPSEC_ALTERING_CAVE_EM             0xD2
+#define MAPSEC_NAVEL_ROCK_EM                0xD3
+#define MAPSEC_TRAINER_HILL                 0xD4
+*/
+
 #define MAPSEC_NONE                         0xC5
 #define MAPSEC_COUNT                        0xC6
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
 #define METLOC_FATEFUL_ENCOUNTER            0xFF
+
+#define KANTO_MAPSEC_START  MAPSEC_PALLET_TOWN
+#define KANTO_MAPSEC_END    MAPSEC_SPECIAL_AREA
+#define KANTO_MAPSEC_COUNT (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
+
+#define HOENN_MAPSEC_START  MAPSEC_LITTLEROOT_TOWN
+#define HOENN_MAPSEC_END    MAPSEC_DYNAMIC
+#define HOENN_MAPSEC_COUNT (HOENN_MAPSEC_END - HOENN_MAPSEC_START + 1)
 
 #endif //GUARD_CONSTANTS_REGION_MAP_SECTIONS_H

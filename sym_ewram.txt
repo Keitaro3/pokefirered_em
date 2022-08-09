@@ -45,6 +45,7 @@
 	.include "src/pokemon_storage_system_8.o"
 	.include "src/script_movement.o"
 	.include "src/fldeff_cut.o"
+	.include "src/map_name_popup.o"	
 	.include "src/item_menu_icons.o"
 	.include "src/item.o"
 	.include "src/shop.o"
