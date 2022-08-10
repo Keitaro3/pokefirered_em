@@ -18,6 +18,7 @@ static EWRAM_DATA bool8 sScheduledBgCopiesToVram[4] = {FALSE};
 static EWRAM_DATA u16 sTempTileDataBufferCursor = {0};
 static EWRAM_DATA void *sTempTileDataBuffers[0x20] = {NULL};
 static EWRAM_DATA u8 sStartMenuWindowId = {0};
+static EWRAM_DATA u8 sMapNamePopupWindowId = {0};
 
 static const u16 gUnknown_841EF48[] = INCBIN_U16("graphics/unknown/unk_841EF48.4bpp");
 
@@ -380,6 +381,7 @@ void InitStandardTextBoxWindows(void)
 {
     InitWindows(sStandardTextBox_WindowTemplates);
     sStartMenuWindowId = 0xFF;
+    sMapNamePopupWindowId = 0xFF;
     MapNamePopupWindowIdSetDummy();
 }
 
@@ -698,6 +700,27 @@ static u16 GetDlgWindowBaseTileNum(void)
 u16 GetStdWindowBaseTileNum(void)
 {
     return STD_WINDOW_BASE_TILE_NUM;
+}
+
+u8 AddMapNamePopUpWindow(void)
+{
+    if (sMapNamePopupWindowId == WINDOW_NONE)
+        sMapNamePopupWindowId = CreateWindowTemplate(0, 1, 1, 10, 3, 14, 0x107);
+    return sMapNamePopupWindowId;
+}
+
+u8 GetMapNamePopUpWindowId(void)
+{
+    return sMapNamePopupWindowId;
+}
+
+void RemoveMapNamePopUpWindow(void)
+{
+    if (sMapNamePopupWindowId != WINDOW_NONE)
+    {
+        RemoveWindow(sMapNamePopupWindowId);
+        sMapNamePopupWindowId = WINDOW_NONE;
+    }
 }
 
 void DrawHelpMessageWindowWithText(const u8 * text)

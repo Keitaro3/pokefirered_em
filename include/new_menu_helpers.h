@@ -49,4 +49,9 @@ void DestroyHelpMessageWindow_(void);
 void LoadSignPostWindowFrameGfx(void);
 void SetDefaultFontsPointer(void);
 
+// Emerald
+void RemoveMapNamePopUpWindow(void);
+u8 GetMapNamePopUpWindowId(void);
+u8 AddMapNamePopUpWindow(void);
+
 #endif // GUARD_NEW_MENU_HELPERS_H

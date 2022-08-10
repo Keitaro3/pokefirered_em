@@ -4,7 +4,7 @@
 #include "event_data.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
-#include "menu.h"
+//#include "menu.h"
 #include "map_name_popup.h"
 #include "new_menu_helpers.h"
 #include "palette.h"
@@ -322,7 +322,7 @@ static void ShowMapNamePopUpWindow(void)
 
     // Remove the following two lines once the Battle Frontier is added
     withoutPrefixPtr = &(mapDisplayHeader[3]);
-    GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0);    
+    GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0); 
 
     AddMapNamePopUpWindow();
     LoadMapNamePopUpWindowBg();
@@ -333,6 +333,26 @@ static void ShowMapNamePopUpWindow(void)
     AddTextPrinterParameterized(GetMapNamePopUpWindowId(), 0, mapDisplayHeader, x, 3, 0xFF, NULL);
     CopyWindowToVram(GetMapNamePopUpWindowId(), 3);
 }
+
+/*
+static u8 *MapNamePopupAppendFloorNum(u8 *dest, s8 floorNum)
+{
+    if (floorNum == 0)
+        return dest;
+    *dest++ = CHAR_SPACE;
+    if (floorNum == 0x7F)
+        return StringCopy(dest, gText_Rooftop2);
+    if (floorNum < 0)
+    {
+        *dest++ = CHAR_B;
+        floorNum *= -1;
+    }
+    dest = ConvertIntToDecimalStringN(dest, floorNum, STR_CONV_MODE_LEFT_ALIGN, 2);
+    *dest++ = CHAR_F;
+    *dest = EOS;
+    return dest;
+}
+*/
 
 #define TILE_TOP_EDGE_START 0x21D
 #define TILE_TOP_EDGE_END   0x228

@@ -6,6 +6,20 @@
 #include "text_window.h"
 #include "constants/songs.h"
 
+#include "malloc.h"
+#include "bg.h"
+#include "blit.h"
+#include "dma3.h"
+#include "event_data.h"
+#include "graphics.h"
+#include "main.h"
+#include "palette.h"
+#include "region_map.h"
+#include "sound.h"
+#include "string_util.h"
+#include "task.h"
+#include "window.h"
+
 struct Menu
 {
     u8 left;
@@ -22,7 +36,6 @@ struct Menu
     bool8 APressMuted;
 };
 
-static EWRAM_DATA u8 sMapNamePopupWindowId = 0;
 static EWRAM_DATA struct Menu sMenu = {0};
 static EWRAM_DATA u16 sTileNum = 0;
 static EWRAM_DATA u8 sPaletteNum = 0;
@@ -36,27 +49,6 @@ static void WindowFunc_ClearStdWindowAndFrameToTransparent(u8 bg, u8 tilemapLeft
 static u8 MultichoiceGrid_MoveCursor(s8 deltaX, s8 deltaY);
 
 static const u8 gUnknown_8456618[3] = {15, 1, 2};
-
-u8 AddMapNamePopUpWindow(void)
-{
-    if (sMapNamePopupWindowId == WINDOW_NONE)
-        sMapNamePopupWindowId = CreateWindowTemplate(0, 1, 1, 10, 3, 14, 0x107);
-    return sMapNamePopupWindowId;
-}
-
-u8 GetMapNamePopUpWindowId(void)
-{
-    return sMapNamePopupWindowId;
-}
-
-void RemoveMapNamePopUpWindow(void)
-{
-    if (sMapNamePopupWindowId != WINDOW_NONE)
-    {
-        RemoveWindow(sMapNamePopupWindowId);
-        sMapNamePopupWindowId = WINDOW_NONE;
-    }
-}
 
 void DrawDialogFrameWithCustomTileAndPalette(u8 windowId, bool8 copyToVram, u16 tileNum, u8 paletteNum)
 {

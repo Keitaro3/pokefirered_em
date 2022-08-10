@@ -65,9 +65,4 @@ void ClearDialogWindowAndFrameToTransparent(u8 windowId, bool8 copyToVram);
 void DrawDialogFrameWithCustomTileAndPalette(u8 windowId, bool8 copyToVram, u16 tileNum, u8 paletteNum);
 struct WindowTemplate SetWindowTemplateFields(u8 bg, u8 left, u8 top, u8 width, u8 height, u8 paletteNum, u16 baseBlock);
 
-// Emerald
-void RemoveMapNamePopUpWindow(void);
-u8 GetMapNamePopUpWindowId(void);
-u8 AddMapNamePopUpWindow(void);
-
 #endif // GUARD_MENU_H

@@ -1403,7 +1403,7 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
             if (gQuestLogPlaybackState == 2)
                 sub_81127F8(&gInputToStoreInQuestLogMaybe);
             ScriptContext2_Enable();
-            HideMapNamePopupWindow();
+            HideMapNamePopUpWindow();
         }
         else
         {
@@ -1428,7 +1428,7 @@ static void DoCB1_Overworld_QuestLogPlayback(void)
         if (ProcessPlayerFieldInput(&fieldInput) == TRUE)
         {
             ScriptContext2_Enable();
-            HideMapNamePopupWindow();
+            HideMapNamePopUpWindow();
         }
         else
         {
