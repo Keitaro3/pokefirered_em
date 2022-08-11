@@ -2,13 +2,14 @@
 //#include "battle_pyramid.h"
 #include "bg.h"
 #include "event_data.h"
+#include "gflib.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
-//#include "menu.h"
 #include "map_name_popup.h"
 #include "new_menu_helpers.h"
 #include "palette.h"
 #include "region_map.h"
+#include "strings.h"
 #include "task.h"
 #include "quest_log.h"
 #include "constants/layouts.h"
@@ -30,6 +31,7 @@ enum MapPopUp_Themes
 static void Task_MapNamePopUpWindow(u8 taskId);
 static void ShowMapNamePopUpWindow(void);
 static void LoadMapNamePopUpWindowBg(void);
+static u8 *MapNamePopupAppendFloorNum(u8 *dest, s8 flags);
 
 // EWRAM
 static EWRAM_DATA u8 sPopupTaskId = 0;
@@ -299,6 +301,7 @@ static void ShowMapNamePopUpWindow(void)
     u8 *withoutPrefixPtr;
     u8 x;
     const u8* mapDisplayHeaderSource;
+    u8 *ptr;
 
    /* if (InBattlePyramid())
     {
@@ -322,12 +325,17 @@ static void ShowMapNamePopUpWindow(void)
 
     // Remove the following two lines once the Battle Frontier is added
     withoutPrefixPtr = &(mapDisplayHeader[3]);
-    GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0); 
+    ptr = GetMapName(withoutPrefixPtr, gMapHeader.regionMapSectionId, 0);
+    
+    if (gMapHeader.floorNum != 0)
+    {
+        ptr = MapNamePopupAppendFloorNum(ptr, gMapHeader.floorNum);
+        //maxWidth = gMapHeader.floorNum != 0x7F ? 152 : 176;
+    }
 
     AddMapNamePopUpWindow();
     LoadMapNamePopUpWindowBg();
     x = GetStringCenterAlignXOffset(0, withoutPrefixPtr, 80);
-    //x += (80 - GetStringWidth(7, withoutPrefixPtr, 0)) / 2;
     mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
@@ -335,7 +343,6 @@ static void ShowMapNamePopUpWindow(void)
     CopyWindowToVram(GetMapNamePopUpWindowId(), 3);
 }
 
-/*
 static u8 *MapNamePopupAppendFloorNum(u8 *dest, s8 floorNum)
 {
     if (floorNum == 0)
@@ -353,7 +360,6 @@ static u8 *MapNamePopupAppendFloorNum(u8 *dest, s8 floorNum)
     *dest = EOS;
     return dest;
 }
-*/
 
 #define TILE_TOP_EDGE_START 0x21D
 #define TILE_TOP_EDGE_END   0x228
