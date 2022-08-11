@@ -30,7 +30,8 @@ static const struct GlyphWidthFunc sGlyphWidthFuncs[] = {
     { 0x3, GetGlyphWidthFont3 },
     { 0x4, GetGlyphWidthFont4 },
     { 0x5, GetGlyphWidthFont5 },
-    { 0x6, GetGlyphWidthFont6 }
+    { 0x6, GetGlyphWidthFont6 },
+    { 0x7, GetGlyphWidthFont7 }
 };
 
 static const struct SpriteSheet sUnknown_81EA68C[] =
@@ -364,6 +365,49 @@ static const u8 sFont5JapaneseGlyphWidths[] =
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,  0
 };
 
+// Font 7
+static const u16 sFont7LatinGlyphs[] = INCBIN_U16("graphics/fonts/font7.latfont");
+static const u8 sFont7LatinGlyphWidths[] =
+{
+     3,  5,  5,  5,  5,  5,  5,  5,  5,  4,  3,  4,  4,  5,
+     5,  5,  8,  5,  5,  5,  5,  6,  5,  5,  3,  5,  5,  5,
+     5,  5,  4,  3,  4,  4,  5,  5,  5,  8,  5,  5,  5,  5,
+     5,  6,  9,  6,  6,  3,  3,  3,  3,  3,  8,  8,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  5,  5,  4,  8,
+     8,  8,  7,  8,  8,  4,  4,  6,  4,  4,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  5,  3,  3,  3,  3,  3,  3,  4,
+     3,  3,  3,  3,  3,  3,  3,  5,  3,  7,  7,  7,  7,  1,
+     2,  3,  4,  5,  6,  7,  5,  6,  6,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  8,  5,  5,  5,  5,  5,  5,  5,
+     5,  5,  5,  4,  5,  3,  5,  3,  5,  5,  5,  3,  3,  5,
+     5,  6,  3,  6,  6,  5,  5,  5,  5,  5,  5,  5,  5,  4,
+     5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,
+     5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,
+     4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,
+     5,  8,  3,  5,  5,  5,  5,  5,  5,  3,  3,  3,  3,  3,
+     3,  3,  3,  3, 10, 10, 10, 10,  8,  8, 10,  8, 10, 10,
+    10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,
+     3,  3,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+     8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+     8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+     8,  8,  8,  8,  8,  8,  8,  3
+};
+
 // Font 9
 static const u16 sFont9JapaneseGlyphs[] = INCBIN_U16("graphics/fonts/font9_jap.fwjpnfont");
 
@@ -434,6 +478,18 @@ u16 Font5Func(struct TextPrinter *textPrinter)
     if (subStruct->hasGlyphIdBeenSet == 0)
     {
         textPrinter->subUnion.sub.glyphId = 5;
+        subStruct->hasGlyphIdBeenSet = 1;
+    }
+    return RenderText(textPrinter);
+}
+
+u16 Font7Func(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = &textPrinter->subUnion.sub;
+
+    if (subStruct->hasGlyphIdBeenSet == 0)
+    {
+        textPrinter->subUnion.sub.glyphId = 7;
         subStruct->hasGlyphIdBeenSet = 1;
     }
     return RenderText(textPrinter);
@@ -817,6 +873,10 @@ u16 RenderText(struct TextPrinter *textPrinter)
             break;
         case 5:
             DecompressGlyphFont5(currChar, textPrinter->japanese);
+            break;
+        case 6:
+        case 7:
+            DecompressGlyphFont7(currChar, textPrinter->japanese);
         }
 
         CopyGlyphToWindow(textPrinter);
@@ -1663,6 +1723,49 @@ s32 GetGlyphWidthFont5(u16 glyphId, bool32 isJapanese)
     }
     else
         return sFont5LatinGlyphWidths[glyphId];
+}
+
+void DecompressGlyphFont7(u16 glyphId, bool32 isJapanese)
+{
+    const u16* glyphs;
+
+    if (isJapanese == TRUE)
+    {
+        int eff;
+        glyphs = sFont1JapaneseGlyphs + (0x100 * (glyphId >> 0x4)) + (0x8 * (glyphId & (eff = 0xF)));  // shh, no questions, only matching now
+        DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+        DecompressGlyphTile(glyphs + 0x80, (u16 *)(gGlyphInfo.pixels + 0x40));
+        gGlyphInfo.width = 8;
+        gGlyphInfo.height = 16;
+    }
+    else
+    {
+        glyphs = sFont7LatinGlyphs + (0x20 * glyphId);
+        gGlyphInfo.width = sFont7LatinGlyphWidths[glyphId];
+
+        if (gGlyphInfo.width <= 8)
+        {
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x10, (u16 *)(gGlyphInfo.pixels + 0x40));
+        }
+        else
+        {
+            DecompressGlyphTile(glyphs, (u16 *)gGlyphInfo.pixels);
+            DecompressGlyphTile(glyphs + 0x8, (u16 *)(gGlyphInfo.pixels + 0x20));
+            DecompressGlyphTile(glyphs + 0x10, (u16 *)(gGlyphInfo.pixels + 0x40));
+            DecompressGlyphTile(glyphs + 0x18, (u16 *)(gGlyphInfo.pixels + 0x60));
+        }  
+        
+        gGlyphInfo.height = 15;
+    }
+}
+
+s32 GetGlyphWidthFont7(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+        return 8;
+    else
+        return sFont7LatinGlyphWidths[glyphId];
 }
 
 void DecompressGlyphFont9(u16 glyphId)

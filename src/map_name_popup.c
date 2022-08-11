@@ -327,10 +327,11 @@ static void ShowMapNamePopUpWindow(void)
     AddMapNamePopUpWindow();
     LoadMapNamePopUpWindowBg();
     x = GetStringCenterAlignXOffset(0, withoutPrefixPtr, 80);
+    //x += (80 - GetStringWidth(7, withoutPrefixPtr, 0)) / 2;
     mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized(GetMapNamePopUpWindowId(), 0, mapDisplayHeader, x, 3, 0xFF, NULL);
+    AddTextPrinterParameterized(GetMapNamePopUpWindowId(), 7, mapDisplayHeader, x, 3, 0xFF, NULL);
     CopyWindowToVram(GetMapNamePopUpWindowId(), 3);
 }
 

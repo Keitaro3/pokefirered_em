@@ -91,6 +91,9 @@ $(FONTGFXDIR)/font5_jap.fwjpnfont: $(FONTGFXDIR)/font5_jap.png
 $(FONTGFXDIR)/font6.fwjpnfont: $(FONTGFXDIR)/font6_braille.png
 	$(GFX) $< $@
 
+$(FONTGFXDIR)/font7.latfont: $(FONTGFXDIR)/font7_latin.png
+	$(GFX) $< $@
+
 $(FONTGFXDIR)/font9_jap.fwjpnfont: $(FONTGFXDIR)/font9_jap.png
 	$(GFX) $< $@
 

@@ -132,6 +132,17 @@ static const struct FontInfo gFontInfos[] =
         .shadowColor = 0x3,
     },
     {
+        .fontFunction = Font7Func,
+        .maxLetterWidth = 0x5,
+        .maxLetterHeight = 0x10,
+        .letterSpacing = 0x0,
+        .lineSpacing = 0x0,
+        .unk = 0x0,
+        .fgColor = 0x2,
+        .bgColor = 0x1,
+        .shadowColor = 0x3,
+    },    
+    {
         .fontFunction = NULL,
         .maxLetterWidth = 0x8,
         .maxLetterHeight = 0x8,
