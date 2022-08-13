@@ -26,6 +26,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/moves.h"
 #include "constants/trainer_types.h"
+#include "constants/abilities.h"
 
 static EWRAM_DATA struct ObjectEvent * sPlayerObjectPtr = NULL;
 static EWRAM_DATA u8 sTeleportSavedFacingDirection = DIR_NONE;
@@ -1789,7 +1790,26 @@ static bool8 Fishing6(struct Task *task)
     }
     else
     {
-        StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingBiteDirectionAnimNum(GetPlayerFacingDirection()));
+        if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
+        {
+            u8 ability = GetMonAbility(&gPlayerParty[0]);
+            if (ability == ABILITY_SUCTION_CUPS || ability  == ABILITY_STICKY_HOLD)
+            {
+                if (Random() % 100 > 14)
+                    bite = TRUE;
+            }
+        }
+
+        if (!bite)
+        {
+            if (Random() & 1)
+                task->tStep = FISHING_NO_BITE;
+            else
+                bite = TRUE;
+        }
+
+        if (bite == TRUE)        
+            StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingBiteDirectionAnimNum(GetPlayerFacingDirection()));
     }
     return TRUE;
 }

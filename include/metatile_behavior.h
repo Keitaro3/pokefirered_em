@@ -112,6 +112,8 @@ bool8 MetatileBehavior_IsStrengthButton(u8 metatileBehavior);
 bool8 MetatileBehavior_IsPlayerFacingCableClubWirelessMonitor(u8 metatileBehavior, u8 playerDirection);
 bool8 MetatileBehavior_IsPlayerFacingBattleRecords(u8 metatileBehavior, u8 playerDirection);
 bool8 MetatileBehavior_IsQuestionnaire(u8 metatileBehavior);
+bool8 MetatileBehavior_IsLongGrass_Duplicate(u8 metatileBehavior);
+bool8 MetatileBehavior_IsLongGrassSouthEdge(u8 metatileBehavior);
 bool8 MetatileBehavior_IsIndigoPlateauSign1(u8 metatileBehavior);
 bool8 MetatileBehavior_IsIndigoPlateauSign2(u8 metatileBehavior);
 bool8 MetatileBehavior_IsFood(u8 metatileBehavior);

@@ -34,6 +34,13 @@
 #include "constants/trainers.h"
 #include "constants/hold_effects.h"
 #include "constants/battle_move_effects.h"
+#include "constants/layouts.h"
+
+struct SpeciesItem
+{
+    u16 species;
+    u16 item;
+};
 
 #define SPECIES_TO_HOENN(name)      [SPECIES_##name - 1] = HOENN_DEX_##name
 #define SPECIES_TO_NATIONAL(name)   [SPECIES_##name - 1] = NATIONAL_DEX_##name
@@ -1616,6 +1623,19 @@ static const u16 sHMMoves[] =
 {
     MOVE_CUT, MOVE_FLY, MOVE_SURF, MOVE_STRENGTH, MOVE_FLASH,
     MOVE_ROCK_SMASH, MOVE_WATERFALL, MOVE_DIVE, 0xFFFF
+};
+
+static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
+{
+    {SPECIES_NONE,      ITEM_NONE},
+    {SPECIES_MAREEP,    ITEM_GANLON_BERRY},
+    {SPECIES_PINECO,    ITEM_APICOT_BERRY},
+    {SPECIES_HOUNDOUR,  ITEM_BIG_MUSHROOM},
+    {SPECIES_TEDDIURSA, ITEM_PETAYA_BERRY},
+    {SPECIES_AIPOM,     ITEM_BERRY_JUICE},
+    {SPECIES_SHUCKLE,   ITEM_BERRY_JUICE},
+    {SPECIES_STANTLER,  ITEM_PETAYA_BERRY},
+    {SPECIES_SMEARGLE,  ITEM_SALAC_BERRY},
 };
 
 #if defined(FIRERED)
@@ -5858,24 +5878,63 @@ void SetMonPreventsSwitchingString(void)
     BattleStringExpandPlaceholders(gText_PkmnsXPreventsSwitching, gStringVar4);
 }
 
+static s32 GetWildMonTableIdInAlteringCave(u16 species)
+{
+    s32 i;
+    for (i = 0; i < (s32) ARRAY_COUNT(sAlteringCaveWildMonHeldItems); i++)
+        if (sAlteringCaveWildMonHeldItems[i].species == species)
+            return i;
+    return 0;
+}
+
 void SetWildMonHeldItem(void)
 {
     if (!(gBattleTypeFlags & (BATTLE_TYPE_POKEDUDE | BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER)))
     {
         u16 rnd = Random() % 100;
-        u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
-        if (gBaseStats[species].item1 == gBaseStats[species].item2)
+        u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, 0);
+        u16 var1 = 45;
+        u16 var2 = 95;
+        if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG, 0)
+            && GetMonAbility(&gPlayerParty[0]) == ABILITY_COMPOUND_EYES)
         {
-            SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
-            return;
+            var1 = 20;
+            var2 = 80;
         }
-
-        if (rnd > 44)
+        if (gMapHeader.mapLayoutId == LAYOUT_SIX_ISLAND_ALTERING_CAVE)
         {
-            if (rnd <= 94)
-                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+            s32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
+            if (alteringCaveId != 0)
+            {
+                if (rnd < var2)
+                    return;
+                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &sAlteringCaveWildMonHeldItems[alteringCaveId].item);
+            }
             else
-                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
+            {
+                if (rnd < var1)
+                    return;
+                if (rnd < var2)
+                    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+                else
+                    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
+            }
+        }
+        else
+        {
+            if (gBaseStats[species].item1 == gBaseStats[species].item2 && gBaseStats[species].item1 != 0)
+            {
+                SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+            }
+            else
+            {
+                if (rnd < var1)
+                    return;
+                if (rnd < var2)
+                    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item1);
+                else
+                    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &gBaseStats[species].item2);
+            }
         }
     }
 }
