@@ -1092,6 +1092,12 @@ SECTIONS {
         sound/elep4_c3.o(.rodata);
         sound/elep4_c4.o(.rodata);
         sound/fue1.o(.rodata);
+		sound/koto_c4.o(.rodata);
+		sound/shakuhachi_c4.o(.rodata);
+		sound/koto_c3.o(.rodata);
+		sound/gamelam_c3.o(.rodata);
+		sound/voice_huu1.o(.rodata);
+		sound/voice_haa1.o(.rodata);
 	}
 
     song_data :
@@ -1128,7 +1134,6 @@ SECTIONS {
         sound/se_jite_pyoko.o(.rodata);
         sound/se_mu_pachi.o(.rodata);
         sound/se_tk_kasya.o(.rodata);
-        sound/se_fu_zaku.o(.rodata);
         sound/se_fu_zaku2.o(.rodata);
         sound/se_fu_zuzuzu.o(.rodata);
         sound/se_ru_gashin.o(.rodata);
@@ -1141,9 +1146,6 @@ SECTIONS {
         sound/se_tu_saa.o(.rodata);
         sound/se_hi_turun.o(.rodata);
         sound/se_track_move.o(.rodata);
-        sound/se_track_stop.o(.rodata);
-        sound/se_track_haiki.o(.rodata);
-        sound/se_track_door.o(.rodata);
         sound/se_moter.o(.rodata);
         sound/se_save.o(.rodata);
         sound/se_kon.o(.rodata);
@@ -1193,7 +1195,6 @@ SECTIONS {
         sound/se_c_syu.o(.rodata);
         sound/se_c_pikon.o(.rodata);
         sound/se_reapoke.o(.rodata);
-        sound/se_op_basyu.o(.rodata);
         sound/se_bt_start.o(.rodata);
         sound/se_dendou.o(.rodata);
         sound/se_jihanki.o(.rodata);
@@ -1201,8 +1202,6 @@ SECTIONS {
         sound/se_z_scroll.o(.rodata);
         sound/se_z_page.o(.rodata);
         sound/se_pn_on.o(.rodata);
-        sound/se_pn_off.o(.rodata);
-        sound/se_z_search.o(.rodata);
         sound/se_tamago.o(.rodata);
         sound/se_tb_start.o(.rodata);
         sound/se_tb_kon.o(.rodata);
@@ -1353,6 +1352,13 @@ SECTIONS {
         sound/se_rg_deomov.o(.rodata);
         sound/se_rg_excellent.o(.rodata);
         sound/se_rg_nawamiss.o(.rodata);
+        sound/se_toreeye.o(.rodata);
+        sound/se_toreoff.o(.rodata);
+        sound/se_hantei1.o(.rodata);
+        sound/se_hantei2.o(.rodata);
+        sound/se_curtain.o(.rodata);
+        sound/se_curtain1.o(.rodata);
+        sound/se_ussoki.o(.rodata);
         sound/mus_me_asa.o(.rodata);
         sound/mus_fanfa1.o(.rodata);
         sound/mus_fanfa4.o(.rodata);
@@ -1444,6 +1450,23 @@ SECTIONS {
         sound/mus_rg_t_tower.o(.rodata);
         sound/mus_rg_slowmasara.o(.rodata);
         sound/mus_rg_tvnoize.o(.rodata);
+        sound/dan02.o(.rodata);
+		sound/b_tower.o(.rodata);
+		sound/mus_b_frontier.o(.rodata);
+		sound/mus_b_arena.o(.rodata);
+		sound/me_pointget.o(.rodata);
+		sound/me_tore_eye.o(.rodata);
+		sound/mus_pyramid.o(.rodata);
+		sound/mus_pyramid_top.o(.rodata);
+		sound/mus_b_palace.o(.rodata);
+		sound/mus_sattower.o(.rodata);
+		sound/me_symbolget.o(.rodata);
+		sound/mus_b_dome.o(.rodata);
+		sound/mus_b_tube.o(.rodata);
+		sound/mus_b_factory.o(.rodata);
+		sound/mus_vs_front.o(.rodata);
+		sound/mus_vs_mew.o(.rodata);
+		sound/mus_b_dome1.o(.rodata);
     }
 
     lib_rodata :

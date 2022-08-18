@@ -34,7 +34,6 @@ app_song_table:
 	.short	190, 90
 	.short	190, 100
 	.short	190, 110
-	.short	190, 120
 	.short	190, 110
 	.short	190, 127
 	.short	191, 90
@@ -47,9 +46,6 @@ app_song_table:
 	.short	190, 90
 	.short	191, 90
 	.short	191, 127
-	.short	191, 127
-	.short	190, 127
-	.short	191, 110
 	.short	191, 90
 	.short	191, 80
 	.short	191, 100
@@ -99,15 +95,12 @@ app_song_table:
 	.short	191, 90
 	.short	191, 90
 	.short	191, 95
-	.short	190, 100
 	.short	191, 90
 	.short	191, 100
 	.short	191, 110
 	.short	191, 100
 	.short	190, 40
 	.short	190, 90
-	.short	190, 100
-	.short	190, 100
 	.short	190, 100
 	.short	191, 120
 	.short	191, 110
@@ -259,6 +252,13 @@ app_song_table:
 	.short	300, 80
 	.short	191, 110
 	.short	190, 127
+	.short	300, 120
+	.short	300, 110
+	.short	300, 127
+	.short	300, 127
+	.short	300, 127
+	.short	300, 127
+	.short	300, 127
 	.short	22, 90
 	.short	22, 90
 	.short	22, 90
@@ -350,17 +350,34 @@ app_song_table:
 	.short	354, 90
 	.short	379, 92
 	.short	432, 90
+	.short	450, 80
+	.short	452, 80
+	.short	453, 94
+	.short	454, 90
+	.short	453, 90
+	.short	455, 90
+	.short	456, 112
+	.short	457, 100
+	.short	458, 105
+	.short	459, 100
+	.short	453, 100
+	.short	460, 90
+	.short	461, 100
+	.short	462, 100
+	.short	463, 90
+	.short	464, 90
+	.short	460, 90
 
 	.global	__total_vgrp_n
-	.equ	__total_vgrp_n, 437
+	.equ	__total_vgrp_n, 465
 
 	.global	app_vgrp_table
 app_vgrp_table:
 	.word	voicegroup000
 	.word	voicegroup001
 	.word	voicegroup002
-	.word	0
-	.word	0
+	.word	voicegroup003
+	.word	voicegroup004
 	.word	voicegroup005
 	.word	voicegroup006
 	.word	voicegroup007
@@ -793,6 +810,34 @@ app_vgrp_table:
 	.word	voicegroup434
 	.word	voicegroup435
 	.word	voicegroup436
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	voicegroup450
+	.word	voicegroup451
+	.word	voicegroup452
+	.word	voicegroup453
+	.word	voicegroup454
+	.word	voicegroup455
+	.word	voicegroup456
+	.word	voicegroup457
+	.word	voicegroup458
+	.word	voicegroup459
+	.word	voicegroup460
+	.word	voicegroup461
+	.word	voicegroup462
+	.word	voicegroup463
+	.word	voicegroup464
 
 	.global	pbymidi_swi
 	.equ	pbymidi_swi, 0

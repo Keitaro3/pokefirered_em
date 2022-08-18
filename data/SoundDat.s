@@ -745,6 +745,442 @@ voicegroup002:
 	.word	tsutsumi
 	.byte	255,  0,255,  0
 
+	.global	voicegroup003
+voicegroup003:
+	.byte	0x08, 60,  0,0xC0
+	.word	taiko
+	.byte	255,  0,255,  0
+
+	.byte	0x08, 64,  0,0xC0
+	.word	rimshot
+	.byte	255,180,175,228
+
+	.byte	0x08, 64,  0,0xC0
+	.word	rimshot
+	.byte	255,  0,255,242
+
+	.byte	0x08, 64,  0,0xB6
+	.word	hand_clap
+	.byte	255,255,255,127
+
+	.byte	0x08, 64,  0,0xC0
+	.word	oce_snare
+	.byte	255,  0,255,242
+
+	.byte	0x00, 64,  0,0x98
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x08, 64,  0,0xD0
+	.word	oce_snare
+	.byte	255,  0,255,242
+
+	.byte	0x00, 68,  0,0xA2
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x08, 60,  0,0xC0
+	.word	snare_l
+	.byte	255,  0,255,242
+
+	.byte	0x00, 72,  0,0xAC
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 76,  0,0xD4
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x00, 80,  0,0xDE
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x08, 33,  0,0xD9
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x00, 64,  0,0xE8
+	.word	taiko
+	.byte	255,  0,255,235
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 63,  0,0xC0
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x08, 64,  0,0x98
+	.word	ridecap
+	.byte	255,165,103,231
+
+	.byte	0x08, 66,  0,0xA2
+	.word	tambo
+	.byte	255,127, 77,204
+
+	.byte	0x08, 64,  0,0x8E
+	.word	splash
+	.byte	255,231,  0,188
+
+	.byte	0x08, 64,  0,0xD9
+	.word	cowbell
+	.byte	255,  0,255,242
+
+	.byte	0x08, 64,  0,0x9D
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 64,  0,0xB6
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x08, 64,  0,0xB6
+	.word	cymbal
+	.byte	  8,  0,255,216
+
+	.byte	0x08, 64,  0,0xDE
+	.word	indian
+	.byte	255,  0,255,  0
+
+	.byte	0x08, 64,  0,0xA2
+	.word	h_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x08, 64,  0,0xA2
+	.word	l_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x08, 64,  0,0xDA
+	.word	l_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 61,  0,0xD4
+	.word	woodat2
+	.byte	255,  0,255,  0
+
+	.byte	0x08, 64,  0,0xC0
+	.word	woodat1
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 64,  0,0xA7
+	.word	triyang
+	.byte	255,242,103,188
+
+	.byte	0x08, 64,  0,0xCF
+	.word	triyang
+	.byte	255,242,103,188
+
+	.byte	0x08, 64,  0,0xA7
+	.word	triyang
+	.byte	255,165,103,188
+
+	.byte	0x08, 64,  0,0x98
+	.word	suzu
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 64,  0,0xE8
+	.word	kane
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 63,  0,0xC0
+	.word	taiko
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 50,  0,0xD4
+	.word	tsutsumi
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 64,  0,0xD4
+	.word	tsutsumi
+	.byte	255,  0,255,  0
+
+	.global	voicegroup004
+voicegroup004:
+	.byte	0x00, 62,  0,0xC0
+	.word	ti_bass
+	.byte	255,  0,255,  0
+
+	.byte	0x08, 64,  0,0xC0
+	.word	rimshot
+	.byte	255,180,175,228
+
+	.byte	0x08, 64,  0,0xC0
+	.word	rimshot
+	.byte	255,  0,255,242
+
+	.byte	0x08, 64,  0,0xB6
+	.word	hand_clap
+	.byte	255,255,255,127
+
+	.byte	0x00, 65,  0,0xC0
+	.word	oce_snare
+	.byte	255,  0,255,242
+
+	.byte	0x00, 64,  0,0x98
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x08, 64,  0,0xD0
+	.word	oce_snare
+	.byte	255,  0,255,242
+
+	.byte	0x00, 68,  0,0xA2
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x08, 60,  0,0xC0
+	.word	snare_l
+	.byte	255,  0,255,242
+
+	.byte	0x00, 72,  0,0xAC
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 76,  0,0xD4
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x00, 80,  0,0xDE
+	.word	tom1
+	.byte	255,  0,255,226
+
+	.byte	0x00, 56,  0,0xD9
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x00, 64,  0,0xE8
+	.word	taiko
+	.byte	255,  0,255,235
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 63,  0,0xC0
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x08, 64,  0,0x98
+	.word	ridecap
+	.byte	255,165,103,231
+
+	.byte	0x08, 66,  0,0xA2
+	.word	tambo
+	.byte	255,127, 77,204
+
+	.byte	0x00, 64,  0,0x8E
+	.word	splash
+	.byte	255,231,  0,188
+
+	.byte	0x00, 64,  0,0xD9
+	.word	cowbell
+	.byte	255,  0,255,242
+
+	.byte	0x00, 60,  0,0x9D
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 58,  0,0xB6
+	.word	cymbal
+	.byte	255,235,  0,231
+
+	.byte	0x00, 62,  0,0xB6
+	.word	cymbal
+	.byte	  8,  0,255,216
+
+	.byte	0x00, 64,  0,0xDE
+	.word	indian
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 64,  0,0xA2
+	.word	h_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 64,  0,0xA2
+	.word	l_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 64,  0,0xDA
+	.word	l_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 61,  0,0xD4
+	.word	woodat2
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 64,  0,0xC0
+	.word	woodat1
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 64,  0,0xA7
+	.word	triyang
+	.byte	255,242,103,188
+
+	.byte	0x00, 64,  0,0xCF
+	.word	triyang
+	.byte	255,242,103,188
+
+	.byte	0x00, 64,  0,0xA7
+	.word	triyang
+	.byte	255,165,103,188
+
+	.byte	0x08, 64,  0,0xC0
+	.word	suzu
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 64,  0,0xE8
+	.word	kane
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 63,  0,0xC0
+	.word	taiko
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 50,  0,0xD4
+	.word	tsutsumi
+	.byte	255,  0,255,  0
+
+	.byte	0x00, 64,  0,0xD4
+	.word	tsutsumi
+	.byte	255,  0,255,  0
+
 	.global	voicegroup005
 voicegroup005:
 	.byte	0x00, 60,  0,0x00
@@ -34443,6 +34879,6740 @@ voicegroup436:
 	.word	taiko
 	.byte	255,  0,255,  0
 
+	.global	voicegroup450
+voicegroup450:
+	.byte	0x80,0,0,0
+	.word	voicegroup451 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 2, 4, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt75
+	.byte	 0, 2, 4, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,216, 90,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	porgan_c4
+	.byte	 37,165,180,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,246,  0,235
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,246,  0,226
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w002
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	big_bone_c2
+	.byte	255,165,154,127
+
+	.global	voicegroup451
+voicegroup451:
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 60,  0,0xC0
+	.word	oce_snare
+	.byte	255,  0,255,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 32,  0,0xB1
+	.word	tambo
+	.byte	255,127, 77,204
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 30,  0,0xB6
+	.word	cymbal
+	.byte	  8,  0,255,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 30,  0,0xB6
+	.word	cymbal
+	.byte	255,246,  0,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 72,  0,0xCF
+	.word	h_conga
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x08, 72,  0,0xCA
+	.word	l_conga
+	.byte	255,  0,255,  0
+
+	.global	voicegroup452
+voicegroup452:
+	.byte	0x80,0,0,0
+	.word	voicegroup451 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 1, 7, 1
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 1, 7, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,246,  0,226
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 1, 6, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w006
+	.byte	 0, 7,15, 2
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt75
+	.byte	 0, 1, 6, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w006
+	.byte	 0, 7,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt75
+	.byte	 0, 0, 6, 1
+
+	.global	voicegroup453
+voicegroup453:
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	255,249, 25, 76
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,  0,180,239
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 1, 1, 6, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w001
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt25
+	.byte	 0, 0,10, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 1
+
+	.global	voicegroup454
+voicegroup454:
+	.byte	0x80,0,0,0
+	.word	voicegroup003 - (36 * 12)
+	.word	0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	koto_c4
+	.byte	255,  0,206,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	shakuhachi_c4
+	.byte	255,  0,255,204
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 2, 0,12, 5
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 0,10, 4
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w001
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt25
+	.byte	 2, 0,12, 5
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	koto_c3
+	.byte	255,  0,206,242
+
+	.global	voicegroup455
+voicegroup455:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	xylophone_c5
+	.byte	255,235,  0,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 2, 9, 4
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 2, 9, 4
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 1
+
+	.global	voicegroup456
+voicegroup456:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	porgan_c4
+	.byte	 64, 38,128,226
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	128,249, 25, 76
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ovgt_c3
+	.byte	255,  0,255,127
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c3
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	synbs_c2
+	.byte	255,252,  0,115
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,  0,180,246
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c2
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	flute_c5
+	.byte	255,  0,255,165
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 1, 4, 1
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt12
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w002
+	.byte	 0, 7,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt75
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w004
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 0, 0
+
+	.global	voicegroup457
+voicegroup457:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	128,249, 25, 76
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	octcho_c3
+	.byte	255,  0,255,  0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 1, 4, 1
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt12
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w002
+	.byte	 0, 7,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt75
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 1, 4, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w004
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 0, 0
+
+	.global	voicegroup458
+voicegroup458:
+	.byte	0x80,0,0,0
+	.word	voicegroup004 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	gamelam_c3
+	.byte	255,188,139,239
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	128,249, 25, 76
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	acobs_c1
+	.byte	255,253,  0,188
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt12
+	.byte	 0, 1,13, 4
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 0, 9, 2
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt25
+	.byte	 0, 0, 7, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w003
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w001
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 7, 1
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 0, 0
+
+	.global	voicegroup459
+voicegroup459:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,  0,180,239
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 1, 1, 6, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w001
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 0,10, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 1
+
+	.global	voicegroup460
+voicegroup460:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	porgan_c4
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ovgt_c3
+	.byte	255,  0,255,226
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c3
+	.byte	255,  0,255,195
+
+	.byte	0x00, 60,  0,0x00
+	.word	hau_c4
+	.byte	255,  0,255,195
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c2
+	.byte	255,  0,255,195
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 0, 1, 7, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w021
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 1, 7, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 7, 1
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 1
+
+	.global	voicegroup461
+voicegroup461:
+	.byte	0x80,0,0,0
+	.word	voicegroup003 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w027
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	porgan_c4
+	.byte	255,  0,255,210
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	255,249, 25, 76
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	acobs_c1
+	.byte	255,253,  0,188
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	synbs_c2
+	.byte	128,252,  0,115
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	octcho_c3
+	.byte	128,165,128,188
+
+	.byte	0x00, 60,  0,0x00
+	.word	voice_huu1
+	.byte	128,165,128,204
+
+	.byte	0x00, 60,  0,0x00
+	.word	voice_haa1
+	.byte	128,165,128,188
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 0, 0, 7, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt25
+	.byte	 0, 0, 6, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 0, 6, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 7,10, 1
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 1
+
+	.global	voicegroup462
+voicegroup462:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w029
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w031
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w030
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w027
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w028
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w010
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w011
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w012
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w013
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w014
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	xylophone_c5
+	.byte	255,235,  0,204
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ovgt_c3
+	.byte	255,  0,255,195
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	acobs_c1
+	.byte	255,253,  0,188
+
+	.byte	0x00, 60,  0,0x00
+	.word	slapbs_c1
+	.byte	255,235,128, 99
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	synbs_c2
+	.byte	255,252,  0,115
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w022
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,  0,180,246
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	flute_c5
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 7, 7, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 7, 7, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt25
+	.byte	 0, 7, 7, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 7, 7, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 7, 7, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w021
+	.byte	 0, 7,15, 1
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 0, 7, 7, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt12
+	.byte	 0, 7, 7, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt75
+	.byte	 0, 7, 7, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 7, 1
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 1
+
+	.global	voicegroup463
+voicegroup463:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	elep4_c3
+	.byte	128,249,  0,188
+
+	.byte	0x00, 60,  0,0x00
+	.word	elep4_c4
+	.byte	255,188,103,165
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	tu_bells_c4
+	.byte	255,165, 90,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	porgan_c4
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	128,249, 25,204
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	255,165,128,204
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ovgt_c3
+	.byte	255,  0,255,127
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c3
+	.byte	255,165,154,165
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ebase_c1
+	.byte	255,253,  0,149
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	acobs_c1
+	.byte	255,253,  0,198
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	synbs_c2
+	.byte	255,252,  0,146
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	pizz_c4
+	.byte	255,216,  0,165
+
+	.byte	0x00, 60,  0,0x00
+	.word	harp_c5
+	.byte	255,242, 51,242
+
+	.byte	0x00, 60,  0,0x00
+	.word	timpani_c2
+	.byte	255,246,  0,226
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c2
+	.byte	255,165,180,165
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 0, 2, 7, 2
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 1, 6, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 3, 6, 2
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt12
+	.byte	 0, 2, 6, 5
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt12
+	.byte	 0, 1, 6, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w027
+	.byte	 0, 7,15, 1
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w000
+	.byte	 0, 7,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w021
+	.byte	 0, 1, 9, 2
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 2, 6, 3
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	hau_c4
+	.byte	255,  0,255,165
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 2
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 6, 0
+
+	.global	voicegroup464
+voicegroup464:
+	.byte	0x80,0,0,0
+	.word	voicegroup002 - (36 * 12)
+	.word	0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup005
+	.word	spltbl000 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 2, 6, 5
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	porgan_c4
+	.byte	128,146,190,115
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	accord_c4
+	.byte	255,  0,255,165
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	a_guitar_c4
+	.byte	255,165,128,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ovgt_c3
+	.byte	255,  0,255,127
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c3
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	ebase_c1
+	.byte	255,253,  0,149
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	slapb_c1
+	.byte	255,165,180,216
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	synbs_c2
+	.byte	255,252,  0,115
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup006
+	.word	spltbl001 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup007
+	.word	spltbl002 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x40,0,0,0
+	.word	voicegroup010
+	.word	spltbl004 - 36
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x00, 60,  0,0x00
+	.word	disgt_c2
+	.byte	255,  0,255,127
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt25
+	.byte	 0, 2, 7, 2
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt75
+	.byte	 0, 3, 3, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w027
+	.byte	 0, 3, 6, 5
+
+	.byte	0x09, 60,  0,0x00
+	.word	sc1dt12
+	.byte	 0, 2, 7, 2
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w027
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0B, 60,  0,0x00
+	.word	sc3w005
+	.byte	 0, 7,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0A, 60,  0,0x00
+	.word	sc2dt50
+	.byte	 0, 2, 6, 3
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 2, 6, 0
+
+	.byte	0x0C, 60,  0,0x00
+	.word	sc4st15
+	.byte	 0, 1, 6, 1
+
 spltbl000:
 	.byte	  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
 	.byte	  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1
@@ -34513,6 +41683,26 @@ sc3w007:
 org3:
 	.byte	0xFF,0xFF,0xFF,0xFF,0xFF,0xEE,0x88,0x66
 	.byte	0x44,0x33,0x00,0x33,0x44,0x66,0x88,0xEE
+sc3w010:
+analog_b1:
+	.byte	0x87,0x66,0x55,0x44,0x33,0x22,0x11,0x00
+	.byte	0x87,0x66,0x55,0x44,0x33,0x22,0x11,0x00
+sc3w011:
+analog_b2:
+	.byte	0x87,0x66,0x55,0x44,0x33,0x22,0x22,0x20
+	.byte	0x87,0x66,0x55,0x44,0x33,0x22,0x22,0x20
+sc3w012:
+analog_b3:
+	.byte	0x87,0x66,0x55,0x44,0x44,0x44,0x44,0x40
+	.byte	0x87,0x66,0x55,0x44,0x44,0x44,0x44,0x40
+sc3w013:
+analog_b4:
+	.byte	0x87,0x66,0x66,0x66,0x66,0x66,0x66,0x60
+	.byte	0x87,0x66,0x66,0x66,0x66,0x66,0x66,0x60
+sc3w014:
+analog_b5:
+	.byte	0x88,0x88,0x88,0x88,0x88,0x88,0x88,0x80
+	.byte	0x88,0x88,0x88,0x88,0x88,0x88,0x88,0x80
 sc3w020:
 cgb_bass:
 	.byte	0x67,0x89,0xAB,0xC8,0x98,0x96,0x56,0x54
@@ -34525,6 +41715,42 @@ sc3w022:
 bassball_org:
 	.byte	0x04,0x26,0x38,0x4A,0x5C,0x5A,0x48,0x36
 	.byte	0x04,0x26,0x38,0x4A,0x5C,0x5A,0x48,0x36
+sc3w023:
+bass_1:
+	.byte	0x66,0x65,0x55,0x44,0x43,0x33,0x22,0x10
+	.byte	0x66,0x65,0x55,0x44,0x43,0x33,0x22,0x10
+sc3w024:
+bass_2:
+	.byte	0xAA,0x88,0x77,0x66,0x55,0x44,0x32,0x10
+	.byte	0xAA,0x88,0x77,0x66,0x55,0x44,0x32,0x10
+sc3w025:
+bass_3:
+	.byte	0xCC,0xAA,0x88,0x66,0x55,0x44,0x32,0x10
+	.byte	0xCC,0xAA,0x88,0x66,0x55,0x44,0x32,0x10
+sc3w026:
+bass_4:
+	.byte	0xEE,0xCC,0xAA,0x88,0x76,0x54,0x32,0x10
+	.byte	0xEE,0xCC,0xAA,0x88,0x76,0x54,0x32,0x10
+sc3w027:
+analog_a1:
+	.byte	0x88,0x87,0x77,0x66,0x65,0x55,0x44,0x32
+	.byte	0x88,0x87,0x77,0x66,0x65,0x55,0x44,0x32
+sc3w028:
+analog_a2:
+	.byte	0x88,0x87,0x65,0x54,0x33,0x22,0x22,0x10
+	.byte	0x88,0x87,0x65,0x54,0x33,0x22,0x22,0x10
+sc3w029:
+analog_a3:
+	.byte	0x87,0x54,0x33,0x22,0x11,0x10,0x00,0x08
+	.byte	0x75,0x43,0x32,0x21,0x11,0x00,0x00,0x00
+sc3w030:
+analog_a4:
+	.byte	0x84,0x21,0x11,0x10,0x00,0x00,0x00,0x08
+	.byte	0x42,0x11,0x11,0x00,0x00,0x00,0x00,0x00
+sc3w031:
+analog_a5:
+	.byte	0x88,0x52,0x21,0x11,0x00,0x00,0x00,0x08
+	.byte	0x85,0x22,0x11,0x10,0x00,0x00,0x00,0x00
 
 	.global	__total_mplay_n
 	.equ	__total_mplay_n, 4
@@ -34548,7 +41774,7 @@ mplay_table:
 	.word	m4a_mplay003, m4a_track003, 1+0x00000000
 
 	.global	__total_song_n
-	.equ	__total_song_n, 347
+	.equ	__total_song_n, 364
 
 	.global	song_table
 song_table:
@@ -34614,8 +41840,6 @@ song_table:
 	.short	 1,  1
 	.word	se_tk_kasya
 	.short	 1,  1
-	.word	se_fu_zaku
-	.short	 1,  1
 	.word	se_fu_zaku2
 	.short	 1,  1
 	.word	se_fu_zuzuzu
@@ -34639,12 +41863,6 @@ song_table:
 	.word	se_hi_turun
 	.short	 1,  1
 	.word	se_track_move
-	.short	 1,  1
-	.word	se_track_stop
-	.short	 1,  1
-	.word	se_track_haiki
-	.short	 2,  2
-	.word	se_track_door
 	.short	 1,  1
 	.word	se_moter
 	.short	 2,  2
@@ -34744,8 +41962,6 @@ song_table:
 	.short	 1,  1
 	.word	se_reapoke
 	.short	 1,  1
-	.word	se_op_basyu
-	.short	 1,  1
 	.word	se_bt_start
 	.short	 1,  1
 	.word	se_dendou
@@ -34759,10 +41975,6 @@ song_table:
 	.word	se_z_page
 	.short	 1,  1
 	.word	se_pn_on
-	.short	 1,  1
-	.word	se_pn_off
-	.short	 1,  1
-	.word	se_z_search
 	.short	 1,  1
 	.word	se_tamago
 	.short	 1,  1
@@ -35064,6 +42276,20 @@ song_table:
 	.short	 1,  1
 	.word	se_rg_nawamiss
 	.short	 1,  1
+	.word	se_toreeye
+	.short	 1,  1
+	.word	se_toreoff
+	.short	 1,  1
+	.word	se_hantei1
+	.short	 1,  1
+	.word	se_hantei2
+	.short	 1,  1
+	.word	se_curtain
+	.short	 1,  1
+	.word	se_curtain1
+	.short	 1,  1
+	.word	se_ussoki
+	.short	 1,  1
 	.word	mus_me_asa
 	.short	 2,  2
 	.word	mus_fanfa1
@@ -35245,6 +42471,40 @@ song_table:
 	.word	mus_rg_slowmasara
 	.short	 0,  0
 	.word	mus_rg_tvnoize
+	.short	 0,  0
+	.word	dan02
+	.short	 0,  0
+	.word	b_tower
+	.short	 0,  0
+	.word	mus_b_frontier
+	.short	 0,  0
+	.word	mus_b_arena
+	.short	 0,  0
+	.word	me_pointget
+	.short	 2,  2
+	.word	me_tore_eye
+	.short	 2,  2
+	.word	mus_pyramid
+	.short	 0,  0
+	.word	mus_pyramid_top
+	.short	 0,  0
+	.word	mus_b_palace
+	.short	 0,  0
+	.word	mus_sattower
+	.short	 0,  0
+	.word	me_symbolget
+	.short	 2,  2
+	.word	mus_b_dome
+	.short	 0,  0
+	.word	mus_b_tube
+	.short	 0,  0
+	.word	mus_b_factory
+	.short	 0,  0
+	.word	mus_vs_front
+	.short	 0,  0
+	.word	mus_vs_mew
+	.short	 0,  0
+	.word	mus_b_dome1
 	.short	 0,  0
 
 dmy_song:
