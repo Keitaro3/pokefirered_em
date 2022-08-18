@@ -360,8 +360,8 @@ struct Song
     u16 me;
 };
 
-extern const struct MusicPlayer gMPlayTable[];
-extern const struct Song gSongTable[];
+extern const struct MusicPlayer mplay_table[];
+extern const struct Song song_table[];
 
 
 

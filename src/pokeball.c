@@ -797,11 +797,11 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
             if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
             {
                 if (IsBGMPlaying())
-                    m4aMPlayStop(&gMPlayInfo_BGM);
+                    m4aMPlayStop(&m4a_mplay000);
             }
             else
             {
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 128);
+                m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 128);
             }
         }
 

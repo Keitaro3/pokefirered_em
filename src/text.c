@@ -789,10 +789,10 @@ u16 RenderText(struct TextPrinter *textPrinter)
                 FillWindowPixelBuffer(textPrinter->printerTemplate.windowId, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
                 return 2;
             case EXT_CTRL_CODE_STOP_BGM:
-                m4aMPlayStop(&gMPlayInfo_BGM);
+                m4aMPlayStop(&m4a_mplay000);
                 return 2;
             case EXT_CTRL_CODE_RESUME_BGM:
-                m4aMPlayContinue(&gMPlayInfo_BGM);
+                m4aMPlayContinue(&m4a_mplay000);
                 return 2;
             case EXT_CTRL_CODE_CLEAR:
                 width = *textPrinter->printerTemplate.currentChar;

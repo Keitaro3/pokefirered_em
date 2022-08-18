@@ -5,8 +5,8 @@ gMPlayJumpTable
 gCgbChans
 gPokemonCryTracks
 gPokemonCrySong
-gMPlayInfo_BGM
-gMPlayInfo_SE1
-gMPlayInfo_SE2
+m4a_mplay000
+m4a_mplay001
+m4a_mplay002
 gMPlayMemAccArea
-gMPlayInfo_SE3
+m4a_mplay003

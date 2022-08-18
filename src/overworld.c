@@ -1024,7 +1024,7 @@ void Overworld_PlaySpecialMapMusic(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_LEAGUE_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_LEAGUE_CHAMPIONS_ROOM))
     {
         PlayerGetDestCoords(&x, &y);
-        if (y - 7 < 11 && gMPlayInfo_BGM.songHeader == &mus_victory_gym_leader)
+        if (y - 7 < 11 && m4a_mplay000.songHeader == &mus_rg_win_gym)
         {
             FadeInBGM(4);
             return;

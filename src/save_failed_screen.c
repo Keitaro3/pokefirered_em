@@ -40,7 +40,7 @@ bool32 RunSaveFailedScreen(void)
     case 0:
         if (!sIsInSaveFailedScreen)
             return FALSE;
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 128);
+        m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 128);
         SaveCallbacks();
         sSaveFailedScreenState = 1;
         break;
@@ -95,7 +95,7 @@ bool32 RunSaveFailedScreen(void)
         sSaveFailedScreenState = 8;
         break;
     case 8:
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
+        m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 256);
         RestoreMapTextColors();
         RestoreGPURegs();
         RestoreCallbacks();

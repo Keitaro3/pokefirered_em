@@ -1857,7 +1857,7 @@ void LaunchBattleAnimation(const u8 *const animsTable[], u16 tableId, bool8 isMo
         {
             if (tableId == gMovesWithQuietBGM[i])
             {
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 128);
+                m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 128);
                 break;
             }
         }
@@ -2107,8 +2107,8 @@ static void ScriptCmd_end(void)
         }
         else
         {
-            m4aMPlayStop(&gMPlayInfo_SE1);
-            m4aMPlayStop(&gMPlayInfo_SE2);
+            m4aMPlayStop(&m4a_mplay001);
+            m4aMPlayStop(&m4a_mplay002);
         }
     }
 
@@ -2127,7 +2127,7 @@ static void ScriptCmd_end(void)
 
     if (!continuousAnim)
     {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
+        m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 256);
         ResetSpritePriorityOfAllVisibleBattlers();
         UpdateOamPriorityInAllHealthboxes(1);
         gAnimScriptActive = FALSE;
@@ -3164,8 +3164,8 @@ static void ScriptCmd_waitsound(void)
     {
         if (++sSoundAnimFramesToWait > 90)
         {
-            m4aMPlayStop(&gMPlayInfo_SE1);
-            m4aMPlayStop(&gMPlayInfo_SE2);
+            m4aMPlayStop(&m4a_mplay001);
+            m4aMPlayStop(&m4a_mplay002);
             sSoundAnimFramesToWait = 0;
         }
         else
@@ -3340,7 +3340,7 @@ static void ScriptCmd_doublebattle_2E(void)
 
 static void ScriptCmd_stopsound(void)
 {
-    m4aMPlayStop(&gMPlayInfo_SE1);
-    m4aMPlayStop(&gMPlayInfo_SE2);
+    m4aMPlayStop(&m4a_mplay001);
+    m4aMPlayStop(&m4a_mplay002);
     sBattleAnimScriptPtr++;
 }

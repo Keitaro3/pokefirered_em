@@ -56,11 +56,11 @@ u8 RunHelpSystemCallback(void)
                 PlaySE(SE_HELP_ERROR);
                 return 0;
             }
-            m4aMPlayStop(&gMPlayInfo_SE1);
-            m4aMPlayStop(&gMPlayInfo_SE2);
+            m4aMPlayStop(&m4a_mplay001);
+            m4aMPlayStop(&m4a_mplay002);
             PlaySE(SE_HELP_OPEN);
             if (!gDisableHelpSystemVolumeReduce)
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x80);
+                m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 0x80);
             SaveCallbacks();
             sInHelpSystem = 1;
             sVideoState.state = 1;
@@ -122,7 +122,7 @@ u8 RunHelpSystemCallback(void)
         break;
     case 7:
         if (!gDisableHelpSystemVolumeReduce)
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
+            m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 0x100);
         RestoreMapTextColors();
         RestoreGPURegs();
         sVideoState.state = 8;

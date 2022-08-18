@@ -18,12 +18,12 @@ void m4aMPlayFadeOutTemporarily(struct MusicPlayerInfo *mplayInfo, u16 speed);
 void m4aMPlayFadeIn(struct MusicPlayerInfo *mplayInfo, u16 speed);
 void m4aMPlayImmInit(struct MusicPlayerInfo *mplayInfo);
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
-extern struct MusicPlayerInfo gMPlayInfo_SE1;
-extern struct MusicPlayerInfo gMPlayInfo_SE2;
-extern struct MusicPlayerInfo gMPlayInfo_SE3;
+extern struct MusicPlayerInfo m4a_mplay000;
+extern struct MusicPlayerInfo m4a_mplay001;
+extern struct MusicPlayerInfo m4a_mplay002;
+extern struct MusicPlayerInfo m4a_mplay003;
 extern struct SoundInfo gSoundInfo;
 
-extern const struct SongHeader mus_victory_gym_leader;
+extern const struct SongHeader mus_rg_win_gym;
 
 #endif //GUARD_M4A_H

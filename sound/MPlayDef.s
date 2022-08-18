@@ -1,3 +1,14 @@
+@***
+@
+@ MusicPlayDef.s (MPlayDef.s) ver1.06a
+@
+@                    Copyright (C) 1999-2001 NINTENDO Co.,Ltd.
+@**************************************************************@
+
+@***
+@ MML (without running status)
+@******************************************************@
+
 	.equ	W00,	0x80		@ WAIT
 	.equ	W01,	W00+1		@
 	.equ	W02,	W00+2		@
@@ -57,6 +68,11 @@
 	.equ	PRIO,	0xba		@ priority
 	.equ	TEMPO,	0xbb		@ tempo (BPM/2)
 	.equ	KEYSH,	0xbc		@ key shift
+
+@***
+@ MML (within running status)
+@******************************************************@
+
 	.equ	VOICE,	0xbd		@ voice #
 	.equ	VOL,	0xbe		@ volume
 	.equ	PAN,	0xbf		@ panpot (c_v+??)
@@ -123,15 +139,21 @@
 	.equ	N92,	N01+46		@
 	.equ	N96,	N01+47		@
 
-@ maximum value for volume
+@***
+@ Max value of operators
+@******************************************************@
 
 	.equ	mxv,	0x7F		@
 
+@***
 @ center value of PAN, BEND, TUNE
+@******************************************************@
 
 	.equ	c_v,	0x40		@ -64 ~ +63
 
-@ note for N??, TIE, EOT
+@***
+@ parameter of N??, TIE, EOT
+@******************************************************@
 
 	.equ	CnM2,	0		@
 	.equ	CsM2,	1		@
@@ -262,7 +284,9 @@
 	.equ	Fs8,	126		@
 	.equ	Gn8,	127		@
 
-@ velocity
+@***
+@ parameter of velocity
+@******************************************************@
 
 	.equ	v000,	0		@
 	.equ	v001,	1		@
@@ -393,19 +417,25 @@
 	.equ	v126,	126		@
 	.equ	v127,	127		@
 
-@ exact gate time parameter for N??
+@***
+@ parameter of gate+
+@******************************************************@
 
 	.equ	gtp1,	1		@
 	.equ	gtp2,	2		@
 	.equ	gtp3,	3		@
 
-@ parameter of MODT
+@***
+@ parameter of MODT, BRET
+@******************************************************@
 
 	.equ	mod_vib,0		@ vibrate
 	.equ	mod_tre,1		@ tremolo
 	.equ	mod_pan,2		@ auto-panpot
 
+@***
 @ parameter of MEMACC
+@******************************************************@
 
 	.equ	mem_set,0		@
 	.equ	mem_add,1		@
@@ -426,5 +456,10 @@
 	.equ	mem_mem_bls,16		@
 	.equ	mem_mem_blo,17		@
 
+@***
+@ etc.
+@******************************************************@
+
 	.equ	reverb_set,0x80		@ SOUND_MODE_REVERB_SET
-	.equ	PAM, PAN		@
+	.equ	PAM, PAN		@ 
+

@@ -14,10 +14,10 @@ MPlayFunc gMPlayJumpTable[36];
 struct CgbChannel gCgbChans[4];
 struct MusicPlayerTrack gPokemonCryTracks[MAX_POKEMON_CRIES * 2];
 struct PokemonCrySong gPokemonCrySong;
-struct MusicPlayerInfo gMPlayInfo_BGM;
-struct MusicPlayerInfo gMPlayInfo_SE1;
-struct MusicPlayerInfo gMPlayInfo_SE2;
-struct MusicPlayerInfo gMPlayInfo_SE3;
+struct MusicPlayerInfo m4a_mplay000;
+struct MusicPlayerInfo m4a_mplay001;
+struct MusicPlayerInfo m4a_mplay002;
+struct MusicPlayerInfo m4a_mplay003;
 u8 gMPlayMemAccArea[0x10];
 
 u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
@@ -82,9 +82,9 @@ void m4aSoundInit(void)
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {
-        struct MusicPlayerInfo *mplayInfo = gMPlayTable[i].info;
-        MPlayOpen(mplayInfo, gMPlayTable[i].track, gMPlayTable[i].unk_8);
-        mplayInfo->unk_B = gMPlayTable[i].unk_A;
+        struct MusicPlayerInfo *mplayInfo = mplay_table[i].info;
+        MPlayOpen(mplayInfo, mplay_table[i].track, mplay_table[i].unk_8);
+        mplayInfo->unk_B = mplay_table[i].unk_A;
         mplayInfo->memAccArea = gMPlayMemAccArea;
     }
 
@@ -106,8 +106,8 @@ void m4aSoundMain(void)
 
 void m4aSongNumStart(u16 n)
 {
-    const struct MusicPlayer *mplayTable = gMPlayTable;
-    const struct Song *songTable = gSongTable;
+    const struct MusicPlayer *mplayTable = mplay_table;
+    const struct Song *songTable = song_table;
     const struct Song *song = &songTable[n];
     const struct MusicPlayer *mplay = &mplayTable[song->ms];
 
@@ -116,8 +116,8 @@ void m4aSongNumStart(u16 n)
 
 void m4aSongNumStartOrChange(u16 n)
 {
-    const struct MusicPlayer *mplayTable = gMPlayTable;
-    const struct Song *songTable = gSongTable;
+    const struct MusicPlayer *mplayTable = mplay_table;
+    const struct Song *songTable = song_table;
     const struct Song *song = &songTable[n];
     const struct MusicPlayer *mplay = &mplayTable[song->ms];
 
@@ -137,8 +137,8 @@ void m4aSongNumStartOrChange(u16 n)
 
 void m4aSongNumStartOrContinue(u16 n)
 {
-    const struct MusicPlayer *mplayTable = gMPlayTable;
-    const struct Song *songTable = gSongTable;
+    const struct MusicPlayer *mplayTable = mplay_table;
+    const struct Song *songTable = song_table;
     const struct Song *song = &songTable[n];
     const struct MusicPlayer *mplay = &mplayTable[song->ms];
 
@@ -152,8 +152,8 @@ void m4aSongNumStartOrContinue(u16 n)
 
 void m4aSongNumStop(u16 n)
 {
-    const struct MusicPlayer *mplayTable = gMPlayTable;
-    const struct Song *songTable = gSongTable;
+    const struct MusicPlayer *mplayTable = mplay_table;
+    const struct Song *songTable = song_table;
     const struct Song *song = &songTable[n];
     const struct MusicPlayer *mplay = &mplayTable[song->ms];
 
@@ -163,8 +163,8 @@ void m4aSongNumStop(u16 n)
 
 void m4aSongNumContinue(u16 n)
 {
-    const struct MusicPlayer *mplayTable = gMPlayTable;
-    const struct Song *songTable = gSongTable;
+    const struct MusicPlayer *mplayTable = mplay_table;
+    const struct Song *songTable = song_table;
     const struct Song *song = &songTable[n];
     const struct MusicPlayer *mplay = &mplayTable[song->ms];
 
@@ -177,7 +177,7 @@ void m4aMPlayAllStop(void)
     s32 i;
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
-        m4aMPlayStop(gMPlayTable[i].info);
+        m4aMPlayStop(mplay_table[i].info);
 
     for (i = 0; i < MAX_POKEMON_CRIES; i++)
         m4aMPlayStop(&gPokemonCryMusicPlayers[i]);
@@ -193,7 +193,7 @@ void m4aMPlayAllContinue(void)
     s32 i;
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
-        MPlayContinue(gMPlayTable[i].info);
+        MPlayContinue(mplay_table[i].info);
 
     for (i = 0; i < MAX_POKEMON_CRIES; i++)
         MPlayContinue(&gPokemonCryMusicPlayers[i]);

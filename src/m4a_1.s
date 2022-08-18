@@ -1913,23 +1913,3 @@ _081DDD90:
 gUnknown_030007B8:
     .space 0x40
     .size gUnknown_030007B8, .-gUnknown_030007B8
-
-    .global gMPlayTrack_BGM
-gMPlayTrack_BGM:
-    .space 0x320
-    .size gMPlayTrack_BGM, .-gMPlayTrack_BGM
-
-    .global gMPlayTrack_SE1
-gMPlayTrack_SE1:
-    .space 0xF0
-    .size gMPlayTrack_SE1, .-gMPlayTrack_SE1
-
-    .global gMPlayTrack_SE2
-gMPlayTrack_SE2:
-    .space 0x2D0
-    .size gMPlayTrack_SE2, .-gMPlayTrack_SE2
-
-    .global gMPlayTrack_SE3
-gMPlayTrack_SE3:
-    .space 0x50
-    .size gMPlayTrack_SE3, .-gMPlayTrack_SE3

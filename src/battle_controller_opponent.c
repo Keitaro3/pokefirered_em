@@ -232,9 +232,9 @@ static void Intro_WaitForShinyAnimAndHealthbox(void)
         FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
         FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
         if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
-            m4aMPlayContinue(&gMPlayInfo_BGM);
+            m4aMPlayContinue(&m4a_mplay000);
         else
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
+            m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 256);
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].introEndDelay = 3;
         gBattlerControllerFuncs[gActiveBattler] = Intro_DelayAndEnd;
     }
@@ -373,7 +373,7 @@ static void SwitchIn_HandleSoundAndEnd(void)
 {
     if (!gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].specialAnimActive && !IsCryPlayingOrClearCrySongs())
     {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
+        m4aMPlayVolumeControl(&m4a_mplay000, TRACKS_ALL, 0x100);
         OpponentBufferExecCompleted();
     }
 }
