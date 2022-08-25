@@ -59,8 +59,6 @@
 // gTileset_General
 #define METATILE_General_CalmWater               0x12B
 #define METATILE_General_Door                    0x03D
-#define METATILE_General_LongGrass               0x228
-#define METATILE_General_LongGrass_Root          0x230
 #define METATILE_General_Plain_Grass             0x00D
 #define METATILE_General_Plain_Mowed             0x001
 #define METATILE_General_SlidingDoubleDoor       0x15B
@@ -256,8 +254,10 @@
 #define METATILE_TrainerTower_RoofElevatorDoor       0x356
 
 // gTileset_VermilionCity
-#define METATILE_VermilionCity_Door                0x29E
-#define METATILE_VermilionCity_PokemonFanClubDoor  0x2E1
+#define METATILE_VermilionCity_Door                      0x29E
+#define METATILE_VermilionCity_PokemonFanClubDoor        0x2E1
+#define METATILE_VermilionCity_Vermilion_LongGrass       0x33E
+#define METATILE_VermilionCity_Vermilion_LongGrass_Root  0x33F
 
 // gTileset_VermilionGym
 #define METATILE_VermilionGym_Beam_MidBottom                     0x28D

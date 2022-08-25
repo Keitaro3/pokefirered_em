@@ -101,6 +101,12 @@ VermilionCity_Text_OhAuroraTicketTakeYouToBirthIsland::
     .string "We'll be happy to take you to\n"
     .string "BIRTH ISLAND anytime.$"
 
+VermilionCity_Text_OhOldSeaMapTakeYouToFarawayIsland::
+    .string "Oh! That's an OLD SEA MAP!\n"
+    .string "Now that is rare.\p"
+    .string "We'll be happy to take you to\n"
+    .string "FARAWAY ISLAND anytime.$"
+
 VermilionCity_Text_BoardSeagallopFerry::
     .string "Would you like to board\n"
     .string "a SEAGALLOP ferry?$"
@@ -109,6 +115,12 @@ VermilionCity_Text_Seagallop10Departing::
     .string "Okay, everything's in order for you\n"
     .string "to board a special ferry.\p"
     .string "SEAGALLOP HI-SPEED 10 will be\n"
+    .string "departing immediately.$"
+
+VermilionCity_Text_Seagallop11Departing::
+    .string "Okay, everything's in order for you\n"
+    .string "to board a special ferry.\p"
+    .string "SEAGALLOP HI-SPEED 11 will be\n"
     .string "departing immediately.$"
 
 VermilionCity_Text_Seagallop12Departing::

@@ -345,10 +345,10 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special HasAllKantoMons
 	def_special IsMonOTNameNotPlayers
-	def_special NullFieldSpecial
+	def_special SetMewAboveGrass
 	def_special Dummy_TryEnableBravoTrainerBattleTower
 	def_special DoesPartyHaveEnigmaBerry
-	def_special NullFieldSpecial
+	def_special DestroyMewEmergingGrassSprite
 	def_special SetPostgameFlags
 	def_special StartMarowakBattle
 	def_special ForcePlayerOntoBike

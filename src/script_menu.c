@@ -428,10 +428,38 @@ static const struct MenuAction sScriptMultiChoiceMenu_SeviiBirth[] = {
     { gOtherText_Exit }
 };
 
+static const struct MenuAction sScriptMultiChoiceMenu_SeviiFaraway[] = {
+    { gText_SeviiIslands },
+    { gText_FarawayIsland },
+    { gOtherText_Exit }
+};
+
 static const struct MenuAction sScriptMultiChoiceMenu_SeviiNavelBirth[] = {
     { gText_SeviiIslands },
     { gText_NavelRock },
     { gText_BirthIsland },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sScriptMultiChoiceMenu_SeviiNavelFaraway[] = {
+    { gText_SeviiIslands },
+    { gText_NavelRock },
+    { gText_FarawayIsland },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sScriptMultiChoiceMenu_SeviiBirthFaraway[] = {
+    { gText_SeviiIslands },
+    { gText_BirthIsland },
+    { gText_FarawayIsland },
+    { gOtherText_Exit }
+};
+
+static const struct MenuAction sScriptMultiChoiceMenu_SeviiNavelBirthFaraway[] = {
+    { gText_SeviiIslands },
+    { gText_NavelRock },
+    { gText_BirthIsland },
+    { gText_FarawayIsland },
     { gOtherText_Exit }
 };
 
@@ -549,7 +577,11 @@ const struct MultichoiceListStruct gScriptMultiChoiceMenus[] = {
     { sScriptMultiChoiceMenu_TradeColosseumBlank, NELEMS(sScriptMultiChoiceMenu_TradeColosseumBlank) },
     { sScriptMultiChoiceMenu_SeviiNavel, NELEMS(sScriptMultiChoiceMenu_SeviiNavel) },
     { sScriptMultiChoiceMenu_SeviiBirth, NELEMS(sScriptMultiChoiceMenu_SeviiBirth) },
+    { sScriptMultiChoiceMenu_SeviiBirth, NELEMS(sScriptMultiChoiceMenu_SeviiFaraway) },
     { sScriptMultiChoiceMenu_SeviiNavelBirth, NELEMS(sScriptMultiChoiceMenu_SeviiNavelBirth) },
+    { sScriptMultiChoiceMenu_SeviiNavelFaraway, NELEMS(sScriptMultiChoiceMenu_SeviiNavelFaraway) },
+    { sScriptMultiChoiceMenu_SeviiBirthFaraway, NELEMS(sScriptMultiChoiceMenu_SeviiBirthFaraway) },
+    { sScriptMultiChoiceMenu_SeviiNavelBirthFaraway, NELEMS(sScriptMultiChoiceMenu_SeviiNavelBirthFaraway) },
     { sScriptMultiChoiceMenu_Seagallop123, NELEMS(sScriptMultiChoiceMenu_Seagallop123) },
     { sScriptMultiChoiceMenu_SeagallopV23, NELEMS(sScriptMultiChoiceMenu_SeagallopV23) },
     { sScriptMultiChoiceMenu_SeagallopV13, NELEMS(sScriptMultiChoiceMenu_SeagallopV13) },

@@ -349,6 +349,9 @@ $(OBJEVENTGFXDIR)/pokemon/machop.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon/meowth.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
+$(OBJEVENTGFXDIR)/pokemon/mew_em.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/pokemon/nidoran_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
@@ -387,6 +390,9 @@ $(OBJEVENTGFXDIR)/pokemon/slowpoke.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon/spearow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
+
+$(OBJEVENTGFXDIR)/pokemon/sudowoodo.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokemon/voltorb.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2

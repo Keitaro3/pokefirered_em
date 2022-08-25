@@ -14,6 +14,9 @@ enum {
 u8 *GetMapName(u8 *dest, u16 mapsec, u16 fill);
 u8 *GetMapNameGeneric(u8 *dest, u16 mapsec);
 u8 *GetMapNameGeneric_(u8 *dest, u16 mapsec);
+u8 *GetMapNameNonGBA(u8 *dest, u16 mapsec, u16 fill, u8 gameSwitch);
+u8 *GetMapNameNonGBAGeneric(u8 *dest, u16 mapsec, u8 gameSwitch);
+u8 *GetMapNameNonGBAGeneric_(u8 *dest, u16 mapsec, u8 gameSwitch);
 void InitRegionMapWithExitCB(u8 a0, void (*a1)(void));
 void CB2_OpenFlyMap(void);
 

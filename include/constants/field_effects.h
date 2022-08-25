@@ -72,6 +72,7 @@
 #define FLDEFF_DESTROY_DEOXYS_ROCK       68
 #define FLDEFF_PHOTO_FLASH               69
 
+#define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_GENERAL_0          0x1004
 #define FLDEFF_PAL_TAG_GENERAL_1          0x1005
 #define FLDEFF_PAL_TAG_ASH                0x100D

@@ -60,18 +60,19 @@ static const struct BgTemplate sBGTemplates[] = {
 };
 
 static const s8 sSeag[][4] = {
-                                   // Map                     X     Y
-    [SEAGALLOP_VERMILION_CITY]  = {MAP(VERMILION_CITY),      0x17, 0x20},
-    [SEAGALLOP_ONE_ISLAND]      = {MAP(ONE_ISLAND_HARBOR),   0x08, 0x05},
-    [SEAGALLOP_TWO_ISLAND]      = {MAP(TWO_ISLAND_HARBOR),   0x08, 0x05},
-    [SEAGALLOP_THREE_ISLAND]    = {MAP(THREE_ISLAND_HARBOR), 0x08, 0x05},
-    [SEAGALLOP_FOUR_ISLAND]     = {MAP(FOUR_ISLAND_HARBOR),  0x08, 0x05},
-    [SEAGALLOP_FIVE_ISLAND]     = {MAP(FIVE_ISLAND_HARBOR),  0x08, 0x05},
-    [SEAGALLOP_SIX_ISLAND]      = {MAP(SIX_ISLAND_HARBOR),   0x08, 0x05},
-    [SEAGALLOP_SEVEN_ISLAND]    = {MAP(SEVEN_ISLAND_HARBOR), 0x08, 0x05},
-    [SEAGALLOP_CINNABAR_ISLAND] = {MAP(CINNABAR_ISLAND),     0x15, 0x07},
-    [SEAGALLOP_NAVEL_ROCK]      = {MAP(NAVEL_ROCK_HARBOR),   0x08, 0x05},
-    [SEAGALLOP_BIRTH_ISLAND]    = {MAP(BIRTH_ISLAND_HARBOR), 0x08, 0x05}
+                                   // Map                         X     Y
+    [SEAGALLOP_VERMILION_CITY]  = {MAP(VERMILION_CITY),          0x17, 0x20},
+    [SEAGALLOP_ONE_ISLAND]      = {MAP(ONE_ISLAND_HARBOR),       0x08, 0x05},
+    [SEAGALLOP_TWO_ISLAND]      = {MAP(TWO_ISLAND_HARBOR),       0x08, 0x05},
+    [SEAGALLOP_THREE_ISLAND]    = {MAP(THREE_ISLAND_HARBOR),     0x08, 0x05},
+    [SEAGALLOP_FOUR_ISLAND]     = {MAP(FOUR_ISLAND_HARBOR),      0x08, 0x05},
+    [SEAGALLOP_FIVE_ISLAND]     = {MAP(FIVE_ISLAND_HARBOR),      0x08, 0x05},
+    [SEAGALLOP_SIX_ISLAND]      = {MAP(SIX_ISLAND_HARBOR),       0x08, 0x05},
+    [SEAGALLOP_SEVEN_ISLAND]    = {MAP(SEVEN_ISLAND_HARBOR),     0x08, 0x05},
+    [SEAGALLOP_CINNABAR_ISLAND] = {MAP(CINNABAR_ISLAND),         0x15, 0x07},
+    [SEAGALLOP_NAVEL_ROCK]      = {MAP(NAVEL_ROCK_HARBOR),       0x08, 0x05},
+    [SEAGALLOP_BIRTH_ISLAND]    = {MAP(BIRTH_ISLAND_HARBOR),     0x08, 0x05},
+    [SEAGALLOP_FARAWAY_ISLAND]  = {MAP(FARAWAY_ISLAND_ENTRANCE), 0x0D, 0x26}
 };
 
 // Bitpacked array.  In the commented section, right-most bit is the
@@ -95,7 +96,8 @@ static const u16 sTravelDirectionMatrix[] = {
     [SEAGALLOP_SEVEN_ISLAND]    = 0x440, // 10001000000
     [SEAGALLOP_CINNABAR_ISLAND] = 0x7ff, // 11111111111
     [SEAGALLOP_NAVEL_ROCK]      = 0x6e0, // 11011100000
-    [SEAGALLOP_BIRTH_ISLAND]    = 0x000  // 00000000000
+    [SEAGALLOP_BIRTH_ISLAND]    = 0x000, // 00000000000
+    [SEAGALLOP_FARAWAY_ISLAND]  = 0x000  // 00000000000
 };
 
 static const union AnimCmd sSpriteAnims_Ferry_WB[] = {

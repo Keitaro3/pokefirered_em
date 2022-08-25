@@ -134,6 +134,21 @@ static const u16 *const sTilesetAnims_CeladonGym_Flowers[] = {
     sTilesetAnims_CeladonGym_Flowers_Frame1
 };
 
+// palette: general 00
+static const u16 sTilesetAnims_Vermilion_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/vermilion_city/anim/flower/0.4bpp");
+static const u16 sTilesetAnims_Vermilion_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/vermilion_city/anim/flower/1.4bpp");
+static const u16 sTilesetAnims_Vermilion_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/vermilion_city/anim/flower/2.4bpp");
+static const u16 sTilesetAnims_Vermilion_Flower_Frame3[] = INCBIN_U16("data/tilesets/secondary/vermilion_city/anim/flower/3.4bpp");
+static const u16 sTilesetAnims_Vermilion_Flower_Frame4[] = INCBIN_U16("data/tilesets/secondary/vermilion_city/anim/flower/4.4bpp");
+
+static const u16 *const sTilesetAnims_Vermilion_Flower[] = {
+    sTilesetAnims_Vermilion_Flower_Frame0,
+    sTilesetAnims_Vermilion_Flower_Frame1,
+    sTilesetAnims_Vermilion_Flower_Frame2,
+    sTilesetAnims_Vermilion_Flower_Frame3,
+    sTilesetAnims_Vermilion_Flower_Frame4
+};
+
 static void ResetTilesetAnimBuffer(void)
 {
     sTilesetDMA3TransferBufferSize = 0;
@@ -329,4 +344,22 @@ void InitTilesetAnim_CeladonGym(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_CeladonGym;
+}
+
+static void QueueAnimTiles_Vermilion_Flower(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_Vermilion_Flower[timer % NELEMS(sTilesetAnims_Vermilion_Flower)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(784)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_VermilionCity(u16 timer)
+{
+    if (timer % 16 == 2)
+        QueueAnimTiles_Vermilion_Flower(timer >> 4);
+}
+
+void InitTilesetAnim_VermilionCity(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 640;
+    sSecondaryTilesetAnimCallback = TilesetAnim_VermilionCity;
 }

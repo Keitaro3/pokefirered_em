@@ -92,6 +92,7 @@ bool8 MetatileBehavior_IsVerticalRail(u8 metatileBehavior);
 bool8 MetatileBehavior_IsHorizontalRail(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSeaweed(u8 metatileBehavior);
 bool8 MetatileBehavior_IsRunningDisallowed(u8 metatileBehavior);
+bool8 MetatileBehavior_IsCuttableGrass(u8 metatileBehavior);
 bool8 MetatileBehavior_IsBookshelf(u8 metatileBehavior);
 bool8 MetatileBehavior_IsPokeMartShelf(u8 metatileBehavior);
 bool8 MetatileBehavior_IsPlayerFacingPokemonCenterSign(u8 metatileBehavior, u8 playerDirection);

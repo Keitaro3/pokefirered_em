@@ -51,6 +51,7 @@ struct PaletteFadeControl
 
 extern struct PaletteFadeControl gPaletteFade;
 extern u32 gPlttBufferTransferPending;
+extern u8 gPaletteDecompressionBuffer[PLTT_DECOMP_BUFFER_SIZE];
 extern u16 gPlttBufferUnfaded[PLTT_BUFFER_SIZE];
 extern u16 gPlttBufferFaded[PLTT_BUFFER_SIZE];
 

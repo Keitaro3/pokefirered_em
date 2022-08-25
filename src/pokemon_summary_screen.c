@@ -21,6 +21,8 @@
 #include "constants/moves.h"
 #include "dynamic_placeholder_text_util.h"
 #include "constants/region_map_sections.h"
+#include "constants/johto_map_sections.h"
+#include "constants/orre_map_sections.h"
 #include "region_map.h"
 #include "field_specials.h"
 #include "party_menu.h"
@@ -120,6 +122,9 @@ static bool32 IsMultiBattlePartner(void);
 static bool32 PokeSum_IsMonBoldOrGentle(u8 nature);
 static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void);
 static bool32 CurrentMonIsFromGBA(void);
+static bool32 CurrentMonIsFromGCN(void);
+static bool32 CurrentMonIsFromJohto(void);
+static bool32 CurrentMonIsFromFRLG(void);
 static u8 PokeSum_BufferOtName_IsEqualToCurrentOwner(struct Pokemon * mon);
 static void PokeSum_PrintAbilityNameAndDesc(void);
 static void PokeSum_DrawMoveTypeIcons(void);
@@ -2630,8 +2635,19 @@ static void PokeSum_PrintTrainerMemo_Mon_HeldByOT(void)
 
     metLocation = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_LOCATION);
 
-    if (MapSecIsInKantoOrSevii(metLocation) == TRUE)
-        GetMapNameGeneric_(mapNameStr, metLocation);
+    if (CurrentMonIsFromJohto() == TRUE)
+	{
+        GetMapNameNonGBAGeneric_(mapNameStr, metLocation, 0);
+	}
+	else if (CurrentMonIsFromGCN() == TRUE)
+	{
+		if (GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_EVENT_LEGAL) == 1)
+		GetMapNameNonGBAGeneric_(mapNameStr, metLocation, 2);
+		else
+		GetMapNameNonGBAGeneric_(mapNameStr, metLocation, 1);
+	}
+	else if (CurrentMonIsFromGBA() == TRUE)
+		GetMapNameGeneric_(mapNameStr, metLocation);
     else
     {
         if (sMonSummaryScreen->isEnemyParty == TRUE || IsMultiBattlePartner() == TRUE)
@@ -2672,14 +2688,23 @@ static void PokeSum_PrintTrainerMemo_Mon_HeldByOT(void)
         }
         else
         {
-            if (PokeSum_IsMonBoldOrGentle(nature))
+			if (!CurrentMonIsFromFRLG())
+			{
+				if (PokeSum_IsMonBoldOrGentle(nature))
+                DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_ApparentlyMet_BoldGentleGrammar);
+				else
+                DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_ApparentlyMet);
+			}
+				
+			
+            else if (PokeSum_IsMonBoldOrGentle(nature))
                 DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_Met_BoldGentleGrammar);
             else
                 DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_Met);
         }
     }
 
-    AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
+    AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], 2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
 }
 
 static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
@@ -2688,8 +2713,12 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
     u8 level;
     u8 metLocation;
     u8 levelStr[5];
+	u8 otNameStr[7];
     u8 mapNameStr[32];
     u8 natureMetOrHatchedAtLevelStr[152];
+	u16 species;
+	
+	species = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES2);
 
     DynamicPlaceholderTextUtil_Reset();
     nature = GetNature(&sMonSummaryScreen->currentMon);
@@ -2705,7 +2734,7 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
 
     metLocation = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_LOCATION);
 
-    if (!MapSecIsInKantoOrSevii(metLocation) || !CurrentMonIsFromGBA())
+    if (!CurrentMonIsFromGCN && !CurrentMonIsFromGBA() && !CurrentMonIsFromJohto)
     {
         if (IsMultiBattlePartner() == TRUE)
         {
@@ -2728,14 +2757,52 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
                 DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_MetInATrade);
         }
 
-        AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
+        AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], 2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
         return;
     }
 
-    if (MapSecIsInKantoOrSevii(metLocation) == TRUE)
-        GetMapNameGeneric_(mapNameStr, metLocation);
-    else
-        StringCopy(mapNameStr, gText_PokeSum_ATrade);
+    if (CurrentMonIsFromJohto() == TRUE)
+	{
+        GetMapNameNonGBAGeneric_(mapNameStr, metLocation, 0);
+	}
+	else if (CurrentMonIsFromGCN() == TRUE)
+	{
+		if (metLocation == MAPSEC_ORRE_SPECIAL)
+		{
+			StringCopy(mapNameStr, sMonSummaryScreen->summary.otNameStrBuf);
+			DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, mapNameStr);
+			
+			if (species == SPECIES_PLUSLE)
+			{
+				DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_ApparentlyReceived);
+			}
+			else
+			{
+				DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_OldFriend);
+			}
+			
+			AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], 2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
+			return;
+		}
+		else if (metLocation == MAPSEC_DISTANT_LAND)
+		{
+			StringCopy(mapNameStr, sMonSummaryScreen->summary.otNameStrBuf);
+			DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, mapNameStr);
+			
+			DynamicPlaceholderTextUtil_ExpandPlaceholders(natureMetOrHatchedAtLevelStr, gText_PokeSum_ApparentlyObtained);
+			AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], 2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
+			return;
+		}
+			
+        // Colosseum and XD use two different sets of location data, but share a game ID
+        // We can differentiate the two based on whether the Pokemon is considered a fateful encounter or not. 
+		if (GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_EVENT_LEGAL) == 1)
+		GetMapNameNonGBAGeneric_(mapNameStr, metLocation, 2); // if the Pokemon is from GCN and has a fateful encounter, use XD's location data 
+		else
+		GetMapNameNonGBAGeneric_(mapNameStr, metLocation, 1); // Otherwise, use Colosseum's
+	}
+	else if (CurrentMonIsFromGBA() == TRUE)
+		GetMapNameGeneric_(mapNameStr, metLocation);
 
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, mapNameStr);
 
@@ -2776,7 +2843,7 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
         }
     }
 
-    AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
+    AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], 2, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, natureMetOrHatchedAtLevelStr);
 }
 
 static void PokeSum_PrintTrainerMemo_Mon(void)
@@ -5206,6 +5273,38 @@ static bool32 CurrentMonIsFromGBA(void)
         || version == VERSION_RUBY
         || version == VERSION_SAPPHIRE
         || version == VERSION_EMERALD)
+        return TRUE;
+
+    return FALSE;
+}
+
+static bool32 CurrentMonIsFromGCN(void)
+{
+    u8 version = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_GAME);
+
+    if (version == VERSION_GAMECUBE)
+        return TRUE;
+
+    return FALSE;
+}
+
+static bool32 CurrentMonIsFromJohto(void)
+{
+    u8 version = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_GAME);
+
+    if (version == VERSION_SOUL_SILVER
+		|| version == VERSION_HEART_GOLD)
+        return TRUE;
+
+    return FALSE;
+}
+
+static bool32 CurrentMonIsFromFRLG(void)
+{
+    u8 version = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_GAME);
+
+    if (version == VERSION_LEAF_GREEN
+		|| version == VERSION_FIRE_RED)
         return TRUE;
 
     return FALSE;

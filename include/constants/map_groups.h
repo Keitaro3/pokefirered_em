@@ -198,6 +198,8 @@
 #define MAP_ONE_ISLAND_KINDLE_ROAD_EMBER_SPA          (57 | (2 << 8))
 #define MAP_BIRTH_ISLAND_HARBOR                       (58 | (2 << 8))
 #define MAP_NAVEL_ROCK_HARBOR                         (59 | (2 << 8))
+#define MAP_FARAWAY_ISLAND_ENTRANCE                   (60 | (2 << 8))
+#define MAP_FARAWAY_ISLAND_INTERIOR                   (61 | (2 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))

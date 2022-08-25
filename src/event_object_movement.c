@@ -2,6 +2,7 @@
 #include "gflib.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "faraway_island.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
@@ -438,6 +439,8 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_RS_GROUDON                  0x1119
 #define OBJ_EVENT_PAL_TAG_RS_GROUDON_REFLECTION       0x111A
 #define OBJ_EVENT_PAL_TAG_RS_SUBMARINE_SHADOW         0x111B
+#define OBJ_EVENT_PAL_TAG_SUDOWOODO                   0x111C
+#define OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION        0x111D
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -467,6 +470,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Meteorite,               OBJ_EVENT_PAL_TAG_METEORITE},
     {gObjectEventPal_SSAnne,                  OBJ_EVENT_PAL_TAG_SS_ANNE},
     {gObjectEventPal_Seagallop,               OBJ_EVENT_PAL_TAG_SEAGALLOP},
+    {gObjectEventPal_Sudowoodo,               OBJ_EVENT_PAL_TAG_SUDOWOODO},
+    {gObjectEventPal_SudowoodoReflection,     OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION},
     {},
 };
 
@@ -568,6 +573,13 @@ static const u16 sGreenNPCReflectionPaletteTags[] = {
     OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION,
 };
 
+static const u16 sSudowoodoReflectionPaletteTags[] = {
+    OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION,
+    OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION,
+    OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION,
+    OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION,
+};
+
 static const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PLAYER_RED,          sPlayerReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_PLAYER_GREEN,        sPlayerReflectionPaletteTags},
@@ -581,6 +593,7 @@ static const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_RS_GROUDON,          sRSGroudonReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_NPC_GREEN,           sGreenNPCReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_RS_SUBMARINE_SHADOW, sRSSubmarineShadowReflectionPaletteTags},
+    {OBJ_EVENT_PAL_TAG_SUDOWOODO,           sSudowoodoReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_NONE, NULL},
 };
 
@@ -4316,7 +4329,24 @@ static bool8 CopyablePlayerMovement_GoSpeed0(struct ObjectEvent *objectEvent, st
     s16 y;
 
     direction = playerDirection;
-    direction = GetCopyDirection(gInitialMovementTypeFacingDirections[objectEvent->movementType], objectEvent->directionSequenceIndex, direction);
+    if (ObjectEventIsFarawayIslandMew(objectEvent))
+    {
+        direction = GetMewMoveDirection();
+        if (direction == DIR_NONE)
+        {
+            direction = playerDirection;
+            direction = GetCopyDirection(gInitialMovementTypeFacingDirections[objectEvent->movementType], objectEvent->directionSequenceIndex, direction);
+            ObjectEventMoveDestCoords(objectEvent, direction, &x, &y);
+            ObjectEventSetSingleMovement(objectEvent, sprite, GetFaceDirectionMovementAction(direction));
+            objectEvent->singleMovementActive = TRUE;
+            sprite->data[1] = 2;
+            return TRUE;
+        }
+    }
+    else
+    {
+        direction = GetCopyDirection(gInitialMovementTypeFacingDirections[objectEvent->movementType], objectEvent->directionSequenceIndex, direction);
+    }
     ObjectEventMoveDestCoords(objectEvent, direction, &x, &y);
     ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkNormalMovementAction(direction));
     if (GetCollisionAtCoords(objectEvent, x, y, direction) || (tileCallback != NULL && !tileCallback(MapGridGetMetatileBehaviorAt(x, y))))

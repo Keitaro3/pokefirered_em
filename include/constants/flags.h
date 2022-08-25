@@ -182,10 +182,10 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_0x0AF               0x0AF
-#define FLAG_0x0B0               0x0B0
-#define FLAG_0x0B1               0x0B1
-#define FLAG_0x0B2               0x0B2
+#define FLAG_HIDE_MEW            0x0AF
+#define FLAG_DEFEATED_MEW        0x0B0
+#define FLAG_CAUGHT_MEW          0x0B1
+#define FLAG_DEFEATED_SUDOWOODO  0x0B2
 #define FLAG_0x0B3               0x0B3
 #define FLAG_0x0B4               0x0B4
 #define FLAG_0x0B5               0x0B5
@@ -784,7 +784,7 @@
 #define FLAG_OAKS_RATING_IS_VIA_PC                       0x2FF
 
 // Unused?
-#define FLAG_0x300               0x300
+#define FLAG_SHOWN_OLD_SEA_MAP   0x300
 #define FLAG_0x301               0x301
 #define FLAG_0x302               0x302
 #define FLAG_0x303               0x303
@@ -1398,6 +1398,8 @@
 #define FLAG_SYS_UNLOCKED_TANOBY_RUINS                              (SYS_FLAGS + 0x49)
 #define FLAG_ENABLE_SHIP_NAVEL_ROCK                                 (SYS_FLAGS + 0x4A)
 #define FLAG_ENABLE_SHIP_BIRTH_ISLAND                               (SYS_FLAGS + 0x4B)
+#define FLAG_ENABLE_SHIP_FARAWAY_ISLAND                             (SYS_FLAGS + 0x4C)
+#define FLAG_ARRIVED_ON_FARAWAY_ISLAND                              (SYS_FLAGS + 0x4D)
 
 // World Map Flags
 #define FLAG_WORLD_MAP_PALLET_TOWN                                  (SYS_FLAGS + 0x90)

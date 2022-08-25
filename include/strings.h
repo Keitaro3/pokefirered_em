@@ -802,6 +802,7 @@ extern const u8 gText_1BigMushroom[];
 extern const u8 gText_SeviiIslands[];
 extern const u8 gText_NavelRock[];
 extern const u8 gText_BirthIsland[];
+extern const u8 gText_FarawayIsland[];
 extern const u8 gText_MiracleSeed_1000Coins[];
 extern const u8 gText_Charcoal_1000Coins[];
 extern const u8 gText_MysticWater_1000Coins[];
@@ -1530,6 +1531,9 @@ extern const u8 gText_PokeSum_ApparentlyFatefulEncounterHatched_BoldGentleGramma
 extern const u8 gText_PokeSum_ApparentlyFatefulEncounterHatched[];
 extern const u8 gText_PokeSum_ApparentlyMet[];
 extern const u8 gText_PokeSum_ApparentlyMet_BoldGentleGrammar[];
+extern const u8 gText_PokeSum_OldFriend[];
+extern const u8 gText_PokeSum_ApparentlyReceived[];
+extern const u8 gText_PokeSum_ApparentlyObtained[];
 extern const u8 gText_PokeSum_ExpPoints[];
 extern const u8 gText_PokeSum_NextLv[];
 extern const u8 gText_PokeSum_PageName_PokemonInfo[];

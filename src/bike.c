@@ -177,6 +177,8 @@ static void BikeTransition_MoveDirection(u8 direction)
         {
             if (collision == COLLISION_LEDGE_JUMP)
                 PlayerJumpLedge(direction);
+            else if (collision == COLLISION_OBJECT_EVENT && IsPlayerCollidingWithFarawayIslandMew(direction))
+                PlayerOnBikeCollideWithFarawayIslandMew(direction);
             else if (collision != COLLISION_STOP_SURFING
                   && collision != COLLISION_LEDGE_JUMP
                   && collision != COLLISION_PUSHED_BOULDER

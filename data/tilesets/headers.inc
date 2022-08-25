@@ -73,7 +73,7 @@ gTileset_VermilionCity::
 	.4byte gTilesetTiles_VermilionCity
 	.4byte gTilesetPalettes_VermilionCity
 	.4byte gMetatiles_VermilionCity
-	.4byte 0x0
+	.4byte InitTilesetAnim_VermilionCity
 	.4byte gMetatileAttributes_VermilionCity
 
 	.align 2

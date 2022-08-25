@@ -205,13 +205,10 @@
 #define MAPSEC_EMBER_SPA                    0xC3
 #define MAPSEC_SPECIAL_AREA                 0xC4
 
-/*
-#define MAPSECS_EMERALD                     0xC5
-
 #define MAPSEC_AQUA_HIDEOUT                 0xC5
 #define MAPSEC_MAGMA_HIDEOUT                0xC6
 #define MAPSEC_MIRAGE_TOWER                 0xC7
-#define MAPSEC_BIRTH_ISLAND_EM              0xC8
+#define MAPSEC_BIRTH_ISLAND_EMERALD         0xC8
 #define MAPSEC_FARAWAY_ISLAND               0xC9
 #define MAPSEC_ARTISAN_CAVE                 0xCA
 #define MAPSEC_MARINE_CAVE                  0xCB
@@ -221,13 +218,12 @@
 #define MAPSEC_UNDERWATER_125               0xCF
 #define MAPSEC_UNDERWATER_129               0xD0
 #define MAPSEC_DESERT_UNDERPASS             0xD1
-#define MAPSEC_ALTERING_CAVE_EM             0xD2
-#define MAPSEC_NAVEL_ROCK_EM                0xD3
+#define MAPSEC_ALTERING_CAVE_EMERALD        0xD2
+#define MAPSEC_NAVEL_ROCK_EMERALD           0xD3
 #define MAPSEC_TRAINER_HILL                 0xD4
-*/
 
-#define MAPSEC_NONE                         0xC5
-#define MAPSEC_COUNT                        0xC6
+#define MAPSEC_NONE                         0xD5
+#define MAPSEC_COUNT                        0xD6
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
@@ -236,6 +232,10 @@
 #define KANTO_MAPSEC_START  MAPSEC_PALLET_TOWN
 #define KANTO_MAPSEC_END    MAPSEC_SPECIAL_AREA
 #define KANTO_MAPSEC_COUNT (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
+
+#define EMERALD_MAPSEC_START MAPSEC_AQUA_HIDEOUT
+#define EMEALD_MAPSEC_END    MAPSEC_BIRTH_ISLAND_EMERALD
+#define EMERALD_MAPSEC_COUNT (EMEALD_MAPSEC_END - EMERALD_MAPSEC_START + 1)
 
 #define HOENN_MAPSEC_START  MAPSEC_LITTLEROOT_TOWN
 #define HOENN_MAPSEC_END    MAPSEC_DYNAMIC
