@@ -33,6 +33,7 @@
 #include "field_effect.h"
 #include "fieldmap.h"
 #include "field_door.h"
+#include "palette.h"
 #include "constants/event_objects.h"
 #include "constants/sound.h"
 
@@ -636,6 +637,29 @@ bool8 ScrCmd_fadescreenspeed(struct ScriptContext * ctx)
     u8 speed = ScriptReadByte(ctx);
 
     FadeScreen(mode, speed);
+    SetupNativeScript(ctx, IsPaletteNotActive);
+    return TRUE;
+}
+
+bool8 ScrCmd_fadescreenswapbuffers(struct ScriptContext *ctx)
+{
+    u8 mode = ScriptReadByte(ctx);
+
+    switch (mode)
+    {
+        case FADE_TO_BLACK:
+        case FADE_TO_WHITE:   
+        default:
+            CpuCopy32(gPlttBufferUnfaded, gPaletteDecompressionBuffer, PLTT_DECOMP_BUFFER_SIZE);
+            FadeScreen(mode, 0);
+            break;
+        case FADE_FROM_BLACK:
+        case FADE_FROM_WHITE:
+            CpuCopy32(gPaletteDecompressionBuffer, gPlttBufferUnfaded, PLTT_DECOMP_BUFFER_SIZE);
+            FadeScreen(mode, 0);
+            break;
+    }
+
     SetupNativeScript(ctx, IsPaletteNotActive);
     return TRUE;
 }

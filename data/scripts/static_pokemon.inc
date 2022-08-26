@@ -14,6 +14,15 @@ EventScript_MonFlewAway::
     release
     end
 
+EventScript_MonFlewAway2::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	getspeciesname 0, VAR_0x8004
+	msgbox Text_MonFlewAway
+	release
+	end
+
 EventScript_AwakenSnorlax::
     message Text_PlayedPokeFlute
     waitmessage

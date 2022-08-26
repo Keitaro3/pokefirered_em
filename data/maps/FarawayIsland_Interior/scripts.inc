@@ -162,12 +162,12 @@ FarawayIsland_Interior_EventScript_Mew:: @ 8267DF2
 FarawayIsland_Interior_EventScript_MewDefeated:: @ 8267E96
 	setflag FLAG_DEFEATED_MEW
 	setvar VAR_0x8004, SPECIES_MEW
-	goto EventScript_MonFlewAway
+	goto EventScript_MonFlewAway2
 	end
 
 FarawayIsland_Interior_EventScript_PlayerOrMewRan:: @ 8267EA4
 	setvar VAR_0x8004, SPECIES_MEW
-	goto EventScript_MonFlewAway
+	goto EventScript_MonFlewAway2
 	end
 
 FarawayIsland_Interior_EventScript_FoundMewNorth:: @ 8267EAF
@@ -192,10 +192,10 @@ FarawayIsland_Interior_EventScript_FoundMewEast:: @ 8267ED0
 
 FarawayIsland_Interior_EventScript_HideMewWhenGrassCut:: @ 8267EDB
 	lockall
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_HIDE_MEW
 	removeobject LOCALID_MEW
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox FarawayIsland_Interior_Text_TheFeelingOfBeingWatchedFaded, MSGBOX_DEFAULT
 	closemessage
 	releaseall
