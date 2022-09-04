@@ -1,11 +1,13 @@
-EventScript_DoTrainerBattleFromApproach::
-	lock
+EventScript_DoTrainerBattleFromApproach:: @ 8271354
+	selectapproachingtrainer
+	lockfortrainer
+EventScript_TrainerApproach:: @ 8271356
 	special PlayTrainerEncounterMusic
-	special EndTrainerApproach
+	special DoTrainerApproach
 	waitstate
-	goto EventScript_DoTrainerBattle
+	goto EventScript_ShowTrainerIntroMsg
 
-EventScript_TryDoNormalTrainerBattle::
+EventScript_TryDoNormalTrainerBattle:: @ 8271362
 	lock
 	faceplayer
 	applymovement VAR_LAST_TALKED, Movement_RevealTrainer
@@ -15,12 +17,12 @@ EventScript_TryDoNormalTrainerBattle::
 	goto_if_ne EventScript_NoTrainerBattle
 	special PlayTrainerEncounterMusic
 	special SetUpTrainerMovement
-	goto EventScript_DoTrainerBattle
+	goto EventScript_ShowTrainerIntroMsg
 
-EventScript_NoTrainerBattle::
-	ontrainerbattleend
+EventScript_NoTrainerBattle:: @ 8271389
+	gotopostbattlescript
 
-EventScript_TryDoDoubleTrainerBattle::
+EventScript_TryDoDoubleTrainerBattle:: @ 827138A
 	lock
 	faceplayer
 	call EventScript_RevealTrainer
@@ -32,27 +34,27 @@ EventScript_TryDoDoubleTrainerBattle::
 	goto_if_ne EventScript_NotEnoughMonsForDoubleBattle
 	special PlayTrainerEncounterMusic
 	special SetUpTrainerMovement
-	goto EventScript_DoTrainerBattle
+	goto EventScript_ShowTrainerIntroMsg
 
-EventScript_NotEnoughMonsForDoubleBattle::
+EventScript_NotEnoughMonsForDoubleBattle:: @ 82713BA
 	special ShowTrainerCantBattleSpeech
 	waitmessage
 	waitbuttonpress
 	release
 	end
 
-EventScript_NoDoubleTrainerBattle::
-	ontrainerbattleend
+EventScript_NoDoubleTrainerBattle:: @ 82713C1
+	gotopostbattlescript
 
-EventScript_DoNoIntroTrainerBattle::
+EventScript_DoNoIntroTrainerBattle:: @ 82713C2
 	applymovement VAR_LAST_TALKED, Movement_RevealTrainer
 	waitmovement 0
 	special PlayTrainerEncounterMusic
 	goto_if_questlog EventScript_EndQuestLogBattle
-	battlebegin
-	ontrainerbattleend
+	trainerbattlebegin
+	gotopostbattlescript
 
-EventScript_TryDoRematchBattle::
+EventScript_TryDoRematchBattle:: @ 82713D1
 	call EventScript_RevealTrainer
 	specialvar VAR_RESULT, IsTrainerReadyForRematch
 	compare VAR_RESULT, FALSE
@@ -68,10 +70,10 @@ EventScript_TryDoRematchBattle::
 	releaseall
 	end
 
-EventScript_NoRematchBattle::
-	ontrainerbattleend
+EventScript_NoRematchBattle:: @ 82713F7
+	gotopostbattlescript
 
-EventScript_TryDoDoubleRematchBattle::
+EventScript_TryDoDoubleRematchBattle:: @ 82713F8
 	specialvar VAR_RESULT, IsTrainerReadyForRematch
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_NoDoubleRematchBattle
@@ -89,10 +91,10 @@ EventScript_TryDoDoubleRematchBattle::
 	releaseall
 	end
 
-EventScript_NoDoubleRematchBattle::
-	ontrainerbattleend
+EventScript_NoDoubleRematchBattle:: @ 8271427
+	gotopostbattlescript
 
-EventScript_NotEnoughMonsForDoubleRematchBattle::
+EventScript_NotEnoughMonsForDoubleRematchBattle:: @ 8271428
 	special ShowTrainerCantBattleSpeech
 	waitmessage
 	waitbuttonpress
@@ -103,21 +105,27 @@ EventScript_EndQuestLogRematch::
 	releaseall
 	end
 
-EventScript_RevealTrainer::
+EventScript_RevealTrainer:: @ 827142F
 	applymovement VAR_LAST_TALKED, Movement_RevealTrainer
 	waitmovement 0
 	return
 
-Movement_RevealTrainer::
+Movement_RevealTrainer: @ 827143A
 	reveal_trainer
 	step_end
 
-EventScript_DoTrainerBattle::
+EventScript_ShowTrainerIntroMsg:: @ 827143C
 	special ShowTrainerIntroSpeech
 	waitmessage
 	waitbuttonpress
+	special TryPrepareSecondApproachingTrainer
+	compare VAR_RESULT, TRUE
+	goto_if_eq EventScript_TrainerApproach
+	goto EventScript_DoTrainerBattle
+
+EventScript_DoTrainerBattle:: @ 8271454
 	goto_if_questlog EventScript_EndQuestLogBattle
-	battlebegin
+	trainerbattlebegin
 	specialvar VAR_RESULT, GetTrainerBattleMode
 	compare VAR_RESULT, TRAINER_BATTLE_SINGLE
 	goto_if_eq EventScript_EndTrainerBattle
@@ -129,19 +137,20 @@ EventScript_DoTrainerBattle::
 	goto_if_eq EventScript_EndTrainerBattleContinueScript
 	compare VAR_RESULT, TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC
 	goto_if_eq EventScript_EndTrainerBattleContinueScript
-EventScript_EndTrainerBattle::
+EventScript_EndTrainerBattle:: @ 8271491
+	gotobeatenscript
 	releaseall
 	end
 
 EventScript_EndTrainerBattleContinueScript::
-	ontrainerbattleendgoto
+	gotobeatenscript
 
 EventScript_EndQuestLogBattle::
 	special SetBattledTrainerFlag
 	releaseall
-	end
+	end	
 
-Std_MsgboxAutoclose::
+Std_MsgboxAutoclose:: @ 8271494
 	message 0x0
 	waitmessage
 	waitbuttonpress

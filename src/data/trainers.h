@@ -8906,4 +8906,29 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_CueBallPaxton),
         .party = {.NoItemDefaultMoves = sParty_CueBallPaxton}
     },
+    [TRAINER_HIKER_TACKEY] = {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_HIKER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = _("TACKEY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HikerTackey),
+        .party = {.NoItemDefaultMoves = sParty_HikerTackey}
+    },
+    [TRAINER_BIRD_KEEPER_TSUBASA] = {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = _("TSUBASA"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_BirdKeeperTsubasa),
+        .party = {.NoItemDefaultMoves = sParty_BirdKeeperTsubasa}
+    },
+
 };

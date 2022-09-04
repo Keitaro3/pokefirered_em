@@ -103,3 +103,28 @@ ViridianForest_Text_LeavingViridianForest::
     .string "LEAVING VIRIDIAN FOREST\n"
     .string "PEWTER CITY AHEAD$"
 
+ViridianForest_Text_TackeyIntro::
+    .string "La-dee-da...\n"
+    .string "Just a HIKER in the woods, nothing to\l"
+    .string "see here!$"
+
+ViridianForest_Text_TackeyDefeat::
+    .string "Huh?\n"
+    .string "Why am I in the forest?$"
+
+ViridianForest_Text_TackeyPostBattle::
+	.string "Don't ask questions you aren't prepared\n"
+	.string "to hear the answer to.$"
+
+ViridianForest_Text_TsubasaIntro::
+    .string "Don't forget about me!\n"
+    .string "Come on!\l"
+    .string "Let's battle!$"
+
+ViridianForest_Text_TsubasaDefeat::
+    .string "No!\nMy feathered friends!$"
+
+ViridianForest_Text_TsubasaPostBattle::
+    .string "I have nothing else to say.\n"
+    .string "Go bug TACKEY instead.$"
+

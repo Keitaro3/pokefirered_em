@@ -7147,7 +7147,7 @@ static bool8 MovementAction_RevealTrainer_Step0(struct ObjectEvent *objectEvent,
 {
     if (objectEvent->movementType == MOVEMENT_TYPE_BURIED)
     {
-        MovementAction_RevealTrainer_RunTrainerSeeFuncList(objectEvent);
+        SetBuriedTrainerMovement(objectEvent);
         return FALSE;
     }
     if (objectEvent->movementType != MOVEMENT_TYPE_TREE_DISGUISE && objectEvent->movementType != MOVEMENT_TYPE_MOUNTAIN_DISGUISE)
@@ -9448,4 +9448,17 @@ static void DoRippleFieldEffect(struct ObjectEvent *objectEvent, struct Sprite *
     gFieldEffectArguments[2] = 151;
     gFieldEffectArguments[3] = 3;
     FieldEffectStart(FLDEFF_RIPPLE);
+}
+
+// Used to freeze other objects except two trainers approaching for battle
+void FreezeObjectEventsExceptTwo(u8 objectEventId1, u8 objectEventId2)
+{
+    u8 i;
+
+    for(i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if(i != objectEventId1 && i != objectEventId2 &&
+            gObjectEvents[i].active && i != gPlayerAvatar.objectEventId)
+                FreezeObjectEvent(&gObjectEvents[i]);
+    }
 }

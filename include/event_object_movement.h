@@ -144,6 +144,7 @@ u8 GetFirstInactiveObjectEventId(void);
 u8 GetCollisionFlagsAtCoords(struct ObjectEvent * objectEvent, s16 x, s16 y, u8 direction);
 void OverrideTemplateCoordsForObjectEvent(const struct ObjectEvent *objectEvent);
 void CancelPlayerForcedMovement(void);
+void FreezeObjectEventsExceptTwo(u8 objectEventId1, u8 objectEventId2);
 void FreezeObjectEvents(void);
 bool8 FreezeObjectEvent(struct ObjectEvent *);
 void UnfreezeObjectEvent(struct ObjectEvent *);

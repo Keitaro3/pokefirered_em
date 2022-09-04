@@ -705,15 +705,15 @@
 	.endm
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by trainerbattle, which actually calls this command behind-the-scenes), and blocks script execution until the battle finishes.
-	.macro battlebegin
+	.macro trainerbattlebegin
 	.byte 0x5d
 	.endm
 
-	.macro ontrainerbattleend
+	.macro gotopostbattlescript
 	.byte 0x5e
 	.endm
 
-	.macro ontrainerbattleendgoto
+	.macro gotobeatenscript
 	.byte 0x5f
 	.endm
 
@@ -1449,6 +1449,14 @@
 	.macro fadescreenswapbuffers mode:req
 	.byte 0xd5
 	.byte \mode
+	.endm
+
+	.macro selectapproachingtrainer
+	.byte 0xd6
+	.endm
+
+	.macro lockfortrainer
+	.byte 0xd7
 	.endm
 
 

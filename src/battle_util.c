@@ -1470,64 +1470,99 @@ u8 AtkCanceller_UnableToUseMove(void)
 
 bool8 HasNoMonsToSwitch(u8 battler, u8 partyIdBattlerOn1, u8 partyIdBattlerOn2)
 {
-    u8 playerId, flankId;
     struct Pokemon *party;
+    u8 id1, id2;
     s32 i;
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
-    {
         return FALSE;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
+    {
+        if (GetBattlerSide(battler) == B_SIDE_PLAYER)
+            party = gPlayerParty;
+        else
+            party = gEnemyParty;
+
+        id1 = ((battler & BIT_FLANK) / 2);
+        for (i = id1 * 3; i < id1 * 3 + 3; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP) != 0
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG)
+                break;
+        }
+        return (i == id1 * 3 + 3);
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+    {
+        id2 = GetBattlerMultiplayerId(battler);
+
+        if (GetBattlerSide(battler) == B_SIDE_PLAYER)
+            party = gPlayerParty;
+        else
+            party = gEnemyParty;
+
+        id1 = GetLinkTrainerFlankId(id2);
+        
+
+        for (i = id1 * 3; i < id1 * 3 + 3; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP) != 0
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG)
+                break;
+        }
+        return (i == id1 * 3 + 3);
+    }
+    else if ((gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) && GetBattlerSide(battler) == B_SIDE_OPPONENT)
+    {
+        party = gEnemyParty;
+
+        if (battler == 1)
+            id1 = 0;
+        else
+            id1 = 3;
+
+        for (i = id1; i < id1 + 3; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP) != 0
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG)
+                break;
+        }
+        return (i == id1 + 3);
     }
     else
     {
-        if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+        if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
         {
-            playerId = GetBattlerMultiplayerId(battler);
-            if (GetBattlerSide(battler) == B_SIDE_PLAYER)
-                party = gPlayerParty;
-            else
-                party = gEnemyParty;
-            flankId = GetLinkTrainerFlankId(playerId);
-            for (i = flankId * 3; i < flankId * 3 + 3; ++i)
-            {
-                if (GetMonData(&party[i], MON_DATA_HP) != 0
-                 && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
-                 && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG)
-                    break;
-            }
-            return (i == flankId * 3 + 3);
+            id2 = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+            id1 = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+            party = gEnemyParty;
         }
         else
         {
-            if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
-            {
-                playerId = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
-                flankId = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
-                party = gEnemyParty;
-            }
-            else
-            {
-                playerId = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
-                flankId = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
-                party = gPlayerParty;
-            }
-            if (partyIdBattlerOn1 == PARTY_SIZE)
-                partyIdBattlerOn1 = gBattlerPartyIndexes[playerId];
-            if (partyIdBattlerOn2 == PARTY_SIZE)
-                partyIdBattlerOn2 = gBattlerPartyIndexes[flankId];
-            for (i = 0; i < PARTY_SIZE; ++i)
-            {
-                if (GetMonData(&party[i], MON_DATA_HP) != 0
-                 && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
-                 && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG
-                 && i != partyIdBattlerOn1
-                 && i != partyIdBattlerOn2
-                 && i != *(gBattleStruct->monToSwitchIntoId + playerId)
-                 && i != flankId[gBattleStruct->monToSwitchIntoId])
-                    break;
-            }
-            return (i == PARTY_SIZE);
+            id2 = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+            id1 = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
+            party = gPlayerParty;
         }
+
+        if (partyIdBattlerOn1 == PARTY_SIZE)
+            partyIdBattlerOn1 = gBattlerPartyIndexes[id2];
+        if (partyIdBattlerOn2 == PARTY_SIZE)
+            partyIdBattlerOn2 = gBattlerPartyIndexes[id1];
+
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP) != 0
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_NONE
+             && GetMonData(&party[i], MON_DATA_SPECIES2) != SPECIES_EGG
+             && i != partyIdBattlerOn1 && i != partyIdBattlerOn2
+             && i != *(gBattleStruct->monToSwitchIntoId + id2) && i != id1[gBattleStruct->monToSwitchIntoId])
+                break;
+        }
+        return (i == PARTY_SIZE);
     }
 }
 

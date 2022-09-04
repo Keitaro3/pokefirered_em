@@ -5,6 +5,7 @@
 #include "pokemon.h"
 #include "malloc.h"
 #include "trainer_tower.h"
+#include "party_menu.h"
 
 void AllocateBattleResources(void)
 {
@@ -92,5 +93,23 @@ void AdjustFriendshipOnBattleFaint(u8 battlerId)
     else
     {
         AdjustFriendship(&gPlayerParty[gBattlerPartyIndexes[battlerId]], FRIENDSHIP_EVENT_FAINT_SMALL);
+    }
+}
+
+void SwitchPartyOrderInGameMulti(u8 battlerId, u8 arg1)
+{
+    if (GetBattlerSide(battlerId) != B_SIDE_OPPONENT)
+    {
+        s32 i;
+
+        // gBattleStruct->battlerPartyOrders[0][i]
+
+        for (i = 0; i < (int)ARRAY_COUNT(gBattlePartyCurrentOrder); i++)
+            gBattlePartyCurrentOrder[i] = *(0 * 3 + i + (u8*)(gBattleStruct->battlerPartyOrders));
+
+        SwitchPartyMonSlots(GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[battlerId]), GetPartyIdFromBattlePartyId(arg1));
+
+        for (i = 0; i < (int)ARRAY_COUNT(gBattlePartyCurrentOrder); i++)
+            *(0 * 3 + i + (u8*)(gBattleStruct->battlerPartyOrders)) = gBattlePartyCurrentOrder[i];
     }
 }

@@ -65,6 +65,15 @@
 #define BATTLE_TYPE_WILD_SCRIPTED      (1 << 17) // Used in pokeemerald as BATTLE_TYPE_PALACE.
 #define BATTLE_TYPE_LEGENDARY_FRLG     (1 << 18) // Used in pokeemerald as BATTLE_TYPE_ARENA.
 #define BATTLE_TYPE_TRAINER_TOWER      (1 << 19) // Used in pokeemerald as BATTLE_TYPE_FACTORY.
+#define BATTLE_TYPE_TWO_OPPONENTS      (1 << 20)
+#define BATTLE_TYPE_DOME               (1 << 21)
+#define BATTLE_TYPE_PALACE             (1 << 22)
+#define BATTLE_TYPE_ARENA              (1 << 23)
+#define BATTLE_TYPE_FACTORY            (1 << 24)
+#define BATTLE_TYPE_PIKE               (1 << 25)
+#define BATTLE_TYPE_PYRAMID            (1 << 26)
+#define BATTLE_TYPE_INGAME_PARTNER     (1 << 27)
+#define BATTLE_TYPE_TOWER_LINK_MULTI   (1 << 28)
 
 #define IS_BATTLE_TYPE_GHOST_WITHOUT_SCOPE(flags) ((flags) & BATTLE_TYPE_GHOST && !((flags) & BATTLE_TYPE_GHOST_UNVEILED))
 #define IS_BATTLE_TYPE_GHOST_WITH_SCOPE(flags) ((flags) & BATTLE_TYPE_GHOST && (flags) & BATTLE_TYPE_GHOST_UNVEILED)

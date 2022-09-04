@@ -63,7 +63,7 @@ gSpecials::
 	def_special ShowTrainerIntroSpeech
 	def_special ShowTrainerCantBattleSpeech
 	def_special Script_HasTrainerBeenFought
-	def_special EndTrainerApproach
+	def_special DoTrainerApproach
 	def_special PlayTrainerEncounterMusic
 	def_special ShouldTryRematchBattle
 	def_special IsTrainerReadyForRematch
@@ -137,7 +137,7 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special BufferRandomHobbyOrLifestyleString
-	def_special NullFieldSpecial
+	def_special TryPrepareSecondApproachingTrainer
 	def_special RegisteredItemHandleBikeSwap
 	def_special CalculatePlayerPartyCount
 	def_special CountPartyNonEggMons
@@ -414,6 +414,7 @@ gSpecials::
 	def_special IsNationalPokedexEnabled
 	def_special CallTrainerTowerFunc
 	def_special ShowPokemonJumpRecords
+	def_special ShouldTryGetTrainerScript
 	def_special BufferTMHMMoveName
 	def_special DaisyMassageServices
 	def_special HelpSystem_Disable

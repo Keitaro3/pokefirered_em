@@ -215,6 +215,8 @@ gScriptCmdTable::
 	.4byte ScrCmd_getbraillestringwidth
 	.4byte ScrCmd_bufferitemnameplural
 	.4byte ScrCmd_fadescreenswapbuffers
+	.4byte ScrCmd_selectapproachingtrainer
+	.4byte ScrCmd_lockfortrainer
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

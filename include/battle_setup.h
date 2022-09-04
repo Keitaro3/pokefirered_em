@@ -3,6 +3,10 @@
 
 #include "global.h"
 
+extern u16 gTrainerBattleOpponent_A;
+extern u16 gTrainerBattleOpponent_B;
+extern u16 gPartnerTrainerId;
+
 void StartWildBattle(void);
 void StartRoamerBattle(void);
 void StartOldManTutorialBattle(void);
@@ -14,8 +18,11 @@ void StartGroudonKyogreBattle(void);
 void StartRegiBattle(void);
 u8 BattleSetup_GetTerrainId(void);
 u8 BattleSetup_GetBattleTowerBattleTransition(void);
+void ResetTrainerOpponentIds(void);
 const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data);
 void ConfigureAndSetUpOneTrainerBattle(u8 trainerEventObjId, const u8 *trainerScript);
+void ConfigureTwoTrainersBattle(u8 trainerEventObjId, const u8 *trainerScript);
+void SetUpTwoTrainersBattle(void);
 bool32 GetTrainerFlagFromScriptPointer(const u8 *data);
 void SetUpTrainerMovement(void);
 u8 GetTrainerBattleMode(void);
@@ -32,6 +39,8 @@ const u8 *BattleSetup_GetTrainerPostBattleScript(void);
 void ShowTrainerCantBattleSpeech(void);
 void PlayTrainerEncounterMusic(void);
 const u8 *GetTrainerALoseText(void);
+const u8 *GetTrainerBLoseText(void);
 const u8 *GetTrainerWonSpeech(void);
+void ShouldTryGetTrainerScript(void);
 
 #endif // GUARD_BATTLE_SETUP_H

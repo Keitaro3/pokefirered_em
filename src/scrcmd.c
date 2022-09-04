@@ -34,6 +34,7 @@
 #include "fieldmap.h"
 #include "field_door.h"
 #include "palette.h"
+#include "trainer_see.h"
 #include "constants/event_objects.h"
 #include "constants/sound.h"
 
@@ -2255,6 +2256,29 @@ bool8 ScrCmd_normalmsg(struct ScriptContext * ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_selectapproachingtrainer(struct ScriptContext *ctx)
+{
+    gSelectedObjectEvent = GetCurrentApproachingTrainerObjectEventId();
+    return FALSE;
+}
+
+bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
+{
+    if (IsUpdateLinkStateCBActive())
+    {
+        return FALSE;
+    }
+    else
+    {
+        if (gObjectEvents[gSelectedObjectEvent].active)
+        {
+            FreezeForApproachingTrainers();
+            SetupNativeScript(ctx, IsFreezeObjectAndPlayerFinished);
+        }
+        return TRUE;
+    }
+}
+
 // This command will set a Pokémon's eventLegal bit; there is no similar command to clear it.
 bool8 ScrCmd_setmoneventlegal(struct ScriptContext * ctx)
 {
@@ -2281,4 +2305,9 @@ bool8 ScrCmd_setmonmetlocation(struct ScriptContext * ctx)
     if (partyIndex < PARTY_SIZE)
         SetMonData(&gPlayerParty[partyIndex], MON_DATA_MET_LOCATION, &location);
     return FALSE;
+}
+
+void SetMovingNpcId(u16 npcId)
+{
+    sMovingNpcId = npcId;
 }
