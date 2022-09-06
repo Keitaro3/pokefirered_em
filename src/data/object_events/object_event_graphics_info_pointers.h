@@ -152,6 +152,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewEmerald;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EmBrendan;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EmMay;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -309,4 +311,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
     [OBJ_EVENT_GFX_SUDOWOODO]                = &gObjectEventGraphicsInfo_Sudowoodo,
     [OBJ_EVENT_GFX_MEW]                      = &gObjectEventGraphicsInfo_MewEmerald,
+    [OBJ_EVENT_GFX_EM_BRENDAN]               = &gObjectEventGraphicsInfo_EmBrendan,
+    [OBJ_EVENT_GFX_EM_MAY]                   = &gObjectEventGraphicsInfo_EmMay,
 };

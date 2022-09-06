@@ -297,10 +297,15 @@ static const u8 sTrainerPicFacilityClasses[][2] =
         [MALE]   = FACILITY_CLASS_RED, 
         [FEMALE] = FACILITY_CLASS_LEAF
     },
-    [CARD_TYPE_RSE] = 
+    [CARD_TYPE_RS] = 
     {
-        [MALE]   = FACILITY_CLASS_BRENDAN, 
-        [FEMALE] = FACILITY_CLASS_MAY
+        [MALE]   = FACILITY_CLASS_RS_BRENDAN, 
+        [FEMALE] = FACILITY_CLASS_RS_MAY
+    },
+    [CARD_TYPE_EMERALD] = 
+    {
+        [MALE]   = FACILITY_CLASS_EM_BRENDAN, 
+        [FEMALE] = FACILITY_CLASS_EM_MAY
     },
 };
 
@@ -323,9 +328,9 @@ static const u8 sLinkTrainerPicFacilityClasses[GENDER_COUNT][NUM_LINK_TRAINER_CA
         FACILITY_CLASS_CHANNELER, 
         FACILITY_CLASS_PICNICKER, 
         FACILITY_CLASS_LASS, 
-        FACILITY_CLASS_RS_PSYCHIC_F, 
-        FACILITY_CLASS_BATTLE_GIRL, 
-        FACILITY_CLASS_RS_PKMN_BREEDER_F, 
+        FACILITY_CLASS_PSYCHIC_F, 
+        FACILITY_CLASS_CRUSH_GIRL, 
+        FACILITY_CLASS_PKMN_BREEDER, 
         FACILITY_CLASS_BEAUTY
     }
 };
@@ -650,13 +655,13 @@ static bool8 LoadCardGfx(void)
     switch (sTrainerCardDataPtr->gfxLoadState)
     {
     case 0:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
             LZ77UnCompWram(sHoennTrainerCardBg_Tilemap, sTrainerCardDataPtr->bgTilemap);
         else
             LZ77UnCompWram(sKantoTrainerCardBg_Tilemap, sTrainerCardDataPtr->bgTilemap);
         break;
     case 1:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
             LZ77UnCompWram(sHoennTrainerCardBack_Tilemap, sTrainerCardDataPtr->backTilemap);
         else
             LZ77UnCompWram(sKantoTrainerCardBack_Tilemap, sTrainerCardDataPtr->backTilemap);
@@ -664,14 +669,14 @@ static bool8 LoadCardGfx(void)
     case 2:
         if (!sTrainerCardDataPtr->isLink)
         {
-            if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+            if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
                 LZ77UnCompWram(sHoennTrainerCardFront_Tilemap, sTrainerCardDataPtr->frontTilemap);
             else
                 LZ77UnCompWram(sKantoTrainerCardFront_Tilemap, sTrainerCardDataPtr->frontTilemap);
         }
         else
         {
-            if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+            if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
                 LZ77UnCompWram(sHoennTrainerCardFrontLink_Tilemap, sTrainerCardDataPtr->frontTilemap);
             else
                 LZ77UnCompWram(sKantoTrainerCardFrontLink_Tilemap, sTrainerCardDataPtr->frontTilemap);
@@ -682,7 +687,7 @@ static bool8 LoadCardGfx(void)
         LZ77UnCompWram(sKantoTrainerCardBadges_Gfx, sTrainerCardDataPtr->badgeTiles);
         break;
     case 4:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
             LZ77UnCompWram(gHoennTrainerCard_Gfx, &sTrainerCardDataPtr->cardTiles);
         else
             LZ77UnCompWram(gKantoTrainerCard_Gfx, &sTrainerCardDataPtr->cardTiles);
@@ -841,7 +846,7 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
     {
         trainerCard->rse.stars = GetTrainerStarCount(trainerCard);
     }
-    else if (cardType == CARD_TYPE_RSE)
+    else if (cardType == CARD_TYPE_RS)
     {
         trainerCard->rse.stars = 0;
         if (trainerCard->rse.hofDebutHours != 0 || (trainerCard->rse.hofDebutMinutes != 0 || trainerCard->rse.hofDebutSeconds != 0))
@@ -860,7 +865,7 @@ void TrainerCard_GenerateCardForLinkPlayer(struct TrainerCard *trainerCard)
     u8 id = 0;
 
     trainerCard->version = GAME_VERSION;
-    SetPlayerCardData(trainerCard, CARD_TYPE_RSE);
+    SetPlayerCardData(trainerCard, CARD_TYPE_RS);
     if (GetCardType() != CARD_TYPE_FRLG)
         return;
 
@@ -1150,7 +1155,7 @@ static void PrintMoneyOnCard(void)
 
     txtPtr = StringCopy(buffer, gText_TrainerCardYen);
     ConvertIntToDecimalStringN(txtPtr, sTrainerCardDataPtr->trainerCard.rse.money, STR_CONV_MODE_LEFT_ALIGN, 6);
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
     {
         x = -122 - 6 * StringLength(buffer);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 20, 56, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
@@ -1180,7 +1185,7 @@ static void PrintPokedexOnCard(void)
     if (FlagGet(FLAG_SYS_POKEDEX_GET))
     {
         ConvertIntToDecimalStringN(buffer, sTrainerCardDataPtr->trainerCard.rse.caughtMonsCount, 0, 3);
-        if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+        if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
         {
             x = -120 - 6 * StringLength(buffer);
             AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 20, 72, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
@@ -1218,7 +1223,7 @@ static void PrintTimeOnCard(void)
         minutes = 59;
 
     FillWindowPixelRect(1, PIXEL_FILL(0), sTrainerCardTimeHoursXPositions[sTrainerCardDataPtr->cardType], sTrainerCardTimeMinutesYPositions[sTrainerCardDataPtr->cardType], 50, 12);
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
     else
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 16, 89, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
@@ -1255,7 +1260,7 @@ static void BufferNameForCardBack(void)
 {
     StringCopy(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], sTrainerCardDataPtr->trainerCard.rse.playerName);
     ConvertInternationalString(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], sTrainerCardDataPtr->language);
-    if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
     {
         StringAppend(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], gText_Var1sTrainerCard);
     }
@@ -1353,7 +1358,7 @@ static void PrintTradesStringOnCard(void)
 
 static void BufferBerryCrushPoints(void)
 {
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
     {
         StringCopy(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_BERRY_CRUSH], gText_BerryCrushes);
         ConvertIntToDecimalStringN(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_BERRY_CRUSH_COUNT], sTrainerCardDataPtr->trainerCard.berryCrushPoints, STR_CONV_MODE_RIGHT_ALIGN, 5);
@@ -1362,7 +1367,7 @@ static void BufferBerryCrushPoints(void)
 
 static void PrintBerryCrushStringOnCard(void)
 {
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE && sTrainerCardDataPtr->trainerCard.berryCrushPoints)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS && sTrainerCardDataPtr->trainerCard.berryCrushPoints)
     {
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], sTrainerCardHofDebutXPositions[sTrainerCardDataPtr->cardType], 99, sTrainerCardTextColors, TEXT_SKIP_DRAW, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_BERRY_CRUSH]);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 186, 99, sTrainerCardStatColors, TEXT_SKIP_DRAW, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_BERRY_CRUSH_COUNT]);
@@ -1371,7 +1376,7 @@ static void PrintBerryCrushStringOnCard(void)
 
 static void BufferUnionRoomStats(void)
 {
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
     {
         StringCopy(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_UNION_ROOM], gText_UnionRoomTradesBattles);
         ConvertIntToDecimalStringN(sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_UNION_ROOM_NUM], sTrainerCardDataPtr->trainerCard.unionRoomNum, STR_CONV_MODE_RIGHT_ALIGN, 5);
@@ -1380,7 +1385,7 @@ static void BufferUnionRoomStats(void)
 
 static void PrintUnionStringOnCard(void)
 {
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE && sTrainerCardDataPtr->trainerCard.unionRoomNum)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS && sTrainerCardDataPtr->trainerCard.unionRoomNum)
     {
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], sTrainerCardHofDebutXPositions[sTrainerCardDataPtr->cardType], 83, sTrainerCardTextColors, TEXT_SKIP_DRAW, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_UNION_ROOM]);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 186, 83, sTrainerCardStatColors, TEXT_SKIP_DRAW, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_UNION_ROOM_NUM]);
@@ -1395,7 +1400,7 @@ static void PrintPokemonIconsOnCard(void)
 
     memcpy(paletteSlots, sPokemonIconPalSlots, sizeof(sPokemonIconPalSlots));
     memcpy(xOffsets, sPokemonIconXOffsets, sizeof(sPokemonIconXOffsets));
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -1478,19 +1483,19 @@ static bool8 SetTrainerCardBgsAndPals(void)
         LoadBgTiles(0, sTrainerCardDataPtr->cardTiles, 0x1800, 0);
         break;
     case 2:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
             LoadPalette(sHoennTrainerCardStarPals[sTrainerCardDataPtr->trainerCard.rse.stars], 0, 96);
         else
             LoadPalette(sKantoTrainerCardStarPals[sTrainerCardDataPtr->trainerCard.rse.stars], 0, 96);
         break;
     case 3:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE)
+        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
             LoadPalette(sHoennTrainerCardBadges_Pal, 48, 32);
         else
             LoadPalette(sKantoTrainerCardBadges_Pal, 48, 32);
         break;
     case 4:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RSE && sTrainerCardDataPtr->trainerCard.rse.gender != MALE)
+        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS && sTrainerCardDataPtr->trainerCard.rse.gender != MALE)
             LoadPalette(sHoennTrainerCardFemaleBackground_Pal, 16, 32);
         else if (sTrainerCardDataPtr->trainerCard.rse.gender != MALE)
             LoadPalette(sKantoTrainerCardFemaleBackground_Pal, 16, 32);
@@ -1578,7 +1583,7 @@ static void DrawStarsAndBadgesOnCard(void)
 
 static void DrawCardBackStats(void)
 {
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RSE)
+    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
     {
         if (sTrainerCardDataPtr->hasTrades)
         {
@@ -1881,8 +1886,8 @@ static void InitTrainerCardData(void)
     sTrainerCardDataPtr->timeColonInvisible = FALSE;
     sTrainerCardDataPtr->onBack = FALSE;
     sTrainerCardDataPtr->flipBlendY = 0;
-    if (GetCardType() == CARD_TYPE_RSE)
-        sTrainerCardDataPtr->cardType = CARD_TYPE_RSE;
+    if (GetCardType() == CARD_TYPE_RS)
+        sTrainerCardDataPtr->cardType = CARD_TYPE_RS;
     else
         sTrainerCardDataPtr->cardType = CARD_TYPE_FRLG;
 
@@ -1894,17 +1899,22 @@ static u8 GetCardType(void)
 {
     if (sTrainerCardDataPtr == NULL)
     {
-        if (gGameVersion == VERSION_FIRE_RED || gGameVersion == VERSION_LEAF_GREEN)
+        if (gGameVersion == VERSION_FIRE_RED || gGameVersion == VERSION_LEAF_GREEN || gGameVersion == VERSION_HEART_GOLD || gGameVersion == VERSION_SOUL_SILVER)
             return CARD_TYPE_FRLG;
+        else if (gGameVersion == VERSION_EMERALD)
+            return CARD_TYPE_EMERALD;
         else
-            return CARD_TYPE_RSE;
+            return CARD_TYPE_RS;
     }
     else
     {
-        if (sTrainerCardDataPtr->trainerCard.version == VERSION_FIRE_RED || sTrainerCardDataPtr->trainerCard.version == VERSION_LEAF_GREEN)
+        if (sTrainerCardDataPtr->trainerCard.version == VERSION_FIRE_RED || sTrainerCardDataPtr->trainerCard.version == VERSION_LEAF_GREEN 
+            || sTrainerCardDataPtr->trainerCard.version == VERSION_HEART_GOLD || sTrainerCardDataPtr->trainerCard.version == VERSION_SOUL_SILVER)
             return CARD_TYPE_FRLG;
+        else if (sTrainerCardDataPtr->trainerCard.version == VERSION_EMERALD)
+            return CARD_TYPE_EMERALD;
         else
-            return CARD_TYPE_RSE;
+            return CARD_TYPE_RS;
     }
 }
 

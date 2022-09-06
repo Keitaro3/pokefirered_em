@@ -77,12 +77,14 @@ static const u8 sTextColorTable[] =
     [OBJ_EVENT_GFX_MACHOKE / 2]                 = 0x22, // OBJ_EVENT_GFX_LAPRAS
     [OBJ_EVENT_GFX_ZAPDOS / 2]                  = 0x22, // OBJ_EVENT_GFX_MOLTRES
     [OBJ_EVENT_GFX_ARTICUNO / 2]                = 0x22, // OBJ_EVENT_GFX_MEWTWO
-    [OBJ_EVENT_GFX_MEW / 2]                     = 0x22, // OBJ_EVENT_GFX_ENTEI
+    [OBJ_EVENT_GFX_MEW_FRLG / 2]                = 0x22, // OBJ_EVENT_GFX_ENTEI
     [OBJ_EVENT_GFX_SUICUNE / 2]                 = 0x22, // OBJ_EVENT_GFX_RAIKOU
     [OBJ_EVENT_GFX_LUGIA / 2]                   = 0x22, // OBJ_EVENT_GFX_HO_OH
     [OBJ_EVENT_GFX_CELEBI / 2]                  = 0x22, // OBJ_EVENT_GFX_KABUTO
     [OBJ_EVENT_GFX_DEOXYS_D / 2]                = 0x22, // OBJ_EVENT_GFX_DEOXYS_A
     [OBJ_EVENT_GFX_DEOXYS_N / 2]                = 0x32, // OBJ_EVENT_GFX_SS_ANNE
+    [OBJ_EVENT_GFX_SUDOWOODO / 2]               = 0x22, // OBJ_EVENT_GFX_MEW
+    [OBJ_EVENT_GFX_EM_BRENDAN / 2]              = 0x10, // OBJ_EVENT_GFX_EM_MAY
 };
 
 void DynamicPlaceholderTextUtil_Reset(void)

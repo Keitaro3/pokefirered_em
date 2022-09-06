@@ -3526,15 +3526,23 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
 
     if (linkPlayerObjEvent->active)
     {
-        if (gameVersion == VERSION_FIRE_RED || gameVersion == VERSION_LEAF_GREEN)
+        switch (gameVersion)
         {
+        case VERSION_FIRE_RED:
+        case VERSION_LEAF_GREEN:
+        case VERSION_HEART_GOLD:
+        case VERSION_SOUL_SILVER:
             objEvent->spriteId = AddPseudoObjectEvent(
                 GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkGender(objEvent)),
                 SpriteCB_LinkPlayer, 0, 0, 0);
-        }
-        else
-        {
+            break;
+        case VERSION_RUBY:
+        case VERSION_SAPPHIRE:
             objEvent->spriteId = AddPseudoObjectEvent(GetRSAvatarGraphicsIdByGender(linkGender(objEvent)), SpriteCB_LinkPlayer, 0, 0, 0);
+            break;
+        case VERSION_EMERALD:
+            objEvent->spriteId = AddPseudoObjectEvent(GetEmeraldAvatarGraphicsIdByGender(linkGender(objEvent)), SpriteCB_LinkPlayer, 0, 0, 0);
+            break;
         }
 
         sprite = &gSprites[objEvent->spriteId];
