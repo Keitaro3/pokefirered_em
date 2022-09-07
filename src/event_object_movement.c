@@ -441,8 +441,9 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_RS_SUBMARINE_SHADOW         0x111B
 #define OBJ_EVENT_PAL_TAG_SUDOWOODO                   0x111C
 #define OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION        0x111D
-#define OBJ_EVENT_PAL_TAG_EM_BRENDAN                  0x111E
-#define OBJ_EVENT_PAL_TAG_EM_MAY                      0x111F
+#define OBJ_EVENT_PAL_TAG_HO_OH                       0x111E
+#define OBJ_EVENT_PAL_TAG_EM_BRENDAN                  0x111F
+#define OBJ_EVENT_PAL_TAG_EM_MAY                      0x1120
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -474,6 +475,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Seagallop,               OBJ_EVENT_PAL_TAG_SEAGALLOP},
     {gObjectEventPal_Sudowoodo,               OBJ_EVENT_PAL_TAG_SUDOWOODO},
     {gObjectEventPal_SudowoodoReflection,     OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION},
+    {gObjectEventPal_HoOh,                    OBJ_EVENT_PAL_TAG_HO_OH},
     {gObjectEventPal_EmBrendan,               OBJ_EVENT_PAL_TAG_EM_BRENDAN},
     {gObjectEventPal_EmMay,                   OBJ_EVENT_PAL_TAG_EM_MAY},
     {},
@@ -584,20 +586,6 @@ static const u16 sSudowoodoReflectionPaletteTags[] = {
     OBJ_EVENT_PAL_TAG_SUDOWOODO_REFLECTION,
 };
 
-static const u16 sEmBrendanReflectionPaletteTags[] = {
-    OBJ_EVENT_PAL_TAG_EM_BRENDAN,
-    OBJ_EVENT_PAL_TAG_EM_BRENDAN,
-    OBJ_EVENT_PAL_TAG_EM_BRENDAN,
-    OBJ_EVENT_PAL_TAG_EM_BRENDAN,
-};
-
-static const u16 sEmMayReflectionPaletteTags[] = {
-    OBJ_EVENT_PAL_TAG_EM_MAY,
-    OBJ_EVENT_PAL_TAG_EM_MAY,
-    OBJ_EVENT_PAL_TAG_EM_MAY,
-    OBJ_EVENT_PAL_TAG_EM_MAY,
-};
-
 static const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PLAYER_RED,          sPlayerReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_PLAYER_GREEN,        sPlayerReflectionPaletteTags},
@@ -612,8 +600,6 @@ static const struct PairedPalettes gSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_NPC_GREEN,           sGreenNPCReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_RS_SUBMARINE_SHADOW, sRSSubmarineShadowReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_SUDOWOODO,           sSudowoodoReflectionPaletteTags},
-    {OBJ_EVENT_PAL_TAG_EM_BRENDAN,          sEmBrendanReflectionPaletteTags},
-    {OBJ_EVENT_PAL_TAG_EM_MAY,              sEmMayReflectionPaletteTags},
     {OBJ_EVENT_PAL_TAG_NONE, NULL},
 };
 

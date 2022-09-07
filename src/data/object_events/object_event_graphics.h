@@ -133,6 +133,7 @@ const u16 gObjectEventPic_Raikou[] = INCBIN_U16("graphics/object_events/pics/pok
 const u16 gObjectEventPic_Suicune[] = INCBIN_U16("graphics/object_events/pics/pokemon/suicune.4bpp");
 const u16 gObjectEventPic_Lugia[] = INCBIN_U16("graphics/object_events/pics/pokemon/lugia.4bpp");
 const u16 gObjectEventPic_HoOh[] = INCBIN_U16("graphics/object_events/pics/pokemon/ho_oh.4bpp");
+const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPic_Celebi[] = INCBIN_U16("graphics/object_events/pics/pokemon/celebi.4bpp");
 const u16 gObjectEventPic_DeoxysD[] = INCBIN_U16("graphics/object_events/pics/pokemon/deoxys_d.4bpp");
 const u16 gObjectEventPic_DeoxysA[] = INCBIN_U16("graphics/object_events/pics/pokemon/deoxys_a.4bpp");
