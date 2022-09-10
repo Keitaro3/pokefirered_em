@@ -2175,11 +2175,17 @@ static void PlayerHandleDrawTrainerPic(void)
     {
         if ((gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_RUBY
          || (gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_SAPPHIRE)
+        {
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + BACK_PIC_RS_BRENDAN;
+        }
         else if ((gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_EMERALD)
+        {
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + BACK_PIC_EM_BRENDAN;
+        }
         else
+        {
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + BACK_PIC_RED;
+        }
     }
     else
     {
@@ -2206,11 +2212,17 @@ static void PlayerHandleTrainerSlide(void)
     {
         if ((gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_RUBY
          || (gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_SAPPHIRE)
-            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + 2;
+        {
+            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + BACK_PIC_RS_BRENDAN;
+        }
         else if ((gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_EMERALD)
-            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + 4;
+        {
+            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + BACK_PIC_EM_BRENDAN;
+        }
         else
-            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + 0;
+        {
+            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + BACK_PIC_RED;
+        }
     }
     else
     {

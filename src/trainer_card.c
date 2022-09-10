@@ -655,13 +655,13 @@ static bool8 LoadCardGfx(void)
     switch (sTrainerCardDataPtr->gfxLoadState)
     {
     case 0:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
+        if ((sTrainerCardDataPtr->cardType == CARD_TYPE_RS) || (sTrainerCardDataPtr->cardType == CARD_TYPE_EMERALD))
             LZ77UnCompWram(sHoennTrainerCardBg_Tilemap, sTrainerCardDataPtr->bgTilemap);
         else
             LZ77UnCompWram(sKantoTrainerCardBg_Tilemap, sTrainerCardDataPtr->bgTilemap);
         break;
     case 1:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
+        if ((sTrainerCardDataPtr->cardType == CARD_TYPE_RS) || (sTrainerCardDataPtr->cardType == CARD_TYPE_EMERALD))
             LZ77UnCompWram(sHoennTrainerCardBack_Tilemap, sTrainerCardDataPtr->backTilemap);
         else
             LZ77UnCompWram(sKantoTrainerCardBack_Tilemap, sTrainerCardDataPtr->backTilemap);
@@ -669,14 +669,14 @@ static bool8 LoadCardGfx(void)
     case 2:
         if (!sTrainerCardDataPtr->isLink)
         {
-            if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
+            if ((sTrainerCardDataPtr->cardType == CARD_TYPE_RS) || (sTrainerCardDataPtr->cardType == CARD_TYPE_EMERALD))
                 LZ77UnCompWram(sHoennTrainerCardFront_Tilemap, sTrainerCardDataPtr->frontTilemap);
             else
                 LZ77UnCompWram(sKantoTrainerCardFront_Tilemap, sTrainerCardDataPtr->frontTilemap);
         }
         else
         {
-            if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
+            if ((sTrainerCardDataPtr->cardType == CARD_TYPE_RS) || (sTrainerCardDataPtr->cardType == CARD_TYPE_EMERALD))
                 LZ77UnCompWram(sHoennTrainerCardFrontLink_Tilemap, sTrainerCardDataPtr->frontTilemap);
             else
                 LZ77UnCompWram(sKantoTrainerCardFrontLink_Tilemap, sTrainerCardDataPtr->frontTilemap);
@@ -687,7 +687,7 @@ static bool8 LoadCardGfx(void)
         LZ77UnCompWram(sKantoTrainerCardBadges_Gfx, sTrainerCardDataPtr->badgeTiles);
         break;
     case 4:
-        if (sTrainerCardDataPtr->cardType == CARD_TYPE_RS)
+        if ((sTrainerCardDataPtr->cardType == CARD_TYPE_RS) || (sTrainerCardDataPtr->cardType == CARD_TYPE_EMERALD))
             LZ77UnCompWram(gHoennTrainerCard_Gfx, &sTrainerCardDataPtr->cardTiles);
         else
             LZ77UnCompWram(gKantoTrainerCard_Gfx, &sTrainerCardDataPtr->cardTiles);
@@ -846,7 +846,7 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
     {
         trainerCard->rse.stars = GetTrainerStarCount(trainerCard);
     }
-    else if (cardType == CARD_TYPE_RS)
+    else if ((cardType == CARD_TYPE_RS) || (cardType == CARD_TYPE_EMERALD))
     {
         trainerCard->rse.stars = 0;
         if (trainerCard->rse.hofDebutHours != 0 || (trainerCard->rse.hofDebutMinutes != 0 || trainerCard->rse.hofDebutSeconds != 0))
@@ -1155,7 +1155,7 @@ static void PrintMoneyOnCard(void)
 
     txtPtr = StringCopy(buffer, gText_TrainerCardYen);
     ConvertIntToDecimalStringN(txtPtr, sTrainerCardDataPtr->trainerCard.rse.money, STR_CONV_MODE_LEFT_ALIGN, 6);
-    if (sTrainerCardDataPtr->cardType != CARD_TYPE_RS)
+    if ((sTrainerCardDataPtr->cardType != CARD_TYPE_RS) || (sTrainerCardDataPtr->cardType != CARD_TYPE_EMERALD))
     {
         x = -122 - 6 * StringLength(buffer);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 20, 56, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
