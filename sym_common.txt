@@ -7,6 +7,7 @@
 	.include "sprite.o"
 	.include "link.o"
 	.align 4
+	.include "rtc.o"
 	.include "battle_main.o"
 	.include "random.o"
 	.include "load_save.o"

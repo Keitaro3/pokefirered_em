@@ -16,6 +16,7 @@
 #include "pokedex.h"
 #include "text_window.h"
 #include "text_window_graphics.h"
+#include "rtc.h"
 #include "constants/songs.h"
 
 enum MainMenuType
@@ -47,6 +48,7 @@ static void Task_SetWin0BldRegsAndCheckSaveFile(u8 taskId);
 static void PrintSaveErrorStatus(u8 taskId, const u8 *str);
 static void Task_SaveErrorStatus_RunPrinterThenWaitButton(u8 taskId);
 static void Task_SetWin0BldRegsNoSaveFileCheck(u8 taskId);
+static void Task_WaitForBatteryDryErrorWindow(u8);
 static void Task_WaitFadeAndPrintMainMenuText(u8 taskId);
 static void Task_PrintMainMenuText(u8 taskId);
 static void Task_WaitDma3AndFadeIn(u8 taskId);
@@ -314,10 +316,19 @@ static void Task_SetWin0BldRegsNoSaveFileCheck(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_DARKEN);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, 0));
         SetGpuReg(REG_OFFSET_BLDY, 7);
-        if (gTasks[taskId].tMenuType == MAIN_MENU_NEWGAME)
-            gTasks[taskId].func = Task_ExecuteMainMenuSelection;
+
+        if (!(RtcGetErrorStatus() & RTC_ERR_FLAG_MASK))
+        {
+            if (gTasks[taskId].tMenuType == MAIN_MENU_NEWGAME)
+                gTasks[taskId].func = Task_ExecuteMainMenuSelection;
+            else
+                gTasks[taskId].func = Task_WaitFadeAndPrintMainMenuText;
+        }
         else
-            gTasks[taskId].func = Task_WaitFadeAndPrintMainMenuText;
+        {
+            PrintSaveErrorStatus(taskId, gText_InternalBatteryHasRunDry);
+        }
+
     }
 }
 
