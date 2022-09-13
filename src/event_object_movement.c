@@ -20,6 +20,7 @@
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/trainer_types.h"
+#include "constants/items.h"
 
 static void MoveCoordsInDirection(u32, s16 *, s16 *, s16, s16);
 static bool8 ObjectEventExecSingleMovementAction(struct ObjectEvent *, struct Sprite *);
@@ -152,6 +153,8 @@ static void MovementType_VsSeeker4D(struct Sprite *);
 static void MovementType_VsSeeker4E(struct Sprite *);
 static void MovementType_VsSeeker4F(struct Sprite *);
 static void MovementType_WanderAroundSlower(struct Sprite *);
+
+static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
 #define movement_type_def(setup, table)                                                          \
 static u8 setup##_callback(struct ObjectEvent *, struct Sprite *);                               \
@@ -662,7 +665,7 @@ static const u16 *const gObjectPaletteTagSets[] = {
     sObjectPaletteTags3,
 };
 
-//#include "data/object_events/berry_tree_graphics_tables.h"
+#include "data/object_events/berry_tree_graphics_tables.h"
 #include "data/field_effects/field_effect_objects.h"
 
 static const s16 gMovementDelaysMedium[] = {32, 64,  96, 128};

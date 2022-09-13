@@ -1233,7 +1233,6 @@ static const union AnimCmd *const sAnimTable_RedGreenVSSeekerBike[] = {
     [ANIM_VS_SEEKER] = sAnim_VSSeekerBike,
 };
 
-// Unused
 static const union AnimCmd *const sAnimTable_BerryTree[] = {
     sAnim_BerryTreeStage0,
     sAnim_BerryTreeStage1,
