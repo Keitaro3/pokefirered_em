@@ -260,7 +260,11 @@ static s32 CountRoamerNests(u16 species, struct Subsprite * subsprites)
 
 static bool32 PokemonInAnyEncounterTableInMap(const struct WildPokemonHeader * data, s32 species)
 {
-    if (PokemonInEncounterTable(data->landMonsInfo, species, 12))
+    if (PokemonInEncounterTable(data->morningMonsInfo, species, 12))
+        return TRUE;
+    if (PokemonInEncounterTable(data->dayMonsInfo, species, 12))
+        return TRUE;
+    if (PokemonInEncounterTable(data->nightMonsInfo, species, 12))
         return TRUE;
     if (PokemonInEncounterTable(data->waterMonsInfo, species, 5))
         return TRUE;

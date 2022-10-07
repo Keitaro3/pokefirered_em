@@ -12,6 +12,7 @@
 #include "script.h"
 #include "link.h"
 #include "quest_log.h"
+#include "rtc.h"
 #include "constants/maps.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
@@ -31,6 +32,7 @@ static EWRAM_DATA struct WildEncounterData sWildEncounterData = {};
 static EWRAM_DATA bool8 sWildEncountersDisabled = FALSE;
 
 static bool8 UnlockedTanobyOrAreNotInTanoby(void);
+static bool8 NotInAlteringCave(void);
 static u32 GenerateUnownPersonalityByLetter(u8 letter);
 static bool8 IsWildLevelAllowedByRepel(u8 level);
 static void ApplyFluteEncounterRateMod(u32 *rate);
@@ -68,29 +70,29 @@ void DisableWildEncounters(bool8 state)
 
 static u8 ChooseWildMonIndex_Land(void)
 {
-    u8 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
+    u8 rand = Random() % ENCOUNTER_CHANCE_DAY_MONS_TOTAL;
 
-    if (rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_0)
+    if (rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_0)
         return 0;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_1)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_1)
         return 1;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_2)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_2)
         return 2;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_3)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_3)
         return 3;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_3 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_4)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_3 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_4)
         return 4;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_4 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_5)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_4 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_5)
         return 5;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_5 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_6)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_5 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_6)
         return 6;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_6 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_7)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_6 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_7)
         return 7;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_7 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_8)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_7 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_8)
         return 8;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_8 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_9)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_8 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_9)
         return 9;
-    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_9 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_10)
+    else if (rand >= ENCOUNTER_CHANCE_DAY_MONS_SLOT_9 && rand < ENCOUNTER_CHANCE_DAY_MONS_SLOT_10)
         return 10;
     else
         return 11;
@@ -257,6 +259,16 @@ static bool8 UnlockedTanobyOrAreNotInTanoby(void)
     return FALSE;
 }
 
+static bool8 NotInAlteringCave(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_ALTERING_CAVE) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_ALTERING_CAVE))
+        return FALSE;
+    return TRUE;
+}
+
+
+
 static void GenerateWildMon(u16 species, u8 level, u8 slot)
 {
     u32 personality;
@@ -369,8 +381,21 @@ static u16 GenerateFishingEncounter(const struct WildPokemonInfo * info, u8 rod)
 {
     u8 slot = ChooseWildMonIndex_Fishing(rod);
     u8 level = ChooseWildMonLevel(&info->wildPokemon[slot]);
+
+	//the following swaps out Corsola for Staryu at night.
+	//Since these are the only time-specific fishable Pokemon,
+	//it didn't make sense to have separate encounter tables.
+	if (IsNight() == TRUE && info->wildPokemon[slot].species == SPECIES_CORSOLA) // if a Corsola is encountered at night
+	{
+		GenerateWildMon(SPECIES_STARYU, level, slot);
+		return SPECIES_STARYU;
+	}
+	else // any other time or species, normal code
+	{
     GenerateWildMon(info->wildPokemon[slot].species, level, slot);
     return info->wildPokemon[slot].species;
+	}
+
 }
 
 static bool8 DoWildEncounterRateDiceRoll(u16 a0)
@@ -437,21 +462,29 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 previousMetatileBehavior)
     u16 headerId;
     struct Roamer * roamer;
 
+    const struct WildPokemonInfo *timeOfDaySlot;
+
     if (sWildEncountersDisabled == TRUE)
-        return FALSE;
+        return FALSE; 
 
     headerId = GetCurrentMapWildMonHeaderId();
     if (headerId != 0xFFFF)
     {
+        timeOfDaySlot = gWildMonHeaders[headerId].dayMonsInfo;
+        if (IsMorning() == TRUE && NotInAlteringCave())
+            timeOfDaySlot = gWildMonHeaders[headerId].morningMonsInfo;
+        else if (IsNight() == TRUE && NotInAlteringCave())
+            timeOfDaySlot = gWildMonHeaders[headerId].nightMonsInfo;
+
         if (ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_ENCOUNTER_TYPE) == TILE_ENCOUNTER_LAND)
         {
-            if (gWildMonHeaders[headerId].landMonsInfo == NULL)
+            if (timeOfDaySlot == NULL)
                 return FALSE;
             else if (previousMetatileBehavior != ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_BEHAVIOR) && !DoGlobalWildEncounterDiceRoll())
                 return FALSE;
-            if (DoWildEncounterRateTest(gWildMonHeaders[headerId].landMonsInfo->encounterRate, FALSE) != TRUE)
+            if (DoWildEncounterRateTest(timeOfDaySlot->encounterRate, FALSE) != TRUE)
             {
-                AddToWildEncounterRateBuff(gWildMonHeaders[headerId].landMonsInfo->encounterRate);
+                AddToWildEncounterRateBuff(timeOfDaySlot->encounterRate);
                 return FALSE;
             }
 
@@ -470,14 +503,14 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 previousMetatileBehavior)
             {
 
                 // try a regular wild land encounter
-                if (TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                if (TryGenerateWildMon(timeOfDaySlot, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
                 {
                     StartWildBattle();
                     return TRUE;
                 }
                 else
                 {
-                    AddToWildEncounterRateBuff(gWildMonHeaders[headerId].landMonsInfo->encounterRate);
+                    AddToWildEncounterRateBuff(timeOfDaySlot->encounterRate);
                 }
             }
         }
@@ -558,10 +591,10 @@ bool8 SweetScentWildEncounter(void)
                 return TRUE;
             }
 
-            if (gWildMonHeaders[headerId].landMonsInfo == NULL)
+            if (gWildMonHeaders[headerId].dayMonsInfo == NULL)
                 return FALSE;
 
-            TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0);
+            TryGenerateWildMon(gWildMonHeaders[headerId].dayMonsInfo, WILD_AREA_LAND, 0);
 
             StartWildBattle();
             return TRUE;
@@ -606,23 +639,23 @@ void FishingWildEncounter(u8 rod)
 u16 GetLocalWildMon(bool8 *isWaterMon)
 {
     u16 headerId;
-    const struct WildPokemonInfo * landMonsInfo;
+    const struct WildPokemonInfo * dayMonsInfo;
     const struct WildPokemonInfo * waterMonsInfo;
 
     *isWaterMon = FALSE;
     headerId = GetCurrentMapWildMonHeaderId();
     if (headerId == 0xFFFF)
         return SPECIES_NONE;
-    landMonsInfo = gWildMonHeaders[headerId].landMonsInfo;
+    dayMonsInfo = gWildMonHeaders[headerId].dayMonsInfo;
     waterMonsInfo = gWildMonHeaders[headerId].waterMonsInfo;
     // Neither
-    if (landMonsInfo == NULL && waterMonsInfo == NULL)
+    if (dayMonsInfo == NULL && waterMonsInfo == NULL)
         return SPECIES_NONE;
         // Land Pokemon
-    else if (landMonsInfo != NULL && waterMonsInfo == NULL)
-        return landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
+    else if (dayMonsInfo != NULL && waterMonsInfo == NULL)
+        return dayMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
         // Water Pokemon
-    else if (landMonsInfo == NULL && waterMonsInfo != NULL)
+    else if (dayMonsInfo == NULL && waterMonsInfo != NULL)
     {
         *isWaterMon = TRUE;
         return waterMonsInfo->wildPokemon[ChooseWildMonIndex_WaterRock()].species;
@@ -630,7 +663,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
     // Either land or water Pokemon
     if ((Random() % 100) < 80)
     {
-        return landMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
+        return dayMonsInfo->wildPokemon[ChooseWildMonIndex_Land()].species;
     }
     else
     {
@@ -809,13 +842,13 @@ static u8 GetMapBaseEncounterCooldown(u8 encounterType)
         return 0xFF;
     if (encounterType == TILE_ENCOUNTER_LAND)
     {
-        if (gWildMonHeaders[headerIdx].landMonsInfo == NULL)
+        if (gWildMonHeaders[headerIdx].dayMonsInfo == NULL)
             return 0xFF;
-        if (gWildMonHeaders[headerIdx].landMonsInfo->encounterRate >= 80)
+        if (gWildMonHeaders[headerIdx].dayMonsInfo->encounterRate >= 80)
             return 0;
-        if (gWildMonHeaders[headerIdx].landMonsInfo->encounterRate < 10)
+        if (gWildMonHeaders[headerIdx].dayMonsInfo->encounterRate < 10)
             return 8;
-        return 8 - (gWildMonHeaders[headerIdx].landMonsInfo->encounterRate / 10);
+        return 8 - (gWildMonHeaders[headerIdx].dayMonsInfo->encounterRate / 10);
     }
     if (encounterType == TILE_ENCOUNTER_WATER)
     {

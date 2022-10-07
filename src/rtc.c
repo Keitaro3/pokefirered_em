@@ -344,3 +344,30 @@ u32 RtcGetLocalDayCount(void)
 {
     return RtcGetDayCount(&sRtc);
 }
+
+bool8 IsMorning(void)
+{
+	RtcCalcLocalTime();
+    if (gLocalTime.hours >= MORNING_START && gLocalTime.hours < DAY_START)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 IsDaytime(void)
+{
+	RtcCalcLocalTime();
+    if (gLocalTime.hours >= DAY_START && gLocalTime.hours < NIGHT_START)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 IsNight(void)
+{
+	RtcCalcLocalTime();
+    if (gLocalTime.hours >= NIGHT_START || gLocalTime.hours < MORNING_START)
+        return TRUE;
+    else
+        return FALSE;
+}

@@ -9409,6 +9409,15 @@ static void Cmd_pickup(void)
                 }
             }
         }
+        else if (species == SPECIES_SHUCKLE
+                 && heldItem == ITEM_ORAN_BERRY)
+        {
+            if (!(Random() % 16))
+            {
+                heldItem = ITEM_BERRY_JUICE;
+                SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+            }
+        }
     }
 
     gBattlescriptCurrInstr++;
