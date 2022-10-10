@@ -1915,9 +1915,9 @@ voicegroup022:
 	.word	sc1dt50
 	.byte	 0, 0,15, 0
 
-	.byte	0x00, 60,  0,0x00
-	.word	synbs_c2
-	.byte	255,252,  0,115
+	.byte	0x01, 60,  0,0x00
+	.word	sc1dt50
+	.byte	 0, 0,15, 0
 
 	.byte	0x01, 60,  0,0x00
 	.word	sc1dt50
