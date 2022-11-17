@@ -23,7 +23,7 @@ struct Main
 
     /*0x01C*/ vu16 intrCheck;
 
-    /*0x020*/ u32 *vblankCounter1;
+    /*0x020*/ u32 vblankCounter1;
     /*0x024*/ u32 vblankCounter2;
 
     /*0x028*/ u16 heldKeysRaw;           // held keys without L=A remapping

@@ -96,7 +96,22 @@ s8 BagPocketGetFirstEmptySlot(u8 pocketId)
     return -1;
 }
 
-bool8 IsPocketNotEmpty(u8 pocketId)
+void GetBerryCountString(u8 *dst, const u8 *berryName, u32 quantity)
+{
+    const u8 *berryString;
+    u8 *txtPtr;
+
+    if (quantity < 2)
+        berryString = gText_Berry;
+    else
+        berryString = gText_Berries;
+
+    txtPtr = StringCopy(dst, berryName);
+    *txtPtr = CHAR_SPACE;
+    StringCopy(txtPtr + 1, berryString);
+}
+
+bool8 IsPocketNonEmpty(u8 pocketId)
 {
     u8 i;
 

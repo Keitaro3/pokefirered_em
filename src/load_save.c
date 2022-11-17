@@ -9,6 +9,8 @@
 #include "berry_powder.h"
 #include "overworld.h"
 #include "quest_log.h"
+#include "main.h"
+#include "trainer_hill.h"
 
 #define SAVEBLOCK_MOVE_RANGE    128
 
@@ -93,7 +95,7 @@ void MoveSaveBlocks_ResetHeap(void)
     hblankCB = gMain.hblankCallback;
     gMain.vblankCallback = NULL;
     gMain.hblankCallback = NULL;
-    gMain.vblankCounter1 = NULL;
+    gTrainerHillVBlankCounter = NULL;
     
     saveBlock2Copy = (struct SaveBlock2 *)(gHeap);
     saveBlock1Copy = (struct SaveBlock1 *)(gHeap + sizeof(struct SaveBlock2));

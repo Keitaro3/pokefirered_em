@@ -444,6 +444,14 @@ bool8 MetatileBehavior_IsLongGrass(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsBerryTreeSoil(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_BERRY_TREE_SOIL)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsAshGrass(u8 metatileBehavior) { return FALSE; }
 bool8 MetatileBehavior_IsFootprints(u8 metatileBehavior) { return FALSE; }
 bool8 MetatileBehavior_IsBridge(u8 metatileBehavior) { return FALSE; }
@@ -1033,14 +1041,6 @@ bool8 MetatileBehavior_IsBlinkingLights(u8 metatileBehavior)
 bool8 MetatileBehavior_IsNeatlyLinedUpTools(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_NEATLY_LINED_UP_TOOLS)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-bool8 MetatileBehavior_IsImpressiveMachine(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_IMPRESSIVE_MACHINE)
         return TRUE;
     else
         return FALSE;

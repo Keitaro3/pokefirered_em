@@ -3680,6 +3680,8 @@ extern const u8 gFile_graphics_items_icons_magma_emblem_sheet[];
 extern const u8 gFile_graphics_items_icon_magma_emblem_palette[];
 extern const u8 gFile_graphics_items_icons_old_sea_map_sheet[];
 extern const u8 gFile_graphics_items_icon_old_sea_map_palette[];
+extern const u8 gFile_graphics_items_icons_squirtbottle_sheet[];
+extern const u8 gFile_graphics_items_icon_squirtbottle_palette[];
 extern const u8 gFile_graphics_items_icon_palettes_return_to_field_arrow_palette[];
 
 // battle_anim_utility_funcs

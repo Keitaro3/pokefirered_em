@@ -468,6 +468,7 @@ const u8 gText_KeyItems[] = _("KEY ITEMS");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_TMsAndHMs[] = _("TMs & HMs");
 const u8 gText_Berries[] = _("BERRIES");
+const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Boulderbadge[] = _("BOULDERBADGE");
 const u8 gText_Cascadebadge[] = _("CASCADEBADGE");
 const u8 gText_Thunderbadge[] = _("THUNDERBADGE");

@@ -19,6 +19,7 @@
 #include "bg.h"
 #include "window.h"
 #include "gpu_regs.h"
+#include "clock.h"
 //#include "constants/rgb.h"
 
 #define PALTAG_ARROW 0x1000
@@ -699,6 +700,7 @@ static void Task_ResetRtcScreen(u8 taskId)
                 gSaveBlock2Ptr->lastBerryTreeUpdate = gLocalTime;
                 VarSet(VAR_DAYS, gLocalTime.days);
                 DisableResetRTC();
+                InitTimeBasedEvents(); // temp!
                 ShowMessage(gText_ClockHasBeenReset);
                 tState = MAINSTATE_SAVE;
             }

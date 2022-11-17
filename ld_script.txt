@@ -105,6 +105,7 @@ SECTIONS {
         src/event_data.o(.text);
         src/coord_event_weather.o(.text);
         src/field_tasks.o(.text);
+		src/clock.o(.text);
 		src/reset_rtc_screen.o(.text);
         src/start_menu.o(.text);
         src/tileset_anims.o(.text);
@@ -301,6 +302,7 @@ SECTIONS {
         src/teachy_tv.o(.text);
         src/ereader_helpers.o(.text);
 	    src/faraway_island.o(.text);
+		src/trainer_hill.o(.text);
         src/digit_obj_util.o(.text);
         src/ss_anne.o(.text);
         src/cereader_tool.o(.text);
@@ -601,6 +603,7 @@ SECTIONS {
         src/battle_controller_pokedude.o(.rodata);
         src/teachy_tv.o(.rodata);
 		src/faraway_island.o(.rodata);
+		src/trainer_hill.o(.rodata);
         src/digit_obj_util.o(.rodata);
         src/ss_anne.o(.rodata);
         src/cereader_tool.o(.rodata);

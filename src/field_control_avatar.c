@@ -526,8 +526,6 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_PokeMartShelf;
     if (MetatileBehavior_IsFood(metatileBehavior) == TRUE)
         return EventScript_Food;
-    if (MetatileBehavior_IsImpressiveMachine(metatileBehavior) == TRUE)
-        return EventScript_ImpressiveMachine;
     if (MetatileBehavior_IsBlueprints(metatileBehavior) == TRUE)
         return EventScript_Blueprints;
     if (MetatileBehavior_IsVideoGame(metatileBehavior) == TRUE)
@@ -1162,7 +1160,7 @@ static u8 TrySetDiveWarp(void)
     return 0;
 }
 
-static const u8 *GetObjectEventScriptPointerPlayerFacing(void)
+const u8 *GetObjectEventScriptPointerPlayerFacing(void)
 {
     u8 direction;
     struct MapPosition position;

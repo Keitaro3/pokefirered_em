@@ -836,6 +836,7 @@ extern const u8 gText_KeyItems[];
 extern const u8 gText_PokeBalls[];
 extern const u8 gText_TMsAndHMs[];
 extern const u8 gText_Berries[];
+extern const u8 gText_Berry[];
 extern const u8 gText_Boulderbadge[];
 extern const u8 gText_Cascadebadge[];
 extern const u8 gText_Thunderbadge[];

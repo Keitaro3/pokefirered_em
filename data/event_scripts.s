@@ -36,6 +36,7 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_card.h"
 #include "constants/help_system.h"
+#include "constants/berry.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.set FALSE, 0
@@ -1362,6 +1363,7 @@ Text_TestMsg::
 	.include "data/text/new_game_intro.inc"
 	.include "data/text/pokedude.inc"
 	.include "data/scripts/trainer_script.inc"
+	.include "data/scripts/berry_tree.inc"
 
 	.include "data/maps/FarawayIsland_Interior/scripts.inc"
 	.include "data/maps/FarawayIsland_Interior/text.inc"

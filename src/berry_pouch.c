@@ -660,7 +660,7 @@ static void SetUpListMenuTemplate(void)
     sListMenuItems[i].label = gText_Close;
     sListMenuItems[i].index = i;
     gMultiuseListMenuTemplate.items = sListMenuItems;
-    if (sStaticCnt.type != BERRYPOUCH_FROMBERRYCRUSH)
+    if (sStaticCnt.type < BERRYPOUCH_FROMBERRYCRUSH || sStaticCnt.type > BERRYPOUCH_FROMBERRYTREE)
         gMultiuseListMenuTemplate.totalItems = sResources->listMenuNumItems + 1;
     else
         gMultiuseListMenuTemplate.totalItems = sResources->listMenuNumItems;
@@ -771,7 +771,7 @@ static void SetDescriptionWindowBorderPalette(s32 pal)
 
 static void CreateScrollIndicatorArrows_BerryPouchList(void)
 {
-    if (sStaticCnt.type != BERRYPOUCH_FROMBERRYCRUSH)
+    if (sStaticCnt.type < BERRYPOUCH_FROMBERRYCRUSH || sStaticCnt.type > BERRYPOUCH_FROMBERRYTREE)
         sResources->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 160, 8, 120, sResources->listMenuNumItems - sResources->listMenuMaxShowed + 1, 110, 110, &sStaticCnt.listMenuScrollOffset);
     else
         sResources->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 160, 8, 120, sResources->listMenuNumItems - sResources->listMenuMaxShowed, 110, 110, &sStaticCnt.listMenuScrollOffset);
@@ -813,7 +813,7 @@ void BerryPouch_CursorResetToTop(void)
 static void SanitizeListMenuSelectionParams(void)
 {
     s32 r2;
-    if (sStaticCnt.type != BERRYPOUCH_FROMBERRYCRUSH)
+    if (sStaticCnt.type < BERRYPOUCH_FROMBERRYCRUSH || sStaticCnt.type > BERRYPOUCH_FROMBERRYTREE)
         r2 = sResources->listMenuNumItems + 1;
     else
         r2 = sResources->listMenuNumItems;
@@ -832,7 +832,7 @@ static void UpdateListMenuScrollOffset(void)
 {
     u8 lim;
     u8 i;
-    if (sStaticCnt.type != BERRYPOUCH_FROMBERRYCRUSH)
+    if (sStaticCnt.type < BERRYPOUCH_FROMBERRYCRUSH || sStaticCnt.type > BERRYPOUCH_FROMBERRYTREE)
         lim = sResources->listMenuNumItems + 1;
     else
         lim = sResources->listMenuNumItems;
@@ -892,7 +892,7 @@ static void SortAndCountBerries(void)
             break;
         sResources->listMenuNumItems++;
     }
-    if (sStaticCnt.type != BERRYPOUCH_FROMBERRYCRUSH)
+    if (sStaticCnt.type < BERRYPOUCH_FROMBERRYCRUSH || sStaticCnt.type > BERRYPOUCH_FROMBERRYTREE)
         r2 = sResources->listMenuNumItems + 1;
     else
         r2 = sResources->listMenuNumItems;
@@ -960,7 +960,7 @@ static void Task_BerryPouchMain(u8 taskId)
                 break;
             default:
                 PlaySE(SE_SELECT);
-                if (sStaticCnt.type == BERRYPOUCH_FROMBERRYCRUSH)
+                if (sStaticCnt.type == BERRYPOUCH_FROMBERRYCRUSH || sStaticCnt.type == BERRYPOUCH_FROMBERRYTREE)
                 {
                     gSpecialVar_ItemId = BagGetItemIdByPocketPosition(POCKET_BERRY_POUCH, menuInput);
                     BerryPouch_StartFadeToExitCallback(taskId);
@@ -1077,7 +1077,8 @@ static void Task_BerryPouch_Use(u8 taskId)
     else if (CalculatePlayerPartyCount() == 0 && ItemId_GetType(gSpecialVar_ItemId) == 1)
         Task_Give_PrintThereIsNoPokemon(taskId);
     else
-        ItemId_GetFieldFunc(gSpecialVar_ItemId)(taskId);
+        //ItemId_GetFieldFunc(gSpecialVar_ItemId)(taskId);
+        ItemUseOutOfBattle_Berry(taskId);
 }
 
 static void Task_BerryPouch_Toss(u8 taskId)

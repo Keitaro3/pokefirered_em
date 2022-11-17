@@ -20,10 +20,6 @@ EventScript_Computer::
 	msgbox Text_Computer, MSGBOX_SIGN
 	end
 
-EventScript_ImpressiveMachine::
-	msgbox Text_ImpressiveMachine, MSGBOX_SIGN
-	end
-
 EventScript_Blueprints::
 	msgbox Text_Blueprints, MSGBOX_SIGN
 	end

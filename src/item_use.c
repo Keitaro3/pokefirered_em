@@ -1,6 +1,7 @@
 #include "global.h"
 #include "gflib.h"
 #include "battle.h"
+#include "berry.h"
 #include "berry_pouch.h"
 #include "berry_powder.h"
 #include "bike.h"
@@ -9,6 +10,7 @@
 #include "field_effect.h"
 #include "field_fadetransition.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_player_avatar.h"
 #include "field_specials.h"
 #include "field_weather.h"
@@ -37,6 +39,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/field_weather.h"
+#include "constants/event_objects.h"
 
 static EWRAM_DATA void (*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -68,6 +71,10 @@ static void sub_80A1D58(void);
 static void sub_80A1D68(u8 taskId);
 static void Task_BattleUse_StatBooster_DelayAndPrint(u8 taskId);
 static void Task_BattleUse_StatBooster_WaitButton_ReturnToBattle(u8 taskId);
+static void ItemUseOnFieldCB_Berry(u8 taskId);
+static void ItemUseOnFieldCB_WailmerPailBerry(u8 taskId);
+static void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId);
+static bool8 TryToWaterSudowoodo(void);
 
 // No clue what this is
 static const u8 sUnref_83E27B4[] = {
@@ -510,6 +517,11 @@ static void Task_InitBerryPouchFromField(u8 taskId)
     }
 }
 
+void CB2_ChooseBerry(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMBERRYTREE, CB2_ReturnToFieldContinueScript, 0);
+}
+
 void BattleUseFunc_BerryPouch(u8 taskId)
 {
     ItemMenu_SetExitCallback(InitBerryPouchFromBattle);
@@ -937,4 +949,74 @@ void ItemUse_SetQuestLogEvent(u8 eventId, struct Pokemon * pokemon, u16 itemId, 
         questLog->species = 0xFFFF;
     SetQuestLogEvent(eventId, (void *)questLog);
     Free(questLog);
+}
+
+void ItemUseOutOfBattle_Berry(u8 taskId)
+{
+    if (IsPlayerFacingEmptyBerryTreePatch() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_Berry;
+        gFieldCallback = FieldCB_FadeInFromBlack;
+        
+        BerryPouch_SetExitCallback(CB2_ReturnToField);
+        BerryPouch_StartFadeToExitCallback(taskId);
+    }
+    else
+    {
+        ItemId_GetFieldFunc(gSpecialVar_ItemId)(taskId);
+    }
+}
+
+static void ItemUseOnFieldCB_Berry(u8 taskId)
+{
+    RemoveBagItem(gSpecialVar_ItemId, 1);
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(BerryTree_EventScript_ItemUsePlantBerry);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_WailmerPail(u8 taskId)
+{
+    if (TryToWaterSudowoodo() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_WailmerPailSudowoodo;
+        sub_80A103C(taskId);
+    }
+    else if (TryToWaterBerryTree() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_WailmerPailBerry;
+        sub_80A103C(taskId);
+    }
+    else
+    {
+        PrintNotTheTimeToUseThat(taskId, gTasks[taskId].data[3]);
+    }
+}
+
+static void ItemUseOnFieldCB_WailmerPailBerry(u8 taskId)
+{
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(BerryTree_EventScript_ItemUseWailmerPail);
+    DestroyTask(taskId);
+}
+
+static bool8 TryToWaterSudowoodo(void)
+{
+    u16 x, y;
+    u8 z;
+    u8 objId;
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    z = PlayerGetZCoord();
+    objId = GetObjectEventIdByXYZ(x, y, z);
+    if (objId == OBJECT_EVENTS_COUNT || gObjectEvents[objId].graphicsId != OBJ_EVENT_GFX_SUDOWOODO)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+static void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId)
+{
+    ScriptContext2_Enable();
+    //ScriptContext1_SetupScript(BattleFrontier_OutsideEast_EventScript_WaterSudowoodo);
+    DestroyTask(taskId);
 }

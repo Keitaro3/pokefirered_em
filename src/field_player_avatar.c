@@ -77,6 +77,7 @@ static void PlayerAvatarTransition_Normal(struct ObjectEvent * playerObject);
 static void PlayerAvatarTransition_Bike(struct ObjectEvent * playerObject);
 static void PlayerAvatarTransition_Surfing(struct ObjectEvent * playerObject);
 static void PlayerAvatarTransition_Underwater(struct ObjectEvent * playerObject);
+static void PlayerAvatarTransition_Watering(struct ObjectEvent * playerObject);
 static void PlayerAvatarTransition_ReturnToField(struct ObjectEvent * playerObject);
 static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
@@ -731,7 +732,7 @@ static void (*const sPlayerAvatarTransitionFuncs[])(struct ObjectEvent *) = {
     [PLAYER_AVATAR_STATE_UNDERWATER]   = PlayerAvatarTransition_Underwater,
     [PLAYER_AVATAR_STATE_CONTROLLABLE] = PlayerAvatarTransition_ReturnToField,
     [PLAYER_AVATAR_STATE_FORCED]       = PlayerAvatarTransition_Dummy,
-    [PLAYER_AVATAR_STATE_DASH]         = PlayerAvatarTransition_Dummy
+    [PLAYER_AVATAR_STATE_DASH]         = PlayerAvatarTransition_Watering
 };
 
 static void DoPlayerAvatarTransition(void)
@@ -775,6 +776,11 @@ static void PlayerAvatarTransition_Surfing(struct ObjectEvent * playerObjEvent)
 }
 
 static void PlayerAvatarTransition_Underwater(struct ObjectEvent * playerObjEvent)
+{
+
+}
+
+static void PlayerAvatarTransition_Watering(struct ObjectEvent * playerObjEvent)
 {
 
 }
@@ -1191,6 +1197,7 @@ static const u8 sPlayerAvatarGfxIds[][GENDER_COUNT] = {
     [PLAYER_AVATAR_GFX_FIELD_MOVE] = {OBJ_EVENT_GFX_RED_FIELD_MOVE, OBJ_EVENT_GFX_GREEN_FIELD_MOVE},
     [PLAYER_AVATAR_GFX_FISH]       = {OBJ_EVENT_GFX_RED_FISH,       OBJ_EVENT_GFX_GREEN_FISH},
     [PLAYER_AVATAR_GFX_VSSEEKER]   = {OBJ_EVENT_GFX_RED_VS_SEEKER,  OBJ_EVENT_GFX_GREEN_VS_SEEKER},
+    [PLAYER_AVATAR_GFX_WATERING]   = {OBJ_EVENT_GFX_RED_WATERING,   OBJ_EVENT_GFX_GREEN_WATERING},
 };
 
 static const u8 sRSLinkPartnerGfxIds[] = {
@@ -1237,6 +1244,7 @@ u8 GetPlayerAvatarGenderByGraphicsId(u8 gfxId)
     case OBJ_EVENT_GFX_GREEN_SURF:
     case OBJ_EVENT_GFX_GREEN_FIELD_MOVE:
     case OBJ_EVENT_GFX_GREEN_FISH:
+    case OBJ_EVENT_GFX_GREEN_WATERING:
         return FEMALE;
     default:
         return MALE;
@@ -1420,9 +1428,10 @@ void PlayerUseAcroBikeOnBumpySlope(u8 direction)
 
 }
 
-static void SetPlayerAvatarWatering(void)
+void SetPlayerAvatarWatering(u8 direction)
 {
-
+    ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_WATERING));
+    StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFaceDirectionAnimNum(direction));
 }
 
 static bool8 (*const sArrowWarpMetatileBehaviorChecks2[])(u8) = {

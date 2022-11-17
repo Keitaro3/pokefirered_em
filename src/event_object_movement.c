@@ -16,6 +16,7 @@
 #include "script.h"
 #include "trainer_see.h"
 #include "trig.h"
+#include "berry.h"
 #include "constants/maps.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
@@ -78,6 +79,7 @@ static void SetPlayerAvatarObjectEventIdAndObjectId(u8, u8);
 static void ResetObjectEventFldEffData(struct ObjectEvent *);
 static u8 TryLoadObjectPalette(const struct SpritePalette *spritePalette);
 static u8 FindObjectEventPaletteIndexByTag(u16);
+static void _PatchObjectPalette(u16, u8);
 static bool8 ObjectEventDoesZCoordMatch(struct ObjectEvent *, u8);
 static void ObjectCB_CameraObject(struct Sprite *);
 static void CameraObject_0(struct Sprite *);
@@ -103,6 +105,7 @@ static void MovementType_WanderAround(struct Sprite *);
 static void MovementType_WanderUpAndDown(struct Sprite *);
 static void MovementType_WanderLeftAndRight(struct Sprite *);
 static void MovementType_FaceDirection(struct Sprite *);
+static void MovementType_BerryTreeGrowth(struct Sprite *);
 static void MovementType_FaceDownAndUp(struct Sprite *);
 static void MovementType_FaceLeftAndRight(struct Sprite *);
 static void MovementType_FaceUpAndLeft(struct Sprite *);
@@ -155,6 +158,13 @@ static void MovementType_VsSeeker4F(struct Sprite *);
 static void MovementType_WanderAroundSlower(struct Sprite *);
 
 static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
+
+// Sprite data used throughout
+#define sObjEventId   data[0]
+#define sTypeFuncId   data[1] // Index into corresponding gMovementTypeFuncs_* table
+#define sActionFuncId data[2] // Index into corresponding gMovementActionFuncs_* table
+#define sDirection    data[3]
+#define sSpeed        data[4]
 
 #define movement_type_def(setup, table)                                                          \
 static u8 setup##_callback(struct ObjectEvent *, struct Sprite *);                               \
@@ -214,7 +224,7 @@ static void (*const sMovementTypeCallbacks[MOVEMENT_TYPES_COUNT])(struct Sprite 
     [MOVEMENT_TYPE_FACE_LEFT]                             = MovementType_FaceDirection,
     [MOVEMENT_TYPE_FACE_RIGHT]                            = MovementType_FaceDirection,
     [MOVEMENT_TYPE_PLAYER]                                = MovementType_Player,
-    [MOVEMENT_TYPE_BERRY_TREE_GROWTH]                     = NULL,
+    [MOVEMENT_TYPE_BERRY_TREE_GROWTH]                     = MovementType_BerryTreeGrowth,
     [MOVEMENT_TYPE_FACE_DOWN_AND_UP]                      = MovementType_FaceDownAndUp,
     [MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT]                   = MovementType_FaceLeftAndRight,
     [MOVEMENT_TYPE_FACE_UP_AND_LEFT]                      = MovementType_FaceUpAndLeft,
@@ -1570,6 +1580,7 @@ void Unref_RemoveAllObjectEventsExceptPlayer(void)
 static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTemplate, struct SpriteTemplate *spriteTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
 {
     u8 spriteId;
+    u8 paletteSlot;
     u8 objectEventId;
     struct Sprite *sprite;
     struct ObjectEvent *objectEvent;
@@ -1581,13 +1592,19 @@ static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTempl
 
     objectEvent = &gObjectEvents[objectEventId];
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    if (graphicsInfo->paletteSlot == 0)
+    paletteSlot = graphicsInfo->paletteSlot;
+    if (paletteSlot == 0)
     {
-        LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+        LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, 0);
     }
-    else if (graphicsInfo->paletteSlot == 10)
+    else if (paletteSlot == 10)
     {
-        LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+        LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, 10);
+    }
+    else if (paletteSlot >= 16)
+    {
+        paletteSlot -= 16;
+        _PatchObjectPalette(graphicsInfo->paletteTag, paletteSlot);
     }
 
     if (objectEvent->movementType == MOVEMENT_TYPE_INVISIBLE)
@@ -1766,6 +1783,10 @@ u8 sprite_new(u8 graphicsId, u8 a1, s16 x, s16 y, u8 z, u8 direction)
         {
             LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
         }
+        else if (graphicsInfo->paletteSlot >= 16)
+        {
+            _PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot | 0xf0);
+        }
 
         if (subspriteTables != NULL)
         {
@@ -1897,6 +1918,7 @@ void ReloadMapObjectsWithOffset(s16 x, s16 y)
 static void ReloadMapObjectWithOffset(u8 objectEventId, s16 x, s16 y)
 {
     u8 spriteId;
+    u8 paletteSlot;
     struct Sprite *sprite;
     struct ObjectEvent *objectEvent;
     struct SpriteTemplate spriteTemplate;
@@ -1922,13 +1944,19 @@ static void ReloadMapObjectWithOffset(u8 objectEventId, s16 x, s16 y)
     MakeObjectTemplateFromObjectEventGraphicsInfoWithCallbackIndex(objectEvent->graphicsId, objectEvent->movementType, &spriteTemplate, &subspriteTables);
     spriteTemplate.images = &spriteFrameImage;
     *(u16 *)&spriteTemplate.paletteTag = TAG_NONE;
-    if (graphicsInfo->paletteSlot == 0)
+    paletteSlot = graphicsInfo->paletteSlot;
+    if (paletteSlot == 0)
     {
         LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
     }
-    if (graphicsInfo->paletteSlot > 9)
+    else if (paletteSlot == 10)
     {
         LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+    }
+    else if (paletteSlot >= 16)
+    {
+        paletteSlot -= 16;
+        _PatchObjectPalette(graphicsInfo->paletteTag, paletteSlot);
     }
     *(u16 *)&spriteTemplate.paletteTag = TAG_NONE;
     spriteId = CreateSprite(&spriteTemplate, 0, 0, 0);
@@ -1988,42 +2016,49 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo;
     struct Sprite *sprite;
+    u8 paletteSlot;
     u8 var;
     u8 var3;
 
     graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     sprite = &gSprites[objectEvent->spriteId];
-    if (graphicsInfo->paletteSlot == 0)
+    paletteSlot = graphicsInfo->paletteSlot;
+    if (paletteSlot == 0)
     {
         PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
     }
-    if (graphicsInfo->paletteSlot == 10)
+    else if (paletteSlot == 10)
     {
         LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
     }
+    else if (paletteSlot >= 16)
+    {
+        paletteSlot -= 16;
+        _PatchObjectPalette(graphicsInfo->paletteTag, paletteSlot);
+    }
     
-    var = sprite->images->size / TILE_SIZE_4BPP;
+   /* var = sprite->images->size / TILE_SIZE_4BPP;  // 512 / 32 (16) or 256 / 32 (8)
     if (!sprite->usingSheet)
     {
         FreeSpriteTilesIfNotUsingSheet(sprite);
-    }
+    }*/
     sprite->oam.shape = graphicsInfo->oam->shape;
     sprite->oam.size = graphicsInfo->oam->size;
     sprite->images = graphicsInfo->images;
     sprite->anims = graphicsInfo->anims;
     sprite->subspriteTables = graphicsInfo->subspriteTables;
     sprite->oam.paletteNum = graphicsInfo->paletteSlot;
-    if (!sprite->usingSheet)
+   /* if (!sprite->usingSheet)
     {
         s32 var2;
-        var3 = sprite->images->size / TILE_SIZE_4BPP;
+        var3 = sprite->images->size / TILE_SIZE_4BPP; // 4, 8 or 16 ...?
         var2 = AllocSpriteTiles(var3);
         if (var2 == -1)
         {
             var2 = AllocSpriteTiles(var);    
         }
         sprite->oam.tileNum = var2;
-    }
+    }*/
     objectEvent->inanimate = graphicsInfo->inanimate;
     objectEvent->graphicsId = graphicsId;  
     SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
@@ -2070,6 +2105,30 @@ void ObjectEventTurnByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u8 direc
 void PlayerObjectTurn(struct PlayerAvatar *playerAvatar, u8 direction)
 {
     ObjectEventTurn(&gObjectEvents[playerAvatar->objectEventId], direction);
+}
+
+static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    u8 berryStage;
+    u8 berryId;
+
+    objectEvent->invisible = TRUE;
+    sprite->invisible = TRUE;
+    berryStage = GetStageByBerryTreeId(objectEvent->trainerRange_berryTreeId);
+    if (berryStage != BERRY_STAGE_NO_BERRY)
+    {
+        objectEvent->invisible = FALSE;
+        sprite->invisible = FALSE;
+        berryId = GetBerryTypeByBerryTreeId(objectEvent->trainerRange_berryTreeId) - 1;
+        berryStage--;
+        if (berryId > ITEM_TO_BERRY(LAST_BERRY_INDEX))
+            berryId = 0;
+
+        ObjectEventSetGraphicsId(objectEvent, gBerryTreeObjectEventGraphicsIdTablePointers[berryId][berryStage]);
+        sprite->images = gBerryTreePicTablePointers[berryId];
+        sprite->oam.paletteNum = gBerryTreePaletteSlotTablePointers[berryId][berryStage];
+        StartSpriteAnim(sprite, berryStage);
+    }
 }
 
 const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
@@ -2266,9 +2325,9 @@ void LoadSpecialObjectReflectionPalette(u16 tag, u8 slot)
     }
 }
 
-u8 sub_805F6D0(u8 var)
+static void _PatchObjectPalette(u16 tag, u8 slot)
 {
-    return gReflectionEffectPaletteMap[var];
+    PatchObjectPalette(tag, slot);
 }
 
 // Unused
@@ -2485,7 +2544,13 @@ u8 CameraObjectGetFollowedObjectId(void)
 
 void CameraObjectReset2(void)
 {
-    FindCameraObject()->data[1] = 2;
+    struct Sprite *camera;
+
+    camera = FindCameraObject();
+    if (camera != NULL)
+    {
+        camera->data[1] = 2;
+    }
 }
 
 u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority)
@@ -2549,11 +2614,8 @@ const u8 *GetObjectEventScriptPointerByObjectEventId(u8 objectEventId)
 static u16 GetObjectEventFlagIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 {
     struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup);
-#ifdef UBFIX
-    // BUG: The function may return NULL, and attempting to read from NULL may freeze the game using modern compilers.
     if (obj == NULL)
         return 0;
-#endif // UBFIX
     return obj->flagId;
 }
 
@@ -2592,12 +2654,12 @@ u8 GetObjectEventBerryTreeIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
     u8 objectEventId;
 
     if (TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
+    {
         return 0xFF;
-
+    }
     return gObjectEvents[objectEventId].trainerRange_berryTreeId;
 }
 
-// Unused
 u8 GetObjectEventBerryTreeId(u8 objectEventId)
 {
     return gObjectEvents[objectEventId].trainerRange_berryTreeId;
@@ -3256,6 +3318,133 @@ static bool8 MovementType_FaceDirection_Step1(struct ObjectEvent *objectEvent, s
 static bool8 MovementType_FaceDirection_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     objectEvent->singleMovementActive = FALSE;
+    return FALSE;
+}
+
+static bool8 ObjectEventCB2_BerryTree(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+extern bool8 (*const gMovementTypeFuncs_BerryTreeGrowth[])(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+
+enum {
+    BERRYTREEFUNC_NORMAL,
+    BERRYTREEFUNC_MOVE,
+    BERRYTREEFUNC_SPARKLE_START,
+    BERRYTREEFUNC_SPARKLE,
+    BERRYTREEFUNC_SPARKLE_END,
+};
+
+#define sTimer          data[2]
+#define sBerryTreeFlags data[7]
+
+#define BERRY_FLAG_SET_GFX     (1 << 0)
+#define BERRY_FLAG_SPARKLING   (1 << 1)
+#define BERRY_FLAG_JUST_PICKED (1 << 2)
+
+void MovementType_BerryTreeGrowth(struct Sprite *sprite)
+{
+    struct ObjectEvent *objectEvent;
+
+    objectEvent = &gObjectEvents[sprite->sObjEventId];
+    if (!(sprite->sBerryTreeFlags & BERRY_FLAG_SET_GFX))
+    {
+        SetBerryTreeGraphics(objectEvent, sprite);
+        sprite->sBerryTreeFlags |= BERRY_FLAG_SET_GFX;
+    }
+    UpdateObjectEventCurrentMovement(objectEvent, sprite, ObjectEventCB2_BerryTree);
+}
+static bool8 ObjectEventCB2_BerryTree(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    return gMovementTypeFuncs_BerryTreeGrowth[sprite->sTypeFuncId](objectEvent, sprite);
+}
+
+// BERRYTREEFUNC_NORMAL
+bool8 MovementType_BerryTreeGrowth_Normal(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    u8 berryStage;
+    ClearObjectEventMovement(objectEvent, sprite);
+    objectEvent->invisible = TRUE;
+    sprite->invisible = TRUE;
+    berryStage = GetStageByBerryTreeId(objectEvent->trainerRange_berryTreeId);
+    if (berryStage == BERRY_STAGE_NO_BERRY)
+    {
+        if (!(sprite->sBerryTreeFlags & BERRY_FLAG_JUST_PICKED) && sprite->animNum == BERRY_STAGE_FLOWERING)
+        {
+            gFieldEffectArguments[0] = objectEvent->currentCoords.x;
+            gFieldEffectArguments[1] = objectEvent->currentCoords.y;
+            gFieldEffectArguments[2] = sprite->subpriority - 1;
+            gFieldEffectArguments[3] = sprite->oam.priority;
+            FieldEffectStart(FLDEFF_BERRY_TREE_GROWTH_SPARKLE);
+            sprite->animNum = berryStage;
+        }
+        return FALSE;
+    }
+    objectEvent->invisible = FALSE;
+    sprite->invisible = FALSE;
+    berryStage--;
+    if (sprite->animNum != berryStage)
+    {
+        sprite->sTypeFuncId = BERRYTREEFUNC_SPARKLE_START;
+        return TRUE;
+    }
+    SetBerryTreeGraphics(objectEvent, sprite);
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+    sprite->sTypeFuncId = BERRYTREEFUNC_MOVE;
+    return TRUE;
+}
+
+// BERRYTREEFUNC_MOVE
+bool8 MovementType_BerryTreeGrowth_Move(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        sprite->data[1] = BERRYTREEFUNC_NORMAL;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// BERRYTREEFUNC_SPARKLE_START
+bool8 MovementType_BerryTreeGrowth_SparkleStart(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    objectEvent->singleMovementActive = TRUE;
+    sprite->sTypeFuncId = BERRYTREEFUNC_SPARKLE;
+    sprite->sTimer = 0;
+    sprite->sBerryTreeFlags |= BERRY_FLAG_SPARKLING;
+    gFieldEffectArguments[0] = objectEvent->currentCoords.x;
+    gFieldEffectArguments[1] = objectEvent->currentCoords.y;
+    gFieldEffectArguments[2] = sprite->subpriority - 1;
+    gFieldEffectArguments[3] = sprite->oam.priority;
+    FieldEffectStart(FLDEFF_BERRY_TREE_GROWTH_SPARKLE);
+    return TRUE;
+}
+
+// BERRYTREEFUNC_SPARKLE
+bool8 MovementType_BerryTreeGrowth_Sparkle(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->sTimer++;
+    objectEvent->invisible = (sprite->sTimer & 2) >> 1;
+    sprite->animPaused = TRUE;
+    if (sprite->sTimer > 64)
+    {
+        SetBerryTreeGraphics(objectEvent, sprite);
+        sprite->sTypeFuncId = BERRYTREEFUNC_SPARKLE_END;
+        sprite->sTimer = 0;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// BERRYTREEFUNC_SPARKLE_END
+bool8 MovementType_BerryTreeGrowth_SparkleEnd(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->sTimer++;
+    objectEvent->invisible = (sprite->sTimer & 2) >> 1;
+    sprite->animPaused = TRUE;
+    if (sprite->sTimer > 64)
+    {
+        sprite->sTypeFuncId = BERRYTREEFUNC_NORMAL;
+        sprite->sBerryTreeFlags &= ~BERRY_FLAG_SPARKLING;
+        return TRUE;
+    }
     return FALSE;
 }
 
@@ -4970,7 +5159,7 @@ bool8 IsBerryTreeSparkling(u8 localId, u8 mapNum, u8 mapGroup)
     u8 objectEventId;
 
     if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId)
-        && gSprites[gObjectEvents[objectEventId].spriteId].data[7] & 2)
+        && gSprites[gObjectEvents[objectEventId].spriteId].sBerryTreeFlags & BERRY_FLAG_SPARKLING)
     {
         return TRUE;
     }
@@ -4978,15 +5167,18 @@ bool8 IsBerryTreeSparkling(u8 localId, u8 mapNum, u8 mapGroup)
     return FALSE;
 }
 
-void sub_80639D4(u8 localId, u8 mapNum, u8 mapGroup)
+void SetBerryTreeJustPicked(u8 localId, u8 mapNum, u8 mapGroup)
 {
     u8 objectEventId;
 
     if (!TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId))
     {
-        gSprites[gObjectEvents[objectEventId].spriteId].data[7] |= 0x04;
+        gSprites[gObjectEvents[objectEventId].spriteId].sBerryTreeFlags |= BERRY_FLAG_JUST_PICKED;
     }
 }
+
+#undef sTimer
+#undef sBerryTreeFlags
 
 void MoveCoords(u8 direction, s16 *x, s16 *y)
 {

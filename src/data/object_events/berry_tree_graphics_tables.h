@@ -38,7 +38,7 @@ static const struct SpriteFrameImage sPicTable_WepearBerryTree[] = {
     overworld_frame(gObjectEventPic_WepearBerryTree, 2, 4, 5),
 };
 
-const u8 gBerryTreePaletteSlotTable_Wepear[] = {12, 10, 3, 3, 3};
+const u8 gBerryTreePaletteSlotTable_Wepear[] = {12, 10, 4, 4, 4};
 
 static const struct SpriteFrameImage sPicTable_QualotBerryTree[] = {
     overworld_frame(gObjectEventPic_BerryTreeDirtPile, 2, 2, 0),

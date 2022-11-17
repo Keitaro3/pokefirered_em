@@ -158,6 +158,7 @@ static void Task_Bag_TeachyTvRegister(u8 taskId);
 static void Task_Bag_TeachyTvCatching(u8 taskId);
 static void Task_Bag_TeachyTvStatus(u8 taskId);
 static void Task_Bag_TeachyTvTMs(u8 taskId);
+static void GetBerryFromBag2(void);
 
 static const struct BgTemplate sBgTemplates[2] = {
     {

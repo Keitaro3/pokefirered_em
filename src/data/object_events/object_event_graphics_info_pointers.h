@@ -157,6 +157,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EmMay;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BerryTree;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BerryTreeEarlyStages;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BerryTreeLateStages;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedWatering;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreenWatering;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -316,7 +318,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEW]                      = &gObjectEventGraphicsInfo_MewEmerald,
     [OBJ_EVENT_GFX_EM_BRENDAN]               = &gObjectEventGraphicsInfo_EmBrendan,
     [OBJ_EVENT_GFX_EM_MAY]                   = &gObjectEventGraphicsInfo_EmMay,
-    [OBJ_EVENT_GFX_BERRY_TREE] =               &gObjectEventGraphicsInfo_BerryTree,
-    [OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES] =  &gObjectEventGraphicsInfo_BerryTreeEarlyStages,
-    [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES] =   &gObjectEventGraphicsInfo_BerryTreeLateStages,
+    [OBJ_EVENT_GFX_BERRY_TREE]               = &gObjectEventGraphicsInfo_BerryTree,
+    [OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES]  = &gObjectEventGraphicsInfo_BerryTreeEarlyStages,
+    [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES]   = &gObjectEventGraphicsInfo_BerryTreeLateStages,
+    [OBJ_EVENT_GFX_RED_WATERING]             = &gObjectEventGraphicsInfo_RedWatering,
+    [OBJ_EVENT_GFX_GREEN_WATERING]           = &gObjectEventGraphicsInfo_GreenWatering,
 };

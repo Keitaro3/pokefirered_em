@@ -105,10 +105,6 @@ Text_NeatlyLinedUpTools::
 	.string "All sorts of tools are lined up\n"
 	.string "neatly.$"
 
-Text_ImpressiveMachine::
-	.string "It's a machine of some sort.\n"
-	.string "It sure is impressive.$"
-
 Text_VideoGame::
 	.string "It's the latest video game!\n"
 	.string "It sure looks fun!$"

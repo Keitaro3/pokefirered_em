@@ -130,6 +130,7 @@ void NewGameInitData(void)
     ClearPokedexFlags();
     InitEventData();
     ResetFameChecker();
+    ClearBerryTrees();
     SetMoney(&gSaveBlock1Ptr->money, 3000);
     ResetGameStats();
     ClearPlayerLinkBattleRecords();

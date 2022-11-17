@@ -6,6 +6,7 @@
 #include "event_object_movement.h"
 #include "new_menu_helpers.h"
 #include "overworld.h"
+#include "berry.h"
 
 EWRAM_DATA bool8 gBikeCameraAheadPanback = FALSE;
 
@@ -412,7 +413,7 @@ void CameraUpdate(void)
         CameraMove(deltaX, deltaY);
         UpdateObjectEventsForCameraUpdate(deltaX, deltaY);
         // RotatingGatePuzzleCameraUpdate(deltaX, deltaY);
-        // ResetBerryTreeSparkleFlags();
+        SetBerryTreesSeen();
         tilemap_move_something(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
         RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
     }
@@ -489,7 +490,7 @@ void CameraUpdateNoObjectRefresh(void)
         CameraMove(deltaX, deltaY);
         // UpdateObjectEventsForCameraUpdate(deltaX, deltaY);
         // RotatingGatePuzzleCameraUpdate(deltaX, deltaY);
-        // ResetBerryTreeSparkleFlags();
+        SetBerryTreesSeen();
         tilemap_move_something(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
         RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
     }

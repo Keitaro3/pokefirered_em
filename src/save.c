@@ -7,6 +7,7 @@
 #include "link.h"
 #include "save_failed_screen.h"
 #include "fieldmap.h"
+#include "trainer_hill.h"
 #include "gba/flash_internal.h"
 
 static u8 HandleWriteSector(u16 sectorId, const struct SaveSectorLocation *locations);
@@ -636,10 +637,10 @@ static void UpdateSaveAddresses(void)
 u8 HandleSavingData(u8 saveType)
 {
     u8 i;
-    u32 *backupPtr = gMain.vblankCounter1;
+    u32 *backupPtr = gTrainerHillVBlankCounter;
     u8 *tempAddr;
 
-    gMain.vblankCounter1 = NULL;
+    gTrainerHillVBlankCounter = NULL;
     UpdateSaveAddresses();
     switch (saveType)
     {
@@ -677,7 +678,7 @@ u8 HandleSavingData(u8 saveType)
         WriteSaveSectorOrSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
         break;
     }
-    gMain.vblankCounter1 = backupPtr;
+    gTrainerHillVBlankCounter = backupPtr;
     return 0;
 }
 

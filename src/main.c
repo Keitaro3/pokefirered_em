@@ -16,6 +16,7 @@
 #include "save_failed_screen.h"
 #include "quest_log.h"
 #include "rtc.h"
+#include "trainer_hill.h"
 
 extern u32 intr_main[];
 
@@ -208,6 +209,7 @@ static void UpdateLinkAndCallCallbacks(void)
 static void InitMainCallbacks(void)
 {
     gMain.vblankCounter1 = 0;
+    gTrainerHillVBlankCounter = NULL;
     gMain.vblankCounter2 = 0;
     gMain.callback1 = NULL;
     SetMainCallback2(c2_copyright_1);
@@ -373,8 +375,10 @@ static void VBlankIntr(void)
     else if (!gLinkVSyncDisabled)
         LinkVSync();
 
-    if (gMain.vblankCounter1)
-        (*gMain.vblankCounter1)++;
+    gMain.vblankCounter1++;
+
+    if (gTrainerHillVBlankCounter && *gTrainerHillVBlankCounter < 0xFFFFFFFF)
+        (*gTrainerHillVBlankCounter)++;
 
     if (gMain.vblankCallback)
         gMain.vblankCallback();
@@ -455,12 +459,12 @@ static void WaitForVBlank(void)
 
 void SetVBlankCounter1Ptr(u32 *ptr)
 {
-    gMain.vblankCounter1 = ptr;
+    gTrainerHillVBlankCounter = ptr;
 }
 
 void DisableVBlankCounter1(void)
 {
-    gMain.vblankCounter1 = NULL;
+    gTrainerHillVBlankCounter = NULL;
 }
 
 void DoSoftReset(void)

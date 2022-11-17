@@ -21,7 +21,7 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_UnusedSand;
 const struct SpriteTemplate gFieldEffectObjectTemplate_WaterSurfacing;
 const struct SpriteTemplate gFieldEffectObjectTemplate_ReflectionDistortion;
 const struct SpriteTemplate gFieldEffectObjectTemplate_DeepSandFootprints;
-/*const struct SpriteTemplate gFieldEffectObjectTemplate_Sparkle;*/
+const struct SpriteTemplate gFieldEffectObjectTemplate_Sparkle;
 const struct SpriteTemplate gFieldEffectObjectTemplate_TreeDisguise;
 const struct SpriteTemplate gFieldEffectObjectTemplate_MountainDisguise;
 const struct SpriteTemplate gFieldEffectObjectTemplate_Bird;
@@ -58,7 +58,7 @@ const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[] = {
     [FLDEFFOBJ_UNUSED_SAND]           = &gFieldEffectObjectTemplate_UnusedSand,
     [FLDEFFOBJ_WATER_SURFACING]       = &gFieldEffectObjectTemplate_WaterSurfacing,
     [FLDEFFOBJ_REFLECTION_DISTORTION] = &gFieldEffectObjectTemplate_ReflectionDistortion,
-    [FLDEFFOBJ_SPARKLE]               = NULL,
+    [FLDEFFOBJ_SPARKLE]               = &gFieldEffectObjectTemplate_Sparkle,
     [FLDEFFOBJ_DEEP_SAND_FOOTPRINTS]  = &gFieldEffectObjectTemplate_DeepSandFootprints,
     [FLDEFFOBJ_TREE_DISGUISE]         = &gFieldEffectObjectTemplate_TreeDisguise,
     [FLDEFFOBJ_MOUNTAIN_DISGUISE]     = &gFieldEffectObjectTemplate_MountainDisguise,

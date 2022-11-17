@@ -931,7 +931,6 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ReflectionDistortion =
     .callback = SpriteCallbackDummy,
 };
 
-/*
 static const struct SpriteFrameImage sPicTable_Sparkle[] = {
     overworld_frame(gFieldEffectObjectPic_Sparkle, 2, 2, 0),
     overworld_frame(gFieldEffectObjectPic_Sparkle, 2, 2, 1),
@@ -980,7 +979,6 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Sparkle = {
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = WaitFieldEffectSpriteAnim,
 };
-*/
 
 static const struct SpriteFrameImage sPicTable_TreeDisguise[] =
 {

@@ -36,6 +36,8 @@
 #include "palette.h"
 #include "trainer_see.h"
 #include "rtc.h"
+#include "clock.h"
+#include "berry.h"
 #include "constants/event_objects.h"
 #include "constants/sound.h"
 
@@ -694,7 +696,7 @@ bool8 ScrCmd_initclock(struct ScriptContext * ctx)
 
 bool8 ScrCmd_dodailyevents(struct ScriptContext * ctx)
 {
-//    DoTimeBasedEvents();
+    DoTimeBasedEvents();
     return FALSE;
 }
 
@@ -2007,14 +2009,14 @@ bool8 ScrCmd_playslotmachine(struct ScriptContext * ctx)
 
 bool8 ScrCmd_setberrytree(struct ScriptContext * ctx)
 {
-//    u8 treeId = ScriptReadByte(ctx);
-//    u8 berry = ScriptReadByte(ctx);
-//    u8 growthStage = ScriptReadByte(ctx);
-//
-//    if (berry == 0)
-//        PlantBerryTree(treeId, 0, growthStage, FALSE);
-//    else
-//        PlantBerryTree(treeId, berry, growthStage, FALSE);
+    u8 treeId = ScriptReadByte(ctx);
+    u8 berry = ScriptReadByte(ctx);
+    u8 growthStage = ScriptReadByte(ctx);
+
+    if (berry == 0)
+        PlantBerryTree(treeId, 0, growthStage, FALSE);
+    else
+        PlantBerryTree(treeId, berry, growthStage, FALSE);
     return FALSE;
 }
 

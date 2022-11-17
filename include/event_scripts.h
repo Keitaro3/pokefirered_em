@@ -16,6 +16,8 @@ extern const u8 EventScript_275D2E[];
 extern const u8 EventScript_2766A2[];
 extern const u8 EventScript_2766A6[];
 
+extern const u8 BerryTreeScript[];
+
 extern const u8 gTVBravoTrainerText00[];
 extern const u8 gTVBravoTrainerText01[];
 extern const u8 gTVBravoTrainerText02[];
@@ -1222,7 +1224,6 @@ extern const u8 EventScript_WallTownMap[];
 extern const u8 EventScript_Bookshelf[];
 extern const u8 EventScript_PokeMartShelf[];
 extern const u8 EventScript_Food[];
-extern const u8 EventScript_ImpressiveMachine[];
 extern const u8 EventScript_Blueprints[];
 extern const u8 EventScript_VideoGame[];
 extern const u8 EventScript_Burglary[];
@@ -1281,5 +1282,10 @@ extern const u8 TradeCenter_EventScript_Chair0[];
 extern const u8 TradeCenter_EventScript_Chair1[];
 extern const u8 TradeCenter_ConfirmLeaveRoom[];
 extern const u8 TradeCenter_TerminateLink[];
+
+// Item Use
+extern u8 BerryTree_EventScript_ItemUsePlantBerry[];
+extern u8 BerryTree_EventScript_ItemUseWailmerPail[];
+//extern u8 BattleFrontier_OutsideEast_EventScript_WaterSudowoodo[];
 
 #endif //GUARD_EVENT_SCRIPTS_H

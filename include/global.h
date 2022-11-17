@@ -9,6 +9,7 @@
 #include "constants/vars.h"
 #include "constants/species.h"
 #include "constants/easy_chat.h"
+#include "constants/berry.h"
 
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
@@ -807,7 +808,8 @@ struct SaveBlock1
     /*0x3D24*/ u8 unused_3D24[16];
     /*0x3D34*/ u32 towerChallengeId;
     /*0x3D38*/ struct TrainerTower trainerTower[NUM_TOWER_CHALLENGE_TYPES];
-}; // size: 0x3D68
+    /*0x3D68*/ struct BerryTree berryTrees[BERRY_TREES_COUNT];
+}; // size: 0x3E68
 
 struct MapPosition
 {

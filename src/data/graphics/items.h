@@ -678,3 +678,7 @@ const u32 gFile_graphics_items_icon_magma_emblem_palette[] = INCBIN_U32("graphic
 
 const u32 gFile_graphics_items_icons_old_sea_map_sheet[] = INCBIN_U32("graphics/items/icons/old_sea_map.4bpp.lz");
 const u32 gFile_graphics_items_icon_old_sea_map_palette[] = INCBIN_U32("graphics/items/icon_palettes/old_sea_map.gbapal.lz");
+
+// HGSS Items
+const u32 gFile_graphics_items_icons_squirtbottle_sheet[] = INCBIN_U32("graphics/items/icons/squirtbottle.4bpp.lz");
+const u32 gFile_graphics_items_icon_squirtbottle_palette[] = INCBIN_U32("graphics/items/icon_palettes/squirtbottle.gbapal.lz");

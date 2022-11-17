@@ -986,9 +986,12 @@
 	.2byte \word
 	.endm
 
-	@ In FireRed, this command is a nop.
-	.macro plantberrytree
+	@ Sets a berry tree's specific berry and growth stage. In FireRed, this command is a nop.
+	.macro setberrytree tree_id:req, berry:req, growth_stage:req
 	.byte 0x8a
+	.byte \tree_id
+	.byte \berry
+	.byte \growth_stage
 	.endm
 
 	@ In FireRed, this command sets the byte at 0x03000EA8 to 0x01. I do not know what that means.
