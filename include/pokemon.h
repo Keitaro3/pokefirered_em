@@ -446,6 +446,7 @@ void SetMonPreventsSwitchingString(void);
 void SetWildMonHeldItem(void);
 bool8 IsMonShiny(struct Pokemon *mon);
 u8 *GetTrainerPartnerName(void);
+void BattleAnimateBackSprite(struct Sprite* sprite, u16 species);
 u8 GetPlayerPartyHighestLevel(void);
 u16 FacilityClassToPicIndex(u16 facilityClass);
 bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId);

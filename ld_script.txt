@@ -1,6 +1,8 @@
 gNumMusicPlayers = 4;
 gMaxLines = 0;
 
+__anim_mon_load_address = 0x8b00000;
+
 SECTIONS {
     . = 0x2000000;
 
@@ -230,6 +232,7 @@ SECTIONS {
         src/clear_save_data_screen.o(.text);
         src/evolution_graphics.o(.text);
         src/fldeff_teleport.o(.text);
+		src/pokemon_animation.o(.text);
         src/new_menu_helpers.o(.text);
         src/box_party_pokemon_dropdown.o(.text);
         src/save_menu_util.o(.text);
@@ -533,6 +536,7 @@ SECTIONS {
         src/save_failed_screen.o(.rodata);
         src/clear_save_data_screen.o(.rodata);
         src/evolution_graphics.o(.rodata);
+		src/pokemon_animation.o(.rodata);
         src/new_menu_helpers.o(.rodata);
         src/box_party_pokemon_dropdown.o(.rodata);
         src/map_preview_screen.o(.rodata);
@@ -1541,7 +1545,12 @@ SECTIONS {
         data/multiboot_pokemon_colosseum.o(.rodata);
     } =0
 
-    . = 0x08D00000;
+    anim_mon_front_pic_data __anim_mon_load_address :
+    ALIGN(4)
+    {
+        src/anim_mon_front_pics.o(.rodata);
+    } =0
+
     gfx_data :
     ALIGN(4)
     {

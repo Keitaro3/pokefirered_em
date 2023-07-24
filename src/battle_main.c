@@ -25,6 +25,7 @@
 #include "party_menu.h"
 #include "pokeball.h"
 #include "pokedex.h"
+#include "pokemon.h"
 #include "quest_log.h"
 #include "random.h"
 #include "roamer.h"
@@ -2137,6 +2138,12 @@ static void SpriteCB_BounceEffect(struct Sprite *sprite)
         index = sprite->sSinIndex;
     gSprites[bouncerSpriteId].y2 = Sin(index, sprite->sAmplitude) + sprite->sAmplitude;
     sprite->sSinIndex = (sprite->sSinIndex + sprite->sDelta) & 0xFF;
+}
+
+void SpriteCb_PlayerMonFromBall(struct Sprite *sprite)
+{
+    if (sprite->affineAnimEnded)
+        BattleAnimateBackSprite(sprite, sprite->sSpeciesId);
 }
 
 void SpriteCB_PlayerThrowInit(struct Sprite *sprite)

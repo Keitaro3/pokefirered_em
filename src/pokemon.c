@@ -19,6 +19,7 @@
 #include "link.h"
 #include "m4a.h"
 #include "pokedex.h"
+#include "pokemon_animation.h"
 #include "strings.h"
 #include "overworld.h"
 #include "party_menu.h"
@@ -6080,6 +6081,19 @@ u8 *GetTrainerPartnerName(void)
 {
     u8 id = GetMultiplayerId();
     return gLinkPlayers[GetBattlerMultiplayerId(gLinkPlayers[id].id ^ 2)].name;
+}
+
+void BattleAnimateBackSprite(struct Sprite* sprite, u16 species)
+{
+    if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK)))
+    {
+        sprite->callback = SpriteCallbackDummy;
+    }
+    else
+    {
+        LaunchAnimationTaskForBackSprite(sprite, GetSpeciesBackAnimSet(species));
+        sprite->callback = SpriteCallbackDummy_2;
+    }
 }
 
 u8 GetPlayerPartyHighestLevel(void)

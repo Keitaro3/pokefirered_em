@@ -66,6 +66,12 @@ SECTIONS {
     {
     	*(.rodata*);
     } =0
+	
+	anim_mon_front_pic_data :
+    ALIGN(4)
+    {
+        src/anim_mon_front_pics.o(.rodata);
+    } =0	
 
     /* DWARF 2 sections */
     .debug_aranges  0 : { *(.debug_aranges) }

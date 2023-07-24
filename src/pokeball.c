@@ -672,8 +672,10 @@ static void SpriteCB_BallThrow_Shake(struct Sprite *sprite)
 #define tCryTaskSpecies         data[0]
 #define tCryTaskPan             data[1]
 #define tCryTaskWantedCry       data[2]
-#define tCryTaskMonPtr1         data[3]
-#define tCryTaskMonPtr2         data[4]
+#define tCryTaskBattler         data[3]
+#define tCryTaskMonSpriteId     data[4]
+#define tCryTaskMonPtr1         data[5]
+#define tCryTaskMonPtr2         data[6]
 #define tCryTaskFrames          data[10]
 #define tCryTaskState           data[15]
 
@@ -682,15 +684,15 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
     u8 wantedCry = gTasks[taskId].tCryTaskWantedCry;
     s8 pan = gTasks[taskId].tCryTaskPan;
     u16 species = gTasks[taskId].tCryTaskSpecies;
+    u8 battlerId = gTasks[taskId].tCryTaskBattler;
+    u8 monSpriteId = gTasks[taskId].tCryTaskMonSpriteId;
     struct Pokemon *mon = (void *)(u32)((gTasks[taskId].tCryTaskMonPtr1 << 16) | (u16)(gTasks[taskId].tCryTaskMonPtr2));
 
     switch (gTasks[taskId].tCryTaskState)
     {
     case 0:
     default:
-        if (gTasks[taskId].data[8] < 3)
-            gTasks[taskId].data[8]++;
-        else
+        if (gSprites[monSpriteId].affineAnimEnded)
             gTasks[taskId].tCryTaskState = wantedCry + 1;
         break;
     case 1:
@@ -699,7 +701,7 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
             PlayCry_ByMode(species, pan, CRY_MODE_NORMAL);
         else
             PlayCry_ByMode(species, pan, CRY_MODE_WEAK);
-
+        //gBattleSpritesDataPtr->healthBoxesData[battlerId].waitForCry = FALSE;
         DestroyTask(taskId);
         break;
     case 2:
@@ -716,6 +718,7 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
             else
                 PlayCry_ReleaseDouble(species, pan, CRY_MODE_WEAK_DOUBLES);
 
+            //gBattleSpritesDataPtr->healthBoxesData[battlerId].waitForCry = FALSE;
             DestroyTask(taskId);
         }
         else
@@ -755,6 +758,7 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
         else
             PlayCry_ReleaseDouble(species, pan, CRY_MODE_WEAK);
 
+        //gBattleSpritesDataPtr->healthBoxesData[battlerId].waitForCry = FALSE;
         DestroyTask(taskId);
         break;
     }
@@ -794,7 +798,7 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
         if ((battlerId == GetBattlerAtPosition(B_POSITION_PLAYER_LEFT) || battlerId == GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
          && IsDoubleBattle() && gBattleSpritesDataPtr->animationData->introAnimActive)
         {
-            if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+            if (gBattleTypeFlags & BATTLE_TYPE_MULTI && gBattleTypeFlags & BATTLE_TYPE_LINK)
             {
                 if (IsBGMPlaying())
                     m4aMPlayStop(&m4a_mplay000);
@@ -812,16 +816,26 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
         else
             wantedCryCase = 2;
 
+        //gBattleSpritesDataPtr->healthBoxesData[battlerId].waitForCry = TRUE;
+
         taskId = CreateTask(Task_PlayCryWhenReleasedFromBall, 3);
         gTasks[taskId].tCryTaskSpecies = species;
         gTasks[taskId].tCryTaskPan = pan;
         gTasks[taskId].tCryTaskWantedCry = wantedCryCase;
+        gTasks[taskId].tCryTaskBattler = battlerId;
+        gTasks[taskId].tCryTaskMonSpriteId = gBattlerSpriteIds[sprite->sBattler];
         gTasks[taskId].tCryTaskMonPtr1 = (u32)(mon) >> 16;
         gTasks[taskId].tCryTaskMonPtr2 = (u32)(mon);
         gTasks[taskId].tCryTaskState = 0;
     }
 
     StartSpriteAffineAnim(&gSprites[gBattlerSpriteIds[sprite->sBattler]], BATTLER_AFFINE_EMERGE);
+
+    if (GetBattlerSide(sprite->sBattler) == B_SIDE_OPPONENT)
+        gSprites[gBattlerSpriteIds[sprite->sBattler]].callback = NULL;
+    else
+        gSprites[gBattlerSpriteIds[sprite->sBattler]].callback = SpriteCb_PlayerMonFromBall;
+
     AnimateSprite(&gSprites[gBattlerSpriteIds[sprite->sBattler]]);
     gSprites[gBattlerSpriteIds[sprite->sBattler]].data[1] = 0x1000;
 }
@@ -829,6 +843,8 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
 #undef tCryTaskSpecies
 #undef tCryTaskPan
 #undef tCryTaskWantedCry
+#undef tCryTaskBattler
+#undef tCryTaskMonSpriteId
 #undef tCryTaskMonPtr1
 #undef tCryTaskMonPtr2
 #undef tCryTaskFrames
